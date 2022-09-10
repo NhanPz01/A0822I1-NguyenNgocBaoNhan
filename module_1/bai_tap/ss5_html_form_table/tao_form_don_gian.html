@@ -18,8 +18,8 @@
         }
 
         .tittle {
-            color: aqua;
-
+            color: blue;
+            margin: 10px 0 0 0;
         }
 
         .checkbox {
@@ -31,7 +31,7 @@
 <div class="div1">
     <form action="#" method="get" style="margin-left: 20px; margin-right: 20px">
         <h2 style="background-color: orange; color: white; margin-left: 30px">SỞ THÍCH CỦA BẠN</h2>
-        <span class="tittle">Họ và tên</span> <input type="text" name="yourname"><br>
+        <span class="tittle" style="margin-left: 3px;">Họ và tên</span> <input type="text" name="yourname"><br>
         <span class="tittle" style="margin-left: 27px">Email</span> <input type="text" name="email"><br>
         <span class="tittle" style="margin-left: 10px">Sở thích</span> <input type="checkbox" name="hoppy"
                                                                               value="the_thao"> <span
@@ -54,20 +54,21 @@
 <br>
 <div class="div2">
     <form>
-        <h2>ĐĂNG KÝ HỌC VIÊN</h2>
-        <span>Họ và tên</span> <input type="text" name="name"><br>
-        <span>Ngày sinh</span> <input type="text" name="birthday"><br>
-        <span>Giới tính</span> <input type="radio" name="gender" value="1">Nam
+        <h2 style="background-color: lightblue; color: blue">ĐĂNG KÝ HỌC VIÊN</h2>
+        <span class="tittle" style="margin-left: 3px">Họ và tên</span> <input type="text" name="name"><br>
+        <span class="tittle">Ngày sinh</span> <input type="text" name="birthday"><br>
+        <span class="tittle">Giới tính</span> <input type="radio" name="gender" value="1">Nam
         <input type="radio" name="gender" value="0">Nữ<br>
-        <span>Địa chỉ</span> <input type="text" name="address"><br>
-        <span>Lớp</span> <select name="class">
+        <span class="tittle" style="margin-left: 15px;">Địa chỉ</span> <input type="text" name="address"><br>
+        <span class="tittle" style="margin-left: 36px">Lớp</span>
+        <select name="class">
                         <option value="0">--Chọn lớp--</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
-    </select>
-        <span>Email</span><input type="text" name="email"><br>
-        <span>Điện thoại</span><input type="tel" name="phone_number"><br>
-        <button type="submit" name="submit">Đăng ký</button>
+        </select><br>
+        <span class="tittle" style="margin-left: 27px">Email</span><input type="text" name="email"><br>
+        <span class="tittle" style="margin-right: -3px;">Điện thoại</span><input type="tel" name="phone_number"><br>
+        <button type="submit" name="submit" style="margin-left: 64px;">Đăng ký</button>
         <button type="reset" name="reset">Nhập lại</button>
     </form>
 </div>
