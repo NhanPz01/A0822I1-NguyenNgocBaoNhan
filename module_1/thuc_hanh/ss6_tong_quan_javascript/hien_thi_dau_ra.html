@@ -2,9 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Hiển thị đầu ra</title>
 </head>
 <body>
-$END$
+    <button type="button" onclick="show_mes_with_alert()">Click me 1!</button><br>
+    <button type="button" onclick="show_mes_with_innerHTML()">Click me 2!</button><br>
+    <div id="mes_div"></div>
+    <button type="button" onclick="show_mes_with_write()">Click me 3!</button><br>
+    <button type="button" onclick="show_mes_with_console()">Click me 4!</button><br>
+
+<script>
+    function show_mes_with_alert() {
+        alert("Hello!");
+    }
+    function show_mes_with_innerHTML() {
+        document.getElementById('mes_div').innerHTML = "Hello!";
+    }
+    function show_mes_with_write() {
+        document.write("Hello!");
+    }
+    function show_mes_with_console() {
+        console.log("Hello!");
+    }
+</script>
 </body>
 </html>
