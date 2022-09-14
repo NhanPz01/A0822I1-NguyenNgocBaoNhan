@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng chuyển đổi tiền tệ</title>
+</head>
+<body>
+<form>
+    <span>Amount</span>
+    <span>From Currency</span>
+    <span>To Currency</span>
+    <br>
+    <input id="amount" type="text" name="amount">
+    <select id="from_cur">
+        <option name="from_currency" value="1">VietNam</option>
+        <option name="from_currency" value="2">USD</option>
+    </select>
+    <select id="to_cur">
+        <option name="to_currency" value="1">VietNam</option>
+        <option name="to_currency" value="2">USD</option>
+    </select>
+    <button type="button" onclick="convert()">Convert</button>
+    <p id="result"></p>
+</form>
+<script>
+    function convert() {
+        let n1 = +document.getElementById("from_cur").value;
+        let n2 = +document.getElementById("to_cur").value;
+        let n = parseFloat(+document.getElementById("amount").value);
+        if (n1 === 1 && n2 === 2) {
+            result = n * 0.000042;
+        }
+        document.getElementById("result").innerText = result;
+    }
+</script>
+</body>
+</html>
