@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1 - Nhập điểm sinh viên</title>
+</head>
+<body>
+<script>
+    let vat_ly, hoa_hoc, sinh_hoc;
+    vat_ly = parseInt(prompt("Nhập điểm lý"));
+    hoa_hoc = parseInt(prompt("Nhập điểm hóa"));
+    sinh_hoc = parseInt(prompt("Nhập điểm sinh"));
+    let diem_trb;
+    diem_trb = (vat_ly + hoa_hoc + sinh_hoc)/3;
+    document.write("Điểm vật lý là: " + vat_ly + '<br/>');
+    document.write("Điểm hóa học là: " + hoa_hoc + '<br/>');
+    document.write("Điểm sinh học là: " + sinh_hoc + '<br/>');
+    document.write("Điểm trung bình là: " + diem_trb);
+</script>
+</body>
+</html>
