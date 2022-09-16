@@ -4,27 +4,28 @@
     <meta charset="UTF-8">
     <title>Ứng dụng máy tính</title>
     <style>
-        input{
+        input {
             marign-right: 10px;
         }
-        button{
+
+        button {
             marign-right: 10px;
         }
     </style>
 </head>
 <body>
-    <form>
-        <h2>Caculator</h2>
-        <input type="text" id="num1" name="num1">
-        <input type="text" id="num2" name="num2">
-        <br>
-        <br>
-        <button type="button" onclick="add()">Addition(+)</button>
-        <button type="button" onclick="sub()">Subtraction(-)</button>
-        <button type="button" onclick="multi()">Multiplication(X)</button>
-        <button type="button" onclick="divine()">Division(/)</button>
-        <p id="result">Result</p>
-    </form>
+<div>
+    <h2>Caculator</h2>
+    <input type="text" id="num1" name="num1">
+    <input type="text" id="num2" name="num2">
+    <br>
+    <br>
+    <button type="button" onclick="add()">Addition(+)</button>
+    <button type="button" onclick="sub()">Subtraction(-)</button>
+    <button type="button" onclick="multi()">Multiplication(X)</button>
+    <button type="button" onclick="divine()">Division(/)</button>
+    <p id="result">Result</p>
+</div>
 <script>
     function add() {
         let n1 = +document.getElementById("num1").value;
@@ -32,18 +33,21 @@
         let sum = n1 + n2;
         document.getElementById("result").innerHTML = "Result Addition: " + sum;
     }
+
     function sub() {
         let n1 = +document.getElementById("num1").value;
         let n2 = +document.getElementById("num2").value;
         let sub = n1 - n2;
         document.getElementById("result").innerHTML = "Result Subtraction: " + sub;
     }
+
     function multi() {
         let n1 = +document.getElementById("num1").value;
         let n2 = +document.getElementById("num2").value;
         let multi = n1 * n2;
         document.getElementById("result").innerHTML = "Result Multiplication: " + multi;
     }
+
     function divine() {
         let n1 = +document.getElementById("num1").value;
         let n2 = +document.getElementById("num2").value;
