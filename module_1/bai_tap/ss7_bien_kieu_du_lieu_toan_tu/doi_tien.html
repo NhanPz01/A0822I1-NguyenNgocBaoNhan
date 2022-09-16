@@ -3,37 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <title>Ứng dụng chuyển đổi tiền tệ</title>
+    <style>
+        table {
+            width: 700px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-<form>
-    <span>Amount</span>
-    <span>From Currency</span>
-    <span>To Currency</span>
-    <br>
-    <input id="amount" type="text" name="amount">
-    <select id="from_cur">
-        <option name="from_currency" value="1">VietNam</option>
-        <option name="from_currency" value="2">USD</option>
-    </select>
-    <select id="to_cur">
-        <option name="to_currency" value="1">VietNam</option>
-        <option name="to_currency" value="2">USD</option>
-    </select>
-    <button type="button" onclick="convert()">Convert</button>
-    <p id="result"></p>
-</form>
-<script>
-    function convert() {
-        let n1 = +document.getElementById("from_cur").value;
-        let n2 = +document.getElementById("to_cur").value;
-        let n = parseFloat(+document.getElementById("amount").value);
-        if (n1 === 1 && n2 === 2) {
-            result = n * 0.000042;
-        }
-        if (n1 == 2 && n2 == 1) {
+<table>
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To currency</th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" id="amount" name="amount" style="width: 100%">
+        </td>
+        <td>
+            <select id="from">
+                <option name="from" value="0">VietNam</option>
+                <option name="from" value="1">USD</option>
+            </select>
+        </td>
+        <td>
+            <select id="to">
+                <option name="to" value="1">USD</option>
+                <option name="to" value="0">VietNam</option>
+            </select>
+        </td>
+        <td>
+            <button type="button" name="convert" onclick="doiTien()">Convert</button>
+        </td>
+    </tr>
+</table>
+<p id="result" style="color: blue; font-family: Arial">Result:</p>
 
+<script>
+    function doiTien() {
+        const convert_num = 0.000042;
+        let from = document.getElementById("from").value;
+        let to = document.getElementById("to").value;
+        let amountGet = +document.getElementById("amount").value;
+        if (from == to) {
+            document.getElementById("result").innerHTML = "Result: " + amountGet;
         }
-        document.getElementById("result").innerHTML = result;
+        if (from == '0' && to == '1') {
+            document.getElementById("result").innerHTML = "Result: " + amountGet * convert_num;
+        }
+        if (from == '1' && to == '0') {
+            document.getElementById("result").innerHTML = "Result: " + amountGet / convert_num;
+        }
     }
 </script>
 </body>
