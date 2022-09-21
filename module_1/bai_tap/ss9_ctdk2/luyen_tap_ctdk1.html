@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 1</title>
+</head>
+<body>
+<p>Chọn bài muốn làm: </p>
+<input type="button" onclick="bai1()" value="bài 1"><span> Bài tính chia hết</span><br>
+<input type="button" onclick="bai2()" value="bài 2"><span> Bài tính tuổi vào lớp 10</span><br>
+<input type="button" onclick="bai3()" value="bài 3"><span> Bài so sánh với số 0</span><br>
+<input type="button" onclick="bai4()" value="bài 4"><span> Bài tìm lớn nhất trong 3 số</span><br>
+<input type="button" onclick="bai5()" value="bài 5"><span> Bài xếp hạng học lực dựa trên điểm</span><br>
+<input type="button" onclick="bai6()" value="bài 6"><br>
+<input type="button" onclick="bai7()" value="bài 7"><br>
+<script>
+    function bai1() {
+        let a = parseInt(prompt("Nhập vào a"));
+        let b = parseInt(prompt("Nhập vào b"));
+        if (a > b && a % b != 0) {
+            alert("a không chia hết cho b");
+        } else if (a < b) {
+            alert("a không chia hết cho b");
+        } else {
+            alert("a chia hết cho b");
+        }
+    }
+
+    function bai2() {
+        let years_old = parseInt(prompt("Nhập vào tuổi của bạn"));
+        if (years_old < 16) {
+            alert("Bạn không đủ điều kiện học lớp 10");
+        } else {
+            alert("Bạn đủ điều kiện học lớp 10")
+        }
+    }
+
+    function bai3() {
+        let num = parseInt(prompt("Nhập vào 1 số nguyên"));
+        if (num < 0) {
+            alert("Số nguyên nhỏ hơn 0");
+        } else {
+            alert("Số nguyên lớn hơn 0");
+        }
+    }
+
+    function bai4() {
+        let num1 = parseInt(prompt("Nhập vào 3 số nguyên, số thứ 1"));
+        let num2 = parseInt(prompt("Nhập vào 3 số nguyên, số thứ 2"));
+        let num3 = parseInt(prompt("Nhập vào 3 số nguyên, số thứ 3"));
+        let max = num1;
+        if (max < num2 && num2 < num3) {
+            max = num3;
+        } else if (max < num2 && num2 > num3) {
+            max = num2;
+        } else if (max > num2 && num2 > num3) {
+            max = num2;
+        } else if (max > num2 && max > num3) {
+            max = num1;
+        }
+        alert("Số lớn nhất trong 3 số là: " + max);
+    }
+
+    function bai5() {
+        let diem_ktr = parseInt(prompt("Nhập điểm bài kiểm tra"));
+        let diem_gk = parseInt(prompt("Nhập điểm bài thi giữa kỳ"));
+        let diem_ck = parseInt(prompt("Nhập điểm bài thi cuối kỳ"));
+        let diem_avg = (diem_ktr + diem_gk * 2 + diem_ck * 3) / 6;
+        if (diem_avg < 3) {
+            alert("Học sinh kém");
+        } else if (diem_avg < 5) {
+            alert("Học sinh yếu");
+        } else if (diem_avg < 6) {
+            alert("Học sinh trung bình");
+        } else if (diem_avg < 8) {
+            alert("Học sinh khá");
+        } else if (diem_avg < 9) {
+            alert("Học sinh giỏi");
+        } else {
+            alert("Học sinh suất xắc");
+        }
+    }
+</script>
+</body>
+</html>

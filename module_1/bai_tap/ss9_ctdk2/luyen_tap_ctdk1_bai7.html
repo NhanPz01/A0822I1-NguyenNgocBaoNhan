@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CTĐK1_Bài 7</title>
+</head>
+<body>
+<script>
+    let thoi_luong = parseFloat(prompt("Nhập vào thời lượng cuộc gọi (đơn vị là giờ). Mức cước là 500đ/phút với 4 giờ đầu tiên, 1,000đ/phút sau 4 giờ"));
+    let gia_tien;
+    if (thoi_luong < 4) {
+        gia_tien = thoi_luong * 60 * 500;
+    } else {
+        gia_tien = thoi_luong * 60 * 1000;
+    }
+    alert("Cước điện thoại là " + gia_tien);
+</script>
+</body>
+</html>

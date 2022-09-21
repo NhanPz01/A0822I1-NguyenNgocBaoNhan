@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CTĐK1_Bài5</title>
+</head>
+<body>
+<script>
+    let diem_ktr = parseInt(prompt("Nhập điểm bài kiểm tra"));
+    let diem_gk = parseInt(prompt("Nhập điểm bài thi giữa kỳ"));
+    let diem_ck = parseInt(prompt("Nhập điểm bài thi cuối kỳ"));
+    let diem_avg = (diem_ktr + diem_gk * 2 + diem_ck * 3) / 6;
+    if (diem_avg < 3) {
+        alert("Học sinh kém");
+    } else if (diem_avg < 5) {
+        alert("Học sinh yếu");
+    } else if (diem_avg < 6) {
+        alert("Học sinh trung bình");
+    } else if (diem_avg < 8) {
+        alert("Học sinh khá");
+    } else if (diem_avg < 9) {
+        alert("Học sinh giỏi");
+    } else {
+        alert("Học sinh suất xắc");
+    }
+</script>
+</body>
+</html>
