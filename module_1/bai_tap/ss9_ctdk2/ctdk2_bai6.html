@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CTDK2_Bài 6</title>
+</head>
+<body>
+<script>
+    // giải phương trình ax + b = c
+    let a = parseFloat(prompt("Giải phương trình ax + b = c. Nhập hệ số a"));
+    let b = parseFloat(prompt("Giải phương trình ax + b = c. Nhập hệ số b"));
+    let c = parseFloat(prompt("Giải phương trình ax + b = c. Nhập hệ số c"));
+    if (a == 0 && b != c) {
+        alert("Vô nghiệm");
+    } else if (a == 0 && b == c) {
+        alert("Vô số nghiệm");
+    } else {
+        alert("x = " + ((c - b) / a));
+    }
+</script>
+</body>
+</html>

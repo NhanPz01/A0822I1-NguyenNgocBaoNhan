@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CTDK2_Bài 7</title>
+</head>
+<body>
+<script>
+    // Giải phương trình ax^2 + bx + c = 0
+    let a = parseFloat(prompt("Giải phương trình ax^2 + bx + c = d. Nhập hệ số a"));
+    let b = parseFloat(prompt("Giải phương trình ax^2 + bx + c = d. Nhập hệ số b"));
+    let c = parseFloat(prompt("Giải phương trình ax^2 + bx + c = d. Nhập hệ số c"));
+    let delta = b * b - 4 * a * c;
+    let x1, x2;
+    if (delta < 0) {
+        x1 = x2 = 0.0;
+        alert("Nghiệm là " + x1);
+    } else if (delta == 0) {
+        x1 = x2 = (0 - b) / (2 * a);
+        alert("Nghiệm là " + x1);
+    } else {
+        delta = sqrt(delta);
+        x1 = (-b + delta) / (2 * a);
+        x2 = (-b - delta) / (2 * a);
+        alert("Nghiệm là " + x1 + " và " + x2);
+    }
+</script>
+</body>
+</html>
