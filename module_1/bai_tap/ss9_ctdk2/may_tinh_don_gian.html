@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy tính đơn giản</title>
+    <style>
+        table{
+            border: 3px solid black;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+<table border="0px" width="1">
+    <tr>
+        <td colspan="4"> <input type="text" id="maytinh"></td>
+    </tr>
+    <tr>
+        <td><input type="button" onclick="nhap(this.value)" value="1"></td>
+        <td><input type="button" onclick="nhap(this.value)" value="2"></td>
+        <td><input type="button" onclick="nhap(this.value)" value="3"></td>
+        <td><input type="button" onclick="nhap(this.value)" value="+"></td>
+    </tr>
+    <tr>
+        <td><input type="button" onclick="nhap(this.value)" value="4"></td>
+        <td><input type="button" onclick="nhap(this.value)" value="5"></td>
+        <td><input type="button" onclick="nhap(this.value)" value="6"></td>
+        <td><input type="button" onclick="nhap(this.value)" value="-"></td>
+    </tr>
+    <tr>
+        <td><input type="button" onclick="nhap(this.value)" value="7"></td>
+        <td><input type="button" onclick="nhap(this.value)" value="8"></td>
+        <td><input type="button" onclick="nhap(this.value)" value="9"></td>
+        <td><input type="button" onclick="nhap(this.value)" value="*"></td>
+    </tr>
+    <tr>
+        <td><input type="button" onclick="xoa()" value="C"></td>
+        <td><input type="button" onclick="nhap(this.value)" value="0"></td>
+        <td><input type="button" onclick="bang()" value="="></td>
+        <td><input type="button" onclick="nhap(this.value)" value="/"></td>
+    </tr>
+    <script>
+        function nhap(so) {
+            document.getElementById("maytinh").value += so;
+        }
+        function bang() {
+            let string = document.getElementById("maytinh").value;
+            document.getElementById("maytinh").value = eval(string);
+        }
+        function xoa() {
+            document.getElementById("maytinh").value = "";
+        }
+    </script>
+</table>
+</body>
+</html>
