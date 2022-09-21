@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sự kiện chuột</title>
+</head>
+<body>
+    <img id="myImage" src="white_cat_face.png" style="width: 100px">
+    <p>Click the button below to move the cat face to right</p>
+    <button type="button" onclick="moveToRight()">Click me - Right</button>
+    <button type="button" onclick="moveToLeft()">Click me - Left</button>
+<script>
+    window.onload = init;
+    let imgObj = null;
+    function moveToRight() {
+        imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+    }
+    function init() {
+        imgObj = document.getElementById('myImage');
+        imgObj.style.position = 'relative';
+        imgObj.style.left = '0px';
+    }
+    function moveToLeft() {
+        imgObj.style.left = parseInt(imgObj.style.left) - 10 + 'px';
+    }
+</script>
+</body>
+</html>
