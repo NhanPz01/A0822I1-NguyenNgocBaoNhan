@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CTDK2_Bài 9</title>
+</head>
+<body>
+<script>
+    let side1 = parseFloat(prompt("Nhập cạnh 1"));
+    let side2 = parseFloat(prompt("Nhập cạnh 2"));
+    let side3 = parseFloat(prompt("Nhập cạnh 3"));
+    let biggestSide;
+    if (side1 > side2) {
+        if (side1 > side3) {
+            biggestSide = side1;
+        } else {
+            biggestSide = side3;
+        }
+    } else {
+        if (side2 < side3) {
+            biggestSide = side3;
+        } else {
+            biggestSide = side2
+        }
+    }
+    switch (biggestSide) {
+        case side1:
+            if (biggestSide > (side2 + side3)) {
+                alert("Đây không phải 3 cạnh của tam giác!");
+            } else {
+                alert("Đây là 3 cạnh của tam giác!");
+            }
+            break;
+        case side2:
+            if (biggestSide > (side1 + side3)) {
+                alert("Đây không phải 3 cạnh của tam giác!");
+            } else {
+                alert("Đây là 3 cạnh của tam giác!");
+            }
+            break;
+        case side3:
+            if (biggestSide > (side1 + side2)) {
+                alert("Đây không phải 3 cạnh của tam giác!");
+            } else {
+                alert("Đây là 3 cạnh của tam giác!");
+            }
+            break;
+    }
+</script>
+</body>
+</html>

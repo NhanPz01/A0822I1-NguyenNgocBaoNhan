@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CTDK2_Bài 11</title>
+</head>
+<body>
+<script>
+    //Giả sử thuế là 7% theo năm hen :v do hổng có bik
+    //Giả sử là thu nhập trên 3tr mới đóng thuế hen :v
+    let income = parseFloat(prompt("Nhập thu nhập của bạn"));
+    let tax;
+    if (income < 3000000) {
+        tax = 0;
+    } else {
+        tax = income * 7 / 100;
+    }
+    alert("Thuế bạn phải đóng là " + tax + " VNĐ");
+</script>
+</body>
+</html>

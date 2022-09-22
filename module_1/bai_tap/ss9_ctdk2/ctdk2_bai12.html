@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CTDK2_Bài 12</title>
+</head>
+<body>
+<script>
+    let init_loan = parseFloat(prompt("Nhập khoản vay ban đầu (đơn vị triệu đồng)")) * 1000000;
+    let interest_rate = parseFloat(prompt("Nhập lãi suất hàng tháng (đơn vị %)")) / 100;
+    let months = parseFloat(prompt("Nhập số tháng vay"));
+    if (months > 1) {
+        let first_month_loan = init_loan * interest_rate / months;
+        let after_first_month_loan = (init_loan - (init_loan / months)) * interest_rate / months;
+        alert("Số tiền lãi tháng đầu là " + first_month_loan);
+        alert("Số tiền lãi tháng thứ 2 trở đi là " + after_first_month_loan);
+    } else {
+        let first_month_loan = init_loan * interest_rate / months;
+        alert("SỐ tiền lãi là " + first_month_loan);
+    }
+</script>
+</body>
+</html>

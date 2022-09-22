@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CTDK2_Bài 10</title>
+</head>
+<body>
+<script>
+    let chu_dien = parseFloat(prompt("Nhập chữ điện"));
+    let gia_tien;
+    // Không biết chữ điện tính như nào đâu :v
+    if (chu_dien < 10) {
+        let gia_tien = chu_dien * 10000;
+        alert("Giá tiền là " + gia_tien);
+    } else {
+        let gia_tien = chu_dien * 20000;
+        alert("Giá tiền là " + gia_tien);
+    }
+</script>
+</body>
+</html>
