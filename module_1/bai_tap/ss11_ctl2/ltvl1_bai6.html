@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LTVL1_Bài 6</title>
+</head>
+<body>
+<script>
+    let count = 30;
+    let num = 0;
+    let sum = 0;
+    while (true) {
+        if (count != 0) {
+            if (num % 7 != 0) {
+                num++;
+                continue;
+            } else {
+                count--;
+                sum += num;
+                num++;
+            }
+        } else {
+            break;
+        }
+    }
+    document.write("Sum = " + sum);
+</script>
+</body>
+</html>

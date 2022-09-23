@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LTVL1_Bài 3</title>
+</head>
+<body>
+<script>
+    function fibonacy(x) {
+        if (x == 1 || x == 2) {
+            return 1;
+        } else {
+            return fibonacy(x - 1) + fibonacy(x - 2);
+        }
+    }
+    for (let i = 1; i <= 20; i++) {
+        document.write(fibonacy(i) + "<br>");
+    }
+</script>
+</body>
+</html>

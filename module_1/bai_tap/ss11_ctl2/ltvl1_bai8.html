@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LTVL1_Bài 8</title>
+</head>
+<body>
+<input type="button" onclick="play()" value="Chơi">
+<script>
+    function play() {
+        let endNum = parseFloat(prompt("Nhập vào khoảng số muốn đoán, số bắt đầu"));
+        let startNum = parseFloat(prompt("Nhập vào khoảng số muốn đoán, số kết thúc"));
+        let randNum = 0;
+        while (true) {
+            randNum = Math.floor(Math.random() * (endNum + 1));
+            if (randNum < startNum) {
+                continue;
+            } else {
+                break;
+            }
+        }
+        let chooseNum = parseFloat(prompt("Hãy chọn số đúng :v"));
+        if (chooseNum == randNum) {
+            alert("Yayyyyyyyyyyy");
+        } else if (chooseNum > randNum) {
+            alert("Oh no! It's bigger!");
+        } else {
+            alert("Oh no! It's smaller!");
+        }
+    }
+</script>
+</body>
+</html>

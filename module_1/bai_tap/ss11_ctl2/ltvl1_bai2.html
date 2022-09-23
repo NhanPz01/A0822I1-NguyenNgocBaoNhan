@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LTVL1_Bai 2</title>
+</head>
+<body>
+<script>
+    while (true) {
+        let temp = parseFloat(prompt("Give me the temperature"));
+        if (temp > 100) {
+            alert("Reduce it");
+            continue;
+        } else if (temp < 20) {
+            alert("Increa it");
+            continue;
+        } else {
+            alert("Temerature is " + temp);
+            break;
+        }
+    }
+</script>
+</body>
+</html>

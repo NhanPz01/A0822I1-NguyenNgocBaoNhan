@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LTVL1_Bài 4</title>
+</head>
+<body>
+<script>
+    function fibonacy(x) {
+        if (x == 1 || x == 2) {
+            return 1;
+        } else {
+            return fibonacy(x - 1) + fibonacy(x - 2);
+        }
+    }
+    let i = 1
+    while (true) {
+        if (fibonacy(i) % 5 != 0) {
+            i++;
+            continue;
+        } else {
+            document.write(fibonacy(i));
+            break;
+        }
+    }
+</script>
+</body>
+</html>
