@@ -6,16 +6,16 @@
 </head>
 <body>
 <script>
+    let getNum = parseInt(prompt("Tính giai thừa của?"));
+    document.write("Giai thừa của " + getNum + " là " + Factorial(getNum));
+
     function Factorial(num) {
         if (num == 0 || num == 1) {
             return 1;
         } else {
-            return Factorial(num) * Factorial(num - 1);
+            return Factorial(num - 1) * num;
         }
     }
-
-    let getNum = parseInt(prompt("Tính giai thừa của số?"));
-    alert("Giai thừa của " + getNum + " là " + Factorial(getNum));
 </script>
 </body>
 </html>

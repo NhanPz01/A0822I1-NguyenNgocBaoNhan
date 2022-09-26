@@ -12,19 +12,14 @@
         let startNum = parseFloat(prompt("Nhập vào khoảng số muốn đoán, số kết thúc"));
         let randNum = 0;
         let chooseNum = parseFloat(prompt("Hãy chọn số đúng :v"));
-        for (let i = 0; i < 1000; i++) {
-            randNum = Math.floor(Math.random() * (endNum + 1));
-            if (randNum > startNum) {
-                break;
-            }
-        }
+        randNum = Math.floor(Math.random() * (endNum - startNum) + startNum);
         if (chooseNum == randNum) {
             alert("Yayyyyyyyyyyy");
         } else if (chooseNum > randNum) {
-            alert("Oh no! It's bigger!");
+            alert("Sai rồi! Chọn lại nhé!");
             document.write("<input type=\"button\" onclick=\"play()\" value=\"Chơi lại\">");
         } else {
-            alert("Oh no! It's smaller!");
+            alert("Sai rồi! Chọn lại nhé!");
             document.write("<input type=\"button\" onclick=\"play()\" value=\"Chơi lại\">");
         }
     }

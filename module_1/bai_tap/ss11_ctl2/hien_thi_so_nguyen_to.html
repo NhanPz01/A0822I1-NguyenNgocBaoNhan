@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị số nguyên tố</title>
+</head>
+<body>
+<script>
+    let nums = +prompt("Số lượng số nguyên tố muốn xem?");
+    let count = 0;
+    let num = 2;
+    while (count < nums) {
+        let check = 0;
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                check++;
+            }
+        }
+        if (check == 0) {
+            document.write(num + "<br>");
+            count++;
+        }
+        num++;
+    }
+</script>
+</body>
+</html>
