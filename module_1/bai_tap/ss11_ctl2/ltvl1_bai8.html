@@ -11,21 +11,21 @@
         let endNum = parseFloat(prompt("Nhập vào khoảng số muốn đoán, số bắt đầu"));
         let startNum = parseFloat(prompt("Nhập vào khoảng số muốn đoán, số kết thúc"));
         let randNum = 0;
-        while (true) {
+        let chooseNum = parseFloat(prompt("Hãy chọn số đúng :v"));
+        for (let i = 0; i < 1000; i++) {
             randNum = Math.floor(Math.random() * (endNum + 1));
-            if (randNum < startNum) {
-                continue;
-            } else {
+            if (randNum > startNum) {
                 break;
             }
         }
-        let chooseNum = parseFloat(prompt("Hãy chọn số đúng :v"));
         if (chooseNum == randNum) {
             alert("Yayyyyyyyyyyy");
         } else if (chooseNum > randNum) {
             alert("Oh no! It's bigger!");
+            document.write("<input type=\"button\" onclick=\"play()\" value=\"Chơi lại\">");
         } else {
             alert("Oh no! It's smaller!");
+            document.write("<input type=\"button\" onclick=\"play()\" value=\"Chơi lại\">");
         }
     }
 </script>

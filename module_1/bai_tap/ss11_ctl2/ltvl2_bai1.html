@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LTVL2_Bài 1</title>
+</head>
+<body>
+<script>
+    function fibonacy(serial) {
+        if (serial == 1 || serial == 2) {
+            return 1;
+        } else {
+            return fibonacy(serial - 1) + fibonacy(serial - 2);
+        }
+    }
+    let start = parseFloat(prompt("In ra dãy Fibonacy, nhập vào số thứ tự đầu tiên của dãy"));
+    let end = parseFloat(prompt("In ra dãy Fibonacy, nhập vào số thứ tự cuối cùng của dãy"));
+    for (let i = start; i <= end; i++) {
+        document.write(fibonacy(i) + "<br>");
+    }
+</script>
+</body>
+</html>
