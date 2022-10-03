@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu cầu 2 - Bài 1, 2</title>
+</head>
+<body>
+<div>
+    <h3>Lesson 1</h3>
+    <span>Salary: </span>
+    <input type="text" id="salary">
+    <input type="button" onclick="calIncome()" value="Convert">
+    <p id="lesson1">Income: </p>
+</div>
+<div>
+    <h3>Lesson 2</h3>
+</div>
+<script>
+    function calIncome() {
+        let salary = +document.getElementById("salary").value;
+        if (salary > 0) {
+            let incomeTax = 0;
+            let income = 0;
+            if (salary < 7) {
+                incomeTax = 5;
+            } else if (salary < 15) {
+                incomeTax = 10;
+            } else {
+                incomeTax = 20;
+            }
+            income = (salary - salary * incomeTax / 100) * 1000;
+            document.getElementById("lesson1").innerHTML = "Income: " + income + ".000";
+        } else {
+            alert("Refill");
+        }
+    }
+
+</script>
+</body>
+</html>

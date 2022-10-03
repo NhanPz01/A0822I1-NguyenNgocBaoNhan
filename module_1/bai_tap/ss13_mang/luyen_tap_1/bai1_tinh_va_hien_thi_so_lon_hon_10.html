@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính và hiển thị số lớn hơn 10</title>
+</head>
+<body>
+<script>
+    let intNumbers = [];
+    for (let i = 0; i < 10; i++) {
+        intNumbers.push((Math.random() < 0.5 ? -1 : 1)*(Math.floor(Math.random()*100)));
+    }
+    console.log(intNumbers);
+    for (let i = 0; i < 10; i++) {
+        while (intNumbers[i] < 10) {
+            intNumbers.splice(i, 1, );
+        }
+    }
+    console.log("Có " + intNumbers.length + " số lớn hơn 10!");
+    console.log(intNumbers);
+</script>
+</body>
+</html>

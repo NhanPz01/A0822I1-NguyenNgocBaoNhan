@@ -13,6 +13,7 @@
         let randNum = 0;
         let chooseNum = parseFloat(prompt("Hãy chọn số đúng :v"));
         randNum = Math.floor(Math.random() * (endNum - startNum) + startNum);
+        // choose must in [start, end] | 3 times try<--!
         if (chooseNum == randNum) {
             alert("Yayyyyyyyyyyy");
         } else if (chooseNum > randNum) {
