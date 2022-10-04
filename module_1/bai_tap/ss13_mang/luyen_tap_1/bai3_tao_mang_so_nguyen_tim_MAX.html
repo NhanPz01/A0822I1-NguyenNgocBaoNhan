@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo mảng nguyên và tìm MAX</title>
+</head>
+<body>
+<script>
+     let MAX = parseInt(prompt("Nhập số lượng phần tử của mảng"));
+     MAX = MAX < 0 ? MAX * -1 : MAX;
+     let intNums = [];
+     for (let i = 0; i < MAX; i++) {
+         intNums.push((Math.random() < 0.5 ? -1 : 1)*(Math.floor(Math.random()*100)));
+     }
+     let maxNum = intNums[0];
+     let index = 0;
+     for (let i = 1; i < MAX; i++) {
+         if (maxNum < intNums[i]) {
+             maxNum = intNums[i];
+             index = i;
+         }
+     }
+     console.log(intNums);
+     console.log("Số lớn nhất là " + maxNum + " tại vị trí " + index);
+     let sumNums = 0;
+     for (let i = 0; i < MAX; i++) {
+         sumNums += intNums[i];
+     }
+     let avg = sumNums / MAX;
+     console.log("Giá trị trung bình của các phần tử trong mảng là: " + avg);
+</script>
+</body>
+</html>

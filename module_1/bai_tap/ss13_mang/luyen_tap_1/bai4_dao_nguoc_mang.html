@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đảo ngược mảng</title>
+</head>
+<body>
+<script>
+    let choose = 0;
+    let numsLength = 0;
+    let nums = [];
+    while (true) {
+        choose = +prompt("Tự nhập phần tử trong mảng? --- 1. Tự nhập --- 2. Tạo ngẫu nhiên");
+        if (choose < 1) {
+            continue;
+        } else if (choose > 2) {
+            continue;
+        } else {
+            break;
+        }
+    }
+    numsLength = parseInt(prompt("Nhập số lượng phần tử của mảng"));
+    if (choose == 1) {
+        for (let i = 0; i < numsLength; i++) {
+            let j = i + 1;
+            nums[i] = +prompt("Nhập giá trị thứ " + j + " của nums");
+        }
+    } else if (choose == 2) {
+        for (let i = 0; i < numsLength; i++) {
+            nums.push((Math.random() < 0.5 ? -1 : 1)*(Math.floor(Math.random()*100)));
+        }
+    }
+    console.log(nums);
+    nums.reverse();
+    console.log(nums);
+</script>
+</body>
+</html>
