@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra phần tử thuộc mảng</title>
+</head>
+<body>
+<script>
+    const LENGTH = 10;
+    let choose = 0;
+    let nums = [];
+    let vNum = 0;
+    while (true) {
+        choose = +prompt("Tự nhập phần tử trong mảng? --- 1. Tự nhập --- 2. Tạo ngẫu nhiên");
+        if (choose < 1) {
+            continue;
+        } else if (choose > 2) {
+            continue;
+        } else {
+            break;
+        }
+    }
+    if (choose == 1) {
+        for (let i = 0; i < LENGTH; i++) {
+            let j = i + 1;
+            let numCheck = +prompt("Nhập giá trị thứ " + j + " của nums");
+            // nums[i] = parseInt(eval());
+            if (numCheck === 0) {
+                nums[i] = numCheck;
+            }
+        }
+    } else if (choose == 2) {
+        for (let i = 0; i < LENGTH; i++) {
+            nums.push((Math.random() < 0.5 ? -1 : 1)*(Math.floor(Math.random()*100)));
+        }
+    }
+    console.log(nums);
+</script>
+</body>
+</html>

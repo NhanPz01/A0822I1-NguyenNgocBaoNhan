@@ -6,8 +6,27 @@
 </head>
 <body>
 <script>
-    let count;
-    let
+    let count = 0;
+    let sentence = prompt("Write the sentence");
+    let sentenceArray = sentence.split("");
+    console.log(sentenceArray);
+    for (let i = 0; i < sentenceArray.length; i++) {
+        if (sentenceArray[i] == 'u' || sentenceArray[i] == 'U') {
+            count++;
+        } else if (sentenceArray[i] == 'e' || sentenceArray[i] == 'E') {
+            count++;
+        } else if (sentenceArray[i] == 'o' || sentenceArray[i] == 'O') {
+            count++;
+        } else if (sentenceArray[i] == 'a' || sentenceArray[i] == 'A') {
+            count++;
+        } else if (sentenceArray[i] == 'i' || sentenceArray[i] == 'I') {
+            count++;
+        } else {
+            continue;
+        }
+    }
+    console.log("The length of sentence: " + sentenceArray.length);
+    console.log("The num of vowels is: " + count);
 </script>
 </body>
 </html>
