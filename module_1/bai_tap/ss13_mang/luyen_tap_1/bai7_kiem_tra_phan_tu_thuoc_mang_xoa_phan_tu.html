@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Kiểm tra phần tử thuộc mảng</title>
+    <title>Kiểm tra phần tử thuộc mảng và xóa</title>
 </head>
 <body>
 <script>
@@ -39,18 +39,17 @@
         }
     }
     if (chooseV == 1) {
-                vNum = parseInt(prompt("Nhập vào V"));
+                vNum = eval(prompt("Nhập vào V"));
     } else if (chooseV == 2) {
             vNum = Math.random() < 0.5 ? -1 : 1*(Math.floor(Math.random()*100));
     }
     console.log("V = " + vNum);
     for (let i = 0; i < LENGTH; i++) {
         if (nums[i] == vNum) {
-            console.log("V is in the array");
-        } else {
-            console.log("V is not in the array");
+            nums.splice(i, 1);
         }
     }
+    console.log(nums);
 </script>
 </body>
 </html>

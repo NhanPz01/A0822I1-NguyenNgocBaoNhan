@@ -2,15 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Kiểm tra phần tử thuộc mảng</title>
+    <title>Sắp xếp mảng</title>
 </head>
 <body>
 <script>
     const LENGTH = 10;
     let chooseNums = 0;
-    let chooseV = 0;
     let nums = [];
-    let vNum = 0;
     while (true) {
         chooseNums = +prompt("Tự nhập phần tử trong mảng? --- 1. Tự nhập --- 2. Tạo ngẫu nhiên");
         if (chooseNums == 1 || chooseNums == 2) {
@@ -30,27 +28,16 @@
         }
     }
     console.log(nums);
-    while (true) {
-        chooseV = +prompt("Tự nhập số nguyên V? --- 1. Tự nhập --- 2. Tạo ngẫu nhiên");
-        if (chooseV == 1 || chooseV == 2) {
-            break;
-        } else {
-            continue;
+    for (let i = 0; i < LENGTH - 1; i++) {
+        for (let j = i + 1; j < LENGTH; j++) {
+            if (nums[i] < nums[j]) {
+                let temp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = temp;
+            }
         }
     }
-    if (chooseV == 1) {
-                vNum = parseInt(prompt("Nhập vào V"));
-    } else if (chooseV == 2) {
-            vNum = Math.random() < 0.5 ? -1 : 1*(Math.floor(Math.random()*100));
-    }
-    console.log("V = " + vNum);
-    for (let i = 0; i < LENGTH; i++) {
-        if (nums[i] == vNum) {
-            console.log("V is in the array");
-        } else {
-            console.log("V is not in the array");
-        }
-    }
+    console.log(nums);
 </script>
 </body>
 </html>

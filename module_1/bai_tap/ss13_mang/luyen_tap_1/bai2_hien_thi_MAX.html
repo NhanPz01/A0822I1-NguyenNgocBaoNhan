@@ -7,7 +7,6 @@
 <body>
 <script>
     let intNumbers = [];
-    let count = 0;
     for (let i = 0; i < 10; i++) {
         intNumbers.push((Math.random() < 0.5 ? -1 : 1)*(Math.floor(Math.random()*100)));
     }
@@ -15,12 +14,10 @@
         for (let j = i + 1; j < 10; j++) {
             while (intNumbers[i] == intNumbers[j]) {
                 intNumbers[j] = (Math.random() < 0.5 ? -1 : 1)*(Math.floor(Math.random()*100));
-                count++;
             }
         }
     }
     console.log(intNumbers);
-    console.log(count);
     let Max = intNumbers[0];
     let index = 0;
     for (let i = 1; i < 10; i++) {

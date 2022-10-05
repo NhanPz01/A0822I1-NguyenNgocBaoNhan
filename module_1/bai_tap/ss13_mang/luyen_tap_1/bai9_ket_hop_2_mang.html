@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kết hợp 2 mảng</title>
+</head>
+<body>
+<script>
+    const AB_LENGTH = 10;
+    const C_LENGTH = 20;
+    let chooseNums = 0;
+    let aNums = [];
+    let bNums = [];
+    let cNums = [];
+
+    while (true) {
+        chooseNums = +prompt("Tự nhập phần tử trong mảng a? --- 1. Tự nhập --- 2. Tạo ngẫu nhiên");
+        if (chooseNums == 1 || chooseNums == 2) {
+            break;
+        } else {
+            continue;
+        }
+    }
+    if (chooseNums == 1) {
+        for (let i = 0; i < AB_LENGTH; i++) {
+                let k = i + 1;
+                aNums[i] = parseInt(prompt("Nhập vào phần tử thứ " + k + " của aNums"));
+        }
+    } else if (chooseNums == 2) {
+        for (let i = 0; i < AB_LENGTH; i++) {
+            aNums.push((Math.random() < 0.5 ? -1 : 1)*(Math.floor(Math.random()*100)));
+        }
+    }
+
+    while (true) {
+        chooseNums = +prompt("Tự nhập phần tử trong mảng b? --- 1. Tự nhập --- 2. Tạo ngẫu nhiên");
+        if (chooseNums == 1 || chooseNums == 2) {
+            break;
+        } else {
+            continue;
+        }
+    }
+    if (chooseNums == 1) {
+        for (let i = 0; i < AB_LENGTH; i++) {
+                let k = i + 1;
+                bNums[i] = parseInt(prompt("Nhập vào phần tử thứ " + k + " của bNums"));
+        }
+    } else if (chooseNums == 2) {
+        for (let i = 0; i < AB_LENGTH; i++) {
+            bNums.push((Math.random() < 0.5 ? -1 : 1)*(Math.floor(Math.random()*100)));
+        }
+    }
+
+    cNums = aNums.concat(bNums);
+    console.log(aNums);
+    console.log(bNums);
+    console.log(cNums);
+</script>
+</body>
+</html>
