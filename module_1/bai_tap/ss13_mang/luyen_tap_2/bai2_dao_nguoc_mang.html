@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đảo ngược mảng</title>
+</head>
+<body>
+<script>
+    let sentence = prompt("Write the sentence");
+    let arrayFromSentence = sentence.split("");
+    console.log(arrayFromSentence);
+
+    for (let i = 0; i < (arrayFromSentence.length) / 2; i++) {
+        let temp = arrayFromSentence[i];
+        arrayFromSentence[i] = arrayFromSentence[arrayFromSentence.length - 1 - i];
+        arrayFromSentence[arrayFromSentence.length - 1 -i] = temp;
+    }
+    console.log(arrayFromSentence);
+</script>
+</body>
+</html>
