@@ -6,32 +6,35 @@
 </head>
 <body>
 <script>
+    let nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    let arrayLenght = +prompt("Lenght of array");
+    let setArray = [];
+    let arrayToSentence = '';
+    let sentence = [];
     let count = 0;
-    let a = [];
-    let checkElement = '';
-    let length = prompt("Nhập chiều dài mảng");
-    for (let i = 0; i < length; i++) {
-        let j = i + 1;
-        a[i] = prompt("Nhập phần tử thứ " + j + " của mảng");
+    for (let i = 0; i < arrayLenght; i++) {
+        setArray[i] = prompt("Set element: [" + i + "] = ");
     }
-    console.log(a);
-    for (let i = 0; i < length; i++) {
-        checkElement = a[i].slice("");
-        switch (a[i]) {
-            case '1':
-            case '2':
-            case '3':
-            case '4':
-            case '5':
-            case '6':
-            case '7':
-            case '8':
-            case '9':
-            case '0':
-                count++;
+    arrayToSentence = setArray.toString();
+    sentence = arrayToSentence.split("");
+    for (let i = 0; i < sentence.length; i++) {
+        let check = false;
+        if (sentence[i] == ',') {
+            continue;
+        }
+        for (let j = 0; j < nums.length; j++) {
+            if (sentence[i] == nums[j]) {
+                check = true;
+            }
+        }
+        if (check == true) {
+            count++;
+            console.log(sentence[i]);
         }
     }
-    console.log(count);
+    console.log(setArray);
+    console.log(sentence);
+    console.log("The number of number symbol is: " + count);
 </script>
 </body>
 </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đếm ký tự chữ trong chuỗi</title>
+</head>
+<body>
+<script>
+    let banList = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '!', '"', '#', '$', '%', '^', '&', "'", '(', ')', '*', '+', ',', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\',']', '_', '`', '{', '|', '}', '~'];
+    let setString = prompt("Write the sentence");
+    let sentence = setString.split("");
+    let check = true;
+    let count = 0;
+    for (let i = 0; i < sentence.length; i++) {
+        check = true;
+        for (let j = 0; j < banList.length; j++) {
+            if (sentence[i] == banList[j]) {
+                check = false;
+                // console.log(sentence[i]);
+                break;
+            }
+        }
+        if (check == true) {
+            count++;
+            // console.log(sentence[i]);
+        }
+    }
+    console.log("The given sentence: " + setString);
+    // console.log(sentence);
+    console.log("The number of alphabet character is: " + count);
+</script>
+</body>
+</html>

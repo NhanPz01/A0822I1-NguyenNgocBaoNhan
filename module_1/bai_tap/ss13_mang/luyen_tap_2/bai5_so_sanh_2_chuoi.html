@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>So sánh 2 chuỗi</title>
+</head>
+<body>
+<script>
+    let string1 = prompt("Write the first sentence");
+    let string2 = prompt("Write the second sentence");
+    let array1 = string1.split("");
+    let array2 = string2.split("");
+    let check = true;
+    if (array1.length == array2.length) {
+        for (let i = 0; i < array1.length; i++) {
+            check = true;
+            if (array1[i] != array2[i]) {
+                check = false;
+                break;
+            }
+        }
+        if (check == true) { 
+            console.log("Two strings are the same");
+        }
+    } else {
+        console.log("Not the same");
+    }
+</script>
+</body>
+</html>

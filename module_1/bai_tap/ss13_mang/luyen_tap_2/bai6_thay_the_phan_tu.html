@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo và in mảng 2 chiều</title>
+</head>
+<body>
+<script>
+    let arrayLength = +prompt("Set the lenght of array");
+    arrayLength = arrayLength < 0 ? -1 * arrayLength : arrayLength;
+    let setArray = [];
+    for (let i = 0; i < arrayLength; i++) {
+        setArray[i] = prompt("Set the [" + i + "] element");
+    }
+    console.log(setArray);
+    for (let i = 0; i < arrayLength; i++) {
+        if (setArray[i] == '-') {
+            setArray[i] = '_';
+        }
+    }
+    console.log(setArray);
+</script>
+</body>
+</html>
