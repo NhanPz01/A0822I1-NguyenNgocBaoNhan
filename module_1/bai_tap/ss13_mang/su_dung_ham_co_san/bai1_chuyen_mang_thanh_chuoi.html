@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển mảng thành chuỗi</title>
+</head>
+<body>
+<script>
+    let arrayLength = +prompt("Length of array");
+    arrayLength = arrayLength < 0 ? arrayLength : arrayLength;
+    let setArray = [];
+    let setString = '';
+    for (let i = 0; i < arrayLength; i++) {
+        setArray[i] = prompt("Set the [" + i + "] element");
+    }
+    setString = setArray.toString();
+    console.log(setString);
+</script>
+</body>
+</html>

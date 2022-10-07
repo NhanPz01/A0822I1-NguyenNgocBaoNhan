@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi chữ hoa và thường</title>
+</head>
+<body>
+<script>
+    const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    let sentence = prompt("Write the sentence");
+    let result = [];
+    for (let i = 0; i < sentence.length; i++) {
+        if (UPPER.indexOf(sentence[i]) !== -1) {
+            result.push(sentence[i].toLowerCase());
+        } else if (LOWER.indexOf(sentence[i]) !== -1) {
+            result.push(sentence[i].toUpperCase());
+        } else {
+            result.push(sentence[i]);
+        }
+    }
+    console.log(result.join(''));
+</script>
+</body>
+</html>

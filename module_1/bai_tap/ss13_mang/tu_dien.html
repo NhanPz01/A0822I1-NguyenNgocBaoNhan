@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển EN-VN đơn giản</title>
+</head>
+<body>
+<script>
+    let vnWords = ["Một", "Hai", "Ba1"];
+    let enWords = ["One", "Two", "Three"];
+    let searchWord = prompt("Searching?");
+    searchWord = searchWord.toString();
+    // for (let i = 0; i < enWords.length; i++) {
+    //     if (enWords.indexOf(searchWord) !== -1) {
+    //         console.log("Can't find the VN word");
+    //     } else {
+    //         console.log(vnWords[enWords.indexOf(searchWord)]);
+    //     }
+    // }
+    for (let i = 0; i < enWords.length; i++) {
+        if (enWords[i] === searchWord) {
+            console.log(vnWords[i]);
+        } else {
+            console.log("Can't found");
+            break;
+        }
+    }
+</script>
+</body>
+</html>

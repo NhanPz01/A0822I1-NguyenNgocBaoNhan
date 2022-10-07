@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chèn ký tự vào chuỗi có điều kiện</title>
+</head>
+<body>
+<script>
+    let setNum = prompt("Enter the number");
+    let num = setNum.toString();
+    let result = [num[0]];
+    for (let i = 1; i < num.length; i++) {
+        if (num[i] % 2 === 0 && num[i - 1] % 2 === 0) {
+            result.push('-', num[i]);
+        } else {
+            result.push(num[i]);
+        }
+    }
+    console.log(result.join(''));
+</script>
+</body>
+</html>
