@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển mảng thành chuỗi</title>
+</head>
+<body>
+<script>
+    //Bai 1
+    let arrayLength = +prompt("Length of array");
+    arrayLength = arrayLength < 0 ? arrayLength : arrayLength;
+    let setArray = [];
+    let setString = '';
+    for (let i = 0; i < arrayLength; i++) {
+        setArray[i] = prompt("Set the [" + i + "] element");
+    }
+    setString = setArray.toString();
+    console.log(setString);
+    //Bai 2
+    // let setNum = prompt("Enter the number");
+    // let num = setNum.toString();
+    // let result = [num[0]];
+    // for (let i = 1; i < num.length; i++) {
+    //     if (num[i] % 2 === 0 && num[i - 1] % 2 === 0) {
+    //         result.push('-', num[i]);
+    //     } else {
+    //         result.push(num[i]);
+    //     }
+    // }
+    // console.log(result.join(''));
+    //Bai 3
+    // const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    // const LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    // let sentence = prompt("Write the sentence");
+    // let result = [];
+    // for (let i = 0; i < sentence.length; i++) {
+    //     if (UPPER.indexOf(sentence[i]) !== -1) {
+    //         result.push(sentence[i].toLowerCase());
+    //     } else if (LOWER.indexOf(sentence[i]) !== -1) {
+    //         result.push(sentence[i].toUpperCase());
+    //     } else {
+    //         result.push(sentence[i]);
+    //     }
+    // }
+    // console.log(result.join(''));
+</script>
+</body>
+</html>
