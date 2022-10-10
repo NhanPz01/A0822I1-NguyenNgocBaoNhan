@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Tìm tên chòm sao</title>
+</head>
+<body>
+	<script>
+        let ngoi_sao = ["Polaris", "Aldebaran", "Deneb",
+                        "Vega", "Altair", "Dubhe",
+                        "Regulus"
+                        ];
+        let chom_sao = ["Ursa Minor", "Tarurus", "Cygnus",
+                        "Lyra", "Aquila", "Ursa Major",
+                        "Leo"
+                        ];
+        let star = prompt("Name of star");
+        isStar(star);
+        
+        function isStar(starName) {
+            let check = -1;
+            for (let i = 0; i < ngoi_sao.length; i++) {
+                if (ngoi_sao[i] === starName) {
+                    check = i;
+                }
+            }
+            if (check === -1) {
+                alert("Can't find");
+            } else {
+                alert(chom_sao[check]);
+            }
+        }
+    </script>
+</body>
+</html>

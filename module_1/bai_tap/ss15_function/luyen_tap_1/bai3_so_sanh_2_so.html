@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>So sánh 2 số</title>
+</head>
+<body>
+    <script>
+        let firstNumber = +prompt("a = ");
+        let secondNumber = +prompt("b = ");
+        if (compare2Numbers(firstNumber, secondNumber)) {
+            console.log("First number is bigger than second number");
+        } else {
+            console.log(firstNumber + secondNumber);
+        }
+
+        function compare2Numbers(number1, number2) {
+            if (number1 > number2) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
