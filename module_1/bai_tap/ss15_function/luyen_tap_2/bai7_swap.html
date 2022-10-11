@@ -8,9 +8,16 @@
     <script>
         let number1 =+prompt();
         let number2 =+prompt();
-
-        function swap() {
-            
+        console.log(number1);
+        console.log(number2);
+        console.log(swap(number1,number2));
+        console.log(number1);
+        console.log(number2);
+        function swap(num1, num2) {
+            let temp = num1;
+            num1 = num2;
+            num2 = temp;
+            return [num1, num2];
         }
     </script>
 </body>
