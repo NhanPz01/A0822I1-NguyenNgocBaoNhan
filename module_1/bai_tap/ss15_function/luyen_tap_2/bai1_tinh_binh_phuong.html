@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Tính bình phương</title>
+</head>
+<body>
+    <script>
+        function squaring(number) {
+            number = number < 0 ? number * -1 : number;
+            return Math.pow(number, 2);
+        }
+        let number = +prompt();
+        number = squaring(number);
+        alert(number);
+    </script>
+</body>
+</html>

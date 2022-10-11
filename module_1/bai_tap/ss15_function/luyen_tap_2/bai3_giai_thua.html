@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Tính giai thừa</title>
+</head>
+<body>
+    <script>
+        function calculateFactorial(number) {
+            number = number < 0 ? number * -1 : number;
+            if (number == 0 || number == 1) {
+                return 1;
+            } else {
+                return number * calculateFactorial(number - 1);
+            }
+        } 
+
+        let number = +prompt();
+        alert(calculateFactorial(number));
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Kiểm tra ký tự số</title>
+</head>
+<body>
+    <script>
+        
+
+        const numberChars = [   '0', '1', '2',
+                                '3', '4', '5',
+                                '6', '7', '8',
+                                '9'
+                            ];
+        let setChar = prompt();
+        if (isNumber(setChar)) {
+            alert("true");
+        } else {
+            alert("false");
+        }
+
+        function isNumber(character) {
+            for (let i = 0; i < numberChars.length; i++) {
+                if (character === numberChars[i]) {
+                    return true;
+                }
+            }    
+            return false;       
+        }
+    </script>
+</body>
+</html>

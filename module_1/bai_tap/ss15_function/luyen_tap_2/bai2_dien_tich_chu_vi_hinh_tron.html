@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Tính diện tích, chu vi hình tròn</title>
+</head>
+<body>
+    <script>
+        function perimeterCircle(radius) { //Tinh chu vi hinh tron
+            return 2 * radius * PI;    
+        }
+
+        function areaCircle() { //Tinh dien tich hinh tron
+            return radius * radius * PI;    
+        }
+
+        let radius = +prompt();
+        radius = radius < 0 ? radius * -1 : radius;
+        const PI = 3.14;
+        let perimeter = perimeterCircle(radius);
+        let area = areaCircle(radius);
+        alert("Perimeter: " + perimeter + " | Area: " + area);
+    </script>
+</body>
+</html>

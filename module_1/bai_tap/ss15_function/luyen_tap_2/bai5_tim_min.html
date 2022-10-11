@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Tìm nhỏ nhất trong 3 số</title>
+</head>
+<body>
+    <script>
+        let MAXLENGTH = 3;
+        let nums = new Array(MAXLENGTH);
+        for (let i = 0; i < MAXLENGTH; i++) {
+            nums[i] = +prompt();
+        }
+        let minNumber = findMinNumber(nums);
+        alert(minNumber);
+
+        function findMinNumber(numbers) {
+            let minNumber = numbers[0];
+            for (let i = 0; i < numbers.length; i++) {
+                minNumber = minNumber > numbers[i] ? numbers[i] : minNumber;
+            }
+            return minNumber;
+        }
+    </script>
+</body>
+</html>
