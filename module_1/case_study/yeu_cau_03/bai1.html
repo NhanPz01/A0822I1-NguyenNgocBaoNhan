@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Prefix sums</title>
+</head>
+<body>
+	<script>
+        let arrayLength = +prompt("length?");
+        arrayLength = arrayLength < 0 ? -1 * arrayLength : arrayLength;
+        let array1 = [];
+        let array2 = []; // array2 is the prefix sums of array1 -> array2[2] = array1[0] + array1[1] + array1[2] -> ...
+        for (let i = 0; i < arrayLength; i++) {
+            array1[i] = +prompt();
+        }
+        for (let i = 0; i < array1.length; i++) {
+            array2[i] = 0;
+            for (let j = i; j >= 0; j--) {
+                array2[i] += array1[j];
+            }
+        }
+        console.log(array1);
+        console.log(array2);
+
+    </script>
+</body>
+</html>

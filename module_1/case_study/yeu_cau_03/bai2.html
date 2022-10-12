@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Tìm phần tử thiếu trong mảng</title>
+</head>
+<body>
+	<script>
+        let lengthA = +prompt("length A");
+        lengthA = lengthA < 0 ? -1 * lengthA : lengthA;
+        let lengthB = +prompt("length B");
+        lengthB = lengthB < 0 ? -1 * lengthB : lengthB;
+        let arrayA = []; // Missing elements
+        let arrayB = [];
+        let arrayC = []; // Include missing elements
+        for (let i = 0; i < lengthA; i++) {
+            arrayA[i] = +prompt("A");
+        }
+        for (let i = 0; i < lengthB; i++) {
+            arrayB[i] = +prompt("B");
+        }
+        for (let i = 0; i < LENGTHB; i++) {
+            if (arrayA.indexOf(arrayB[i]) < 0) {
+                arrayC.push(arrayB[i]);
+            }
+        }
+        console.log(arrayA, arrayB, arrayC);
+
+    </script>
+</body>
+</html>
