@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Kiểm tra thuôc mảng</title>
+</head>
+<body>
+	<script>
+        let sentence = prompt();
+        let character = prompt();
+        let sentenceToArray = sentence.split("");
+        let count = isInArray(sentenceToArray, character);
+        if (count == 0) {
+            console.log(-1);
+        } else {
+            console.log(count);
+        }
+
+        function isInArray(array, value) {
+            let count = 0;
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] == value) {
+                    count++;
+                }
+            }
+            return count;
+        }
+    </script>
+</body>
+</html>
