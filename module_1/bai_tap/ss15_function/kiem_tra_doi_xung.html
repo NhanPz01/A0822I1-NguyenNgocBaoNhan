@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Kiểm tra đối xứng</title>
+</head>
+<body>
+	<script>
+        let str = prompt();
+        if (isPalidrome(str)) {
+            console.log("Yes");
+        } else {
+            console.log("No");
+        }
+
+        function isPalidrome(str) {
+            let strToArray = str.split("");
+            for (let i = 0; i < strToArray.length; i++) {
+                let j = strToArray.length - 1 - i;
+                if (i < j) {
+                    if (strToArray[i] != strToArray[j]) {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

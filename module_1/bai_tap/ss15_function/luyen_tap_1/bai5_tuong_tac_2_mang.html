@@ -14,20 +14,24 @@
                         "Lyra", "Aquila", "Ursa Major",
                         "Leo"
                         ];
+        let check = -1;
         let star = prompt("Name of star");
-        isStar(star);
-        
-        function isStar(starName) {
-            let check = -1;
-            for (let i = 0; i < ngoi_sao.length; i++) {
-                if (ngoi_sao[i] === starName) {
+        if (isStar(star, ngoi_sao, chom_sao)) {
+            alert("Can't find");
+        } else {
+            alert(chom_sao[check]);
+        }
+
+        function isStar(value, array1, array2) {
+            for (let i = 0; i < array1.length; i++) {
+                if (array1[i] === value) {
                     check = i;
                 }
             }
             if (check === -1) {
-                alert("Can't find");
+                return true;
             } else {
-                alert(chom_sao[check]);
+                return false;
             }
         }
     </script>

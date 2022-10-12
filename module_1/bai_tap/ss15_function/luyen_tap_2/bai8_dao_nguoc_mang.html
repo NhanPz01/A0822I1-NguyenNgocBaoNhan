@@ -6,26 +6,24 @@
 </head>
 <body>
 	<script>
-        // let numbersLength = Math.floor(Math.random()*50);
-        let numbersLength = +prompt("Length of numbers[]");
+        const MAXLENGTH = +prompt("Length?");
         let numbers = [];
-        for (let i = 0; i < numbersLength; i++) {
+        for (let i = 0; i < MAXLENGTH; i++) {
             numbers[i] = +prompt();
         }
         console.log(numbers);
-        convertArray(numbers);
+        revertArray(numbers);
         console.log(numbers);
 
-        function convertArray(numbers) {
+        function revertArray(numbers) {
             for (let i = 0; i < numbers.length; i++) {
-                for (let j = numbers.length; j > 0; j++) {
-                    if (i <= j) {
-                        let temp = numbers[i];
-                        numbers[i] = numbers[j];
-                        numbers[j] = temp;
-                    } else {
-                        return 0;
-                    }
+                let j = numbers.length - 1 - i;
+                if (i <= j) {
+                    let temp = numbers[i];
+                    numbers[i] = numbers[j];
+                    numbers[j] = temp;
+                } else {
+                    break;
                 }
             }
         }

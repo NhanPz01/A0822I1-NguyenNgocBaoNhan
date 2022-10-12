@@ -1,69 +1,83 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="UTF-8" />
-	<title>Quản lý sản phẩm</title>
+    <meta charset="UTF-8" />
+    <title>Quản lý sản phẩm</title>
 </head>
+
 <body>
-    <input type="button" onclick="showClick()" value="Show"><br>
-    <input type="button" onclick="isInList()" value="Is item in list">
-    <input type="text" id="itemToCheckIsIn"><br>
-    <input type="button" onclick="addToList()" value="Add">
-    <input type="text" id="itemToAdd"><br>
-    <input type="button" onclick="editItemInList()" value="Edit">
-    <input type="text" id="itemToEdit">
-    <input type="text" id="itemNew"><br>
-    <input type="button" onclick="deleteItemInList()" value="Delete">
-    <input type="text" id="itemToDelete"><br>
-    <p id="show"></p>
+    <div>
+        <table border="1" width="auto">
+            <tr>
+                <td colspan="3">
+                    <input type="text" id="addItem">
+                </td>
+                <td>
+                    <input type="button" id="add" onclick="add()" value="Add">
+                </td>
+            </tr>
+        </table>
+        <table border="1" width="auto">
+            <tr>
+                <th>
+                    STT
+                </th>
+                <th>
+                    Name of product
+                </th>
+                <th>
+                    <input type="button" id="edit" onclick="edit()" value="Edit">
+                </th>
+                <th>
+                    <input type="button" id="remove" onclick="remove()" value="Remove">
+                </th>
+            </tr>
+        </table>
+    </div>
+    <div id="display"></div>
+    <div id="form"></div>
 
     <script>
-    	let productList = [];
-        let itemToCheckIsIn = document.getElementById("itemToCheckIsIn").value;
-        let itemToAdd = document.getElementById("itemToAdd").value;
-        let itemToEdit = document.getElementById("itemToEdit").value;
-        let itemNew = document.getElementById("itemNew").value;
-        let itemToDelete = document.getElementById("itemToDelete");
-
-        function showList() {
-            document.getElementById("show").innerHTML = productList;
-        }
-
-        function isInList() {
+        let productList = ['chair', 'desk'];
+        show();
+        function show() {
+            let data = '';
+            data += '<table border="1" width="auto">';
             for (let i = 0; i < productList.length; i++) {
-                if (array[i] == item) {
-                    return true;
-                }
+                data += '<tr>';
+                let j = i + 1;
+                data += '<td>' + j + '</td>';
+                data += '<td>' + productList[i] + '</td>';
+                data += '<td>' + '<input type="button" id="edit" onclick="edit()" value="Edit">' + '</td>';
+                data += '<td>' + '<input type="button" id="remove" onclick="remove()" value="Remove">' + '</td>';
+                data += '</tr>';
             }
-            return false;
+            data += '</table>';
+            document.getElementById("display").innerHTML = data;
+        }
+        function add() { 
+            let addItem = document.getElementById("addItem").value;
+            productList.push(addItem);
+            show();
         }
 
-        function addToList(list, item) {
-            if (isInList(list, item)) {
-                return false;
-            } else {
-                list.push(item);
-                return true;
-            }
+        function editFromForm() { 
+            let editItem = document.getElementById("editFromForm").value;
+            productList[productList.indexOf(editItem)];
+            show();
         }
 
-        function editItemInList(list, item, newValue) {
-            if (isInList(list, item)) {
-                return false;
-            } else {
-                list[list.indexOf(item)] = newValue;
-                return true;
-            }
+        function edit() { 
+            let editForm = '';
+            editForm += '<form method="post" action="">';
+                editForm += '<input type="text" id="addFromForm" name="name" placeholder="Enter name of product">' + '</input>';
+                editForm += '<input type="button" onclick="editFromForm()" value="Edit">' + '</input>';
+            editForm += '</form>';
+            document.getElementById("form").innerHTML = editForm;
         }
-
-        function deleteItemInList(list, item) {
-            if (isInList(list, item)) {
-                return false;
-            } else {
-                list.splice(list.indexOf(item), 1);
-                return true;
-            }
-        }
+        function remove() { }
     </script>
 </body>
+
 </html>
