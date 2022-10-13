@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Tìm phân số lớn nhất</title>
+</head>
+<body>
+	<script>
+        let length = +prompt("Length");
+        length = length < 0 ? -1 * length : length;
+        let numerator = [];
+        let denominator = [];
+        let tempList = [];
+        for (let i = 0; i < length; i++) {
+            numerator[i] = +prompt("numerator");
+            denominator[i]  = +prompt("denominator");
+        }
+        for (let i = 0; i < length; i++) {
+            tempList.push(numerator[i] / denominator[i]);
+        }
+        let maxFraction = tempList[0];
+        let index = 0;
+        for (let i = 0; i < tempList.length; i++) {
+            if (maxFraction < tempList[i]) {
+                maxFraction = tempList[i];
+            }
+            index = i;
+        }
+        let fraction = numerator[index] + '/' + denominator[index];
+        console.log(fraction);
+        console.log(index);
+
+    </script>
+</body>
+</html>

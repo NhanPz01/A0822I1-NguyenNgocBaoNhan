@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Phiên dịch</title>
+</head>
+<body>
+    <script>
+        let number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+        let numberReading = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+        let result = [];
+        let index = 0;
+        let str = prompt("String of number");
+        let strArray = str.split("");
+        for (let i = 0; i < strArray.length; i++) {
+            for (let j = 0; j < number.length; j++) {
+                if (strArray[i] === number[j]) {
+                    result.push(numberReading[j]);
+                }
+            }
+        }
+        console.log(str);
+        console.log(result.join(', '));
+    </script>
+</body>
+</html>
