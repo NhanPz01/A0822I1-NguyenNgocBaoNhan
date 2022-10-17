@@ -5,10 +5,26 @@
 	<title>Menu đồ uống</title>
 </head>
 <body>
-	<script>
-        let menu = ['Cafe', 'Cam vắt', 'Nước ép cà rốt',
+    <div id="menu"></div>
+    <input type="text" id="choose" placeholder="1-6 to order | 7 to end of order">
+    <br>
+    <input type="text" id="amount" placeholder="Amount?">
+    <script>
+        let menuDrink = ['Cafe', 'Cam vắt', 'Nước ép cà rốt',
                     'Nước ép cà chua', 'Nước lọc', 'Nước dừa'];
-        let 
+        let menu = '<table border="1">\n' +
+            '           <tr>' +
+            '              <th>ID</th>\n' +
+            '              <th>Drink</th>\n' +
+            '          </tr>\n';
+        for (let i = 0; i < menuDrink.length; i++) {
+            menu += '<tr>' +
+                '       <th>' + (i + 1) + '</th>\n' +
+                '       <th>' + menuDrink[i] + '</th>\n' +
+                '   </tr>\n';
+        }
+        menu += '</table>';
+        document.getElementById("menu").innerHTML = menu;
     </script>
 </body>
 </html>

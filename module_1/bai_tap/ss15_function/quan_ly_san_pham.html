@@ -1,83 +1,70 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="UTF-8" />
-    <title>Quản lý sản phẩm</title>
+	<meta charset="UTF-8" />
+<title>Quản lý sản phẩm</title>
 </head>
-
 <body>
-    <div>
-        <table border="1" width="auto">
-            <tr>
-                <td colspan="3">
-                    <input type="text" id="addItem">
-                </td>
-                <td>
-                    <input type="button" id="add" onclick="add()" value="Add">
-                </td>
-            </tr>
-        </table>
-        <table border="1" width="auto">
-            <tr>
-                <th>
-                    STT
-                </th>
-                <th>
-                    Name of product
-                </th>
-                <th>
-                    <input type="button" id="edit" onclick="edit()" value="Edit">
-                </th>
-                <th>
-                    <input type="button" id="remove" onclick="remove()" value="Remove">
-                </th>
-            </tr>
-        </table>
-    </div>
-    <div id="display"></div>
-    <div id="form"></div>
-
+    <span>
+        <input type="text" id="item" placeholder="Name of item">
+        <input type="button" id="add" value="Add" onclick="add()">
+    </span>
+    <div id="message"></div>
+	<div id="list"></div>
     <script>
-        let productList = ['chair', 'desk'];
-        show();
-        function show() {
-            let data = '';
-            data += '<table border="1" width="auto">';
-            for (let i = 0; i < productList.length; i++) {
-                data += '<tr>';
-                let j = i + 1;
-                data += '<td>' + j + '</td>';
-                data += '<td>' + productList[i] + '</td>';
-                data += '<td>' + '<input type="button" id="edit" onclick="edit()" value="Edit">' + '</td>';
-                data += '<td>' + '<input type="button" id="remove" onclick="remove()" value="Remove">' + '</td>';
-                data += '</tr>';
+        let listProduct = ['Yamaha', 'Honda', 'Toyota'];
+        show(listProduct);
+        function show(list) {
+            let data = '<table border="1">\n' +
+                '           <tr>\n' +
+                '               <th>ID</th>\n' +
+                '               <th>Name of product</th>\n' +
+                '               <th>Edit</th>\n' +
+                '               <th>Remove</th>\n' +
+                '           </tr>\n';
+            for (let i = 0; i < list.length; i++) {
+                data += '<tr>\n' +
+                    '       <td style="text-align: center;">' + (i + 1) + '</td>\n' +
+                    '       <td>' + list[i] + '</td>\n' +
+                    '       <td>' +
+                    '           <input type="button" onclick="edit(' + i + ')" value="Edit" />' +
+                    '       </td>\n' +
+                    '       <td>' +
+                    '           <input type="button" onclick="remove(' + i + ')" value="Remove" />' +
+                    '       </td>\n' +
+                    '   </tr>\n';
             }
             data += '</table>';
-            document.getElementById("display").innerHTML = data;
-        }
-        function add() { 
-            let addItem = document.getElementById("addItem").value;
-            productList.push(addItem);
-            show();
+            document.getElementById("list").innerHTML = data;
         }
 
-        function editFromForm() { 
-            let editItem = document.getElementById("editFromForm").value;
-            productList[productList.indexOf(editItem)];
-            show();
+        function add() {
+            let newItem = document.getElementById("item").value;
+            if (newItem != '') {
+                listProduct.push(newItem);
+                document.getElementById("message").innerHTML = '';
+            }
+            else {
+                document.getElementById("message").innerHTML = "Please enter a product name!";
+            }
+            show(listProduct);
+            document.getElementById("item").value = '';
         }
 
-        function edit() { 
-            let editForm = '';
-            editForm += '<form method="post" action="">';
-                editForm += '<input type="text" id="addFromForm" name="name" placeholder="Enter name of product">' + '</input>';
-                editForm += '<input type="button" onclick="editFromForm()" value="Edit">' + '</input>';
-            editForm += '</form>';
-            document.getElementById("form").innerHTML = editForm;
+        function remove(index,) {
+            let checkRemove = confirm("Remove " + listProduct[index] + " ?")
+            if (checkRemove) {
+                listProduct.splice(index, 1);
+            }
+            show(listProduct);
         }
-        function remove() { }
+
+        function edit(index) {
+            let editItem = prompt("Edit " + listProduct[index], listProduct[index]);
+            listProduct[index] = editItem;
+            show(listProduct);
+        }
+
     </script>
 </body>
-
 </html>

@@ -6,20 +6,20 @@
 </head>
 <body>
 	<script>
-        let ngoi_sao = ["Polaris", "Aldebaran", "Deneb",
+        let ngoiSao = ["Polaris", "Aldebaran", "Deneb",
                         "Vega", "Altair", "Dubhe",
                         "Regulus"
                         ];
-        let chom_sao = ["Ursa Minor", "Tarurus", "Cygnus",
+        let chomSao = ["Ursa Minor", "Tarurus", "Cygnus",
                         "Lyra", "Aquila", "Ursa Major",
                         "Leo"
                         ];
         let check = -1;
         let star = prompt("Name of star");
-        if (isStar(star, ngoi_sao, chom_sao)) {
+        if (isStar(star, ngoiSao, chomSao)) {
             alert("Can't find");
         } else {
-            alert(chom_sao[check]);
+            alert(chomSao[check]);
         }
 
         function isStar(value, array1, array2) {

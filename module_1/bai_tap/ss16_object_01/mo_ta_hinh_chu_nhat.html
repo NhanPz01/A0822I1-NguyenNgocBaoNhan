@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+	<script>
+        let Rectangle = function () {
+            wide_edge : 0,
+            long_edge : 0,
+            calArea : function() {
+                return (this.wide_edge * this.long_edge);
+            },
+            calPerimeter: function() {
+                return 2 * (this.wide_edge + this.long_edge);
+            },
+            setRectangle: function(wide_edge, long_edge) {
+                this.wide_edge = wide_edge;
+                this.long_edge = long_edge;
+            }
+        };
+        let rectangle = new Rectangle();
+        console.log(rectangle.calArea());
+        console.log(rectangle.calPerimeter());
+    </script>
+</body>
+</html>
