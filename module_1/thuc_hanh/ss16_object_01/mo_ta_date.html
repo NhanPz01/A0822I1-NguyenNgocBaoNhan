@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Mô tả Date</title>
+</head>
+
+<body>
+    <script>
+        class Date {
+            constructor(day, month, year) {
+                this.day = (day < 1) ? -1 * day : day;
+                this.month = (month < 1) ? -1 * month : month;
+                if (year > 9999) {
+                    alert('Error: year must be between 1 and 9999');
+                }
+                this.year = (year < 1) ? -1 * year : year;
+            }
+            getDay() {
+                return this.day;
+            }
+            getMonth() {
+                return this.month;
+            }
+            getYear() {
+                return this.year;
+            }
+            setDay(day) {
+                this.day = day;
+            }
+            setMonth(month) {
+                this.month = month;
+            }
+            setYear(year) {
+                this.year = year;
+            }
+            setDate(day, month, year) {
+                this.day = day;
+                this.month = month;
+                this.year = year;
+            }
+            getDate(date) {
+                return date;
+            }
+            toString() {
+                let date = [];
+                if (this.day < 10) {
+                    date.push('0' + this.day);
+                } else {
+                    date.push(this.day);
+                }
+                // date.push('/');
+                if (this.month < 10) {
+                    date.push('0' + this.month);
+                } else if (this.month > 12) {
+                    alert('The month must be between 1 and 12');
+                } else {
+                    date.push(this.month);
+                }
+                // date.push('/');
+                if (this.year > 999) {
+                    date.push(this.year);
+                } else if (this.year > 99) {
+                    date.push('0' + this.year);
+                } else if (this.year > 9) {
+                    date.push('00' + this.year);
+                } else {
+                    date.push('000' + this.year);
+                }
+                return (date.join('/'));
+            }
+        }
+        let date = new Date(-1, 02, 9999);
+        let today = date.getDate(date.toString());
+        document.write(today);
+        
+    </script>
+</body>
+
+</html>

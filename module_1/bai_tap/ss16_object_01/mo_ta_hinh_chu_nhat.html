@@ -1,28 +1,55 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="UTF-8" />
-	<title>Lớp mô tả hình chữ nhật</title>
+    <meta charset="UTF-8" />
+    <title>Lớp mô tả hình chữ nhật</title>
 </head>
+
 <body>
-	<script>
-        let Rectangle = function () {
-            wide_edge : 0,
-            long_edge : 0,
-            calArea : function() {
-                return (this.wide_edge * this.long_edge);
-            },
-            calPerimeter: function() {
-                return 2 * (this.wide_edge + this.long_edge);
-            },
-            setRectangle: function(wide_edge, long_edge) {
-                this.wide_edge = wide_edge;
-                this.long_edge = long_edge;
+    <script>
+        class Rectangle {
+            constructor(width, height) {
+                this.width = width;
+                this.height = height;
             }
-        };
-        let rectangle = new Rectangle();
-        console.log(rectangle.calArea());
-        console.log(rectangle.calPerimeter());
+            setwidth(width) {
+                this.width = width;
+            }
+            setheigth(heigth) {
+                this.width = heigth;
+            }
+            getArea() {
+                return (this.width * this.height);
+            }
+            getPerimeter() {
+                return (2 * (this.width + this.height));
+            }
+            getImage() {
+                for (let i = 0; i < this.height; i++) {
+                    for (let j = 0; j < this.width; j++) {
+                        if (i == 0 || i == this.height - 1) {
+                            document.write('*');
+                        } else {
+                            if (j == 0 || j == this.width - 1) {
+                                document.write('*');
+                            } else {
+                                document.write('&ensp;');
+                            }
+                        }
+                    }
+                    document.write('<br>');
+                }
+            }
+        }
+        let width = +prompt('Width');
+        let height = +prompt('Height');
+        let rectangle = new Rectangle(width, height);
+        rectangle.getArea();
+        rectangle.getPerimeter();
+        rectangle.getImage();
+
     </script>
 </body>
+
 </html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Mô tả hình tròn</title>
+</head>
+<body>
+	<script>
+        const PI = 3.14;
+        class Circle {
+            constructor(radius, color) {
+                this.radius = radius;
+                this.color = color;
+            }
+            getRadius() {
+                return this.radius;
+            }
+            getArea() {
+                return (Math.pow(this.radius, 2) * PI);
+            }
+        }
+        let radius = +prompt("Circle radius");
+        let circle = new Circle(radius, color);
+    </script>
+</body>
+</html>
