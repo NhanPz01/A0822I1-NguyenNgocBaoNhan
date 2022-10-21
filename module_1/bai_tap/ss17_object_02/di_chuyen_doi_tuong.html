@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Game đơn giản - DI chuyển đối tượng</title>
+</head>
+
+<body>
+    <div id="game"></div>
+    <script>
+        class Character {
+            constructor(image, top, left, size, speed) {
+                this.image = image;
+                this.top = top;
+                this.left = left;
+                this.size = size;
+                this.speed = speed;
+            }
+            getCharacter() {
+                return '<img src="' + this.image + '"' +
+                    '   width="' + this.size + '"' +
+                    '   style="height: ' + this.size + 'px;' +
+                    '   position: absolute;' +
+                    '   top: ' + this.top + 'px;' +
+                    '   left: ' + this.left + 'px">';
+            }
+            goLeft() {
+                this.left -= 2 * this.speed;
+            }
+            goRight() {
+                this.left += 2 * this.speed;
+            }
+        }
+        let character = new Character("stick_man.png", 20, 30, 200, 10);
+        function start() {
+            if (character.left != (window.innerWidth - character.size)) {
+                character.goRight();
+            }
+            document.getElementById("game").innerHTML = character.getCharacter();
+            setTimeout(start, 100)
+        }
+        start();
+    </script>
+</body>
+
+</html>

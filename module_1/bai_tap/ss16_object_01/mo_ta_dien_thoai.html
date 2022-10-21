@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Mô tả điện thoại</title>
+</head>
+<body>
+	<script>
+        class SmartPhone {
+            constructor(batteryStatus, powerStatus) {
+                this.batteryStatus = batteryStatus;
+                this.messageDraft = [];
+                this.messageReceived = [];
+                this.messageSent = [];
+                this.powerStatus = powerStatus;
+            }
+            checkBatteryStatus() {
+                if (this.powerStatus != true) {alert("Power status: offline")};
+                this.batteryStatus--;
+                return this.batteryStatus;
+            }
+            checkPowerStatus() {
+                return this.powerStatus;
+            }
+            setPower() {
+                if (this.powerStatus == true) {
+                    this.powerStatus = false;
+                } else {
+                    this.powerStatus = true;
+                }
+                this.batteryStatus--;
+            }
+            charge() {
+                this.batteryStatus = 100;
+            }
+            writeMessage(message) {
+                if (this.powerStatus != true) {alert("Power status: offline")};
+                this.messageDraft.push(message);
+                this.batteryStatus--;
+            }
+            receiveMessage(message) {
+                if (this.powerStatus != true) {alert("Power status: offline")};
+                this.messageReceived.push(message);
+                this.batteryStatus--;
+            }
+            sendMessage(message, phone) {
+                if (this.powerStatus != true) {alert("Power status: offline")};
+                phone.messageReceived.push(message);
+                this.messageSent.push(message);
+                this.batteryStatus--;
+            }
+            getMessageReceived() {
+                if (this.powerStatus != true) {alert("Power status: offline")};
+                this.batteryStatus--;
+                for (let i = 0; i < this.messageReceived.length; i++) {
+                    document.write(this.messageReceived[i] + "<br>");
+                }
+            }
+            getMessageSend() {
+                if (this.powerStatus != true) {alert("Power status: offline")};
+                this.batteryStatus--;
+                for (let i = 0; i < this.messageSent.length; i++) {
+                    document.write(this.messageSent[i] + "<br>");
+                }
+            }
+        }
+        let nokia = new SmartPhone(60, true);
+        let iphone = new SmartPhone(90, false);
+        nokia.sendMessage("Hello there :D", iphone);
+        nokia.sendMessage("How are you today?", iphone);
+        if (iphone.checkPowerStatus() != true) {
+            iphone.setPower();
+        }
+        iphone.getMessageReceived();
+    </script>
+</body>
+</html>
