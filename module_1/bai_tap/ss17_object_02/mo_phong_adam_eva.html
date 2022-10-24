@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Mô tả câu chuyện Adam & Eva</title>
+</head>
+<body>
+    <script>
+        class Apple {
+            constructor() {
+                this.weigth = 10;
+            }
+            getWeigth() {
+                return this.weigth;
+            }
+            decreaseWeigth() {
+                this.weigth--;
+            }
+            isEmpty() {
+                if (this.weigth == 0) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+        class Human {
+            constructor(name, gender, weigth) {
+                this.name = name;
+                this.gender = gender;
+                this.weigth = weigth;
+            }
+            updateWeigth() {
+                this.weigth++;
+            }
+            talk(sentence) {
+                console.log(sentence);
+            }
+            eatApple() {
+                this.updateWeigth();
+                this.talk(this.name + ": " + "Yummy");
+            }
+            checkAppleWeigth(appleWeigth) {
+                this.talk(appleWeigth);
+            }
+        }
+
+        let maleHuman = new Human("Adam", true, 60);
+        let femalHuman = new Human("Eva", false, 40);
+        let apple = new Apple();
+        do {
+            maleHuman.checkAppleWeigth(apple.getWeigth());
+            maleHuman.eatApple();
+            apple.decreaseWeigth();
+            femalHuman.checkAppleWeigth(apple.getWeigth());
+            femalHuman.eatApple();
+            apple.decreaseWeigth();
+        } while (!(apple.isEmpty()));
+    </script>
+</body>
+</html>
