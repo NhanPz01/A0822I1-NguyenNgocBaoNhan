@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Tìm số ký tự chung 2 xâu ký tự</title>
+</head>
+<body>
+    <script>
+        let str1 = prompt(">> string1");
+        let str2 = prompt(">> string2");
+        let toArray1 = str1.split("");
+        let toArray2 = str2.split("");
+        let duplicateChars = [];
+        let counts = [];
+        let count = 0;
+        for (let i = 0; i < toArray1.length; i++) {
+            for (let j = 0; j < toArray2.length; j++) {
+                if (toArray1[i] == toArray2[j]) {
+                    duplicateChars.push(toArray1[i]);
+                    toArray1.splice(i, 1);
+                    toArray2.splice(j, 1);
+                    i--;
+                    j--;
+                    break;
+                } else {
+                    continue;
+                }
+            }
+        }
+        for (let i = 0; i < duplicateChars.length; i++) {
+            let count = 1;
+            for (let j = i + 1; j < duplicateChars.length; j++) {
+                if (duplicateChars[i] == duplicateChars[j]) {
+                    duplicateChars.splice(j, 1);
+                    count++;
+                    j--;
+                }
+            }
+            counts.push(count);
+        }
+        console.log("First string:  " + str1);
+        console.log("Second string: " + str2);
+        console.log("The duplicate charaters: " + duplicateChars.join(", "));
+        console.log("The times of duplicate:  " + counts.join(", "));
+    </script>
+</body>
+</html>

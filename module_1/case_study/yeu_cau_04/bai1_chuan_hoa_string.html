@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Chuẩn hóa String</title>
+</head>
+<body>
+    <script>
+        const UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const LOWER = "abcdefghijklmnopqrstuvwxyz";
+        let sentence = prompt();
+        sentence = sentence.trim();
+        let toArray = sentence.split("");
+        let result = [];
+        for (let i = -1; i < toArray.length - 1; i++) {
+            let j = i + 1;
+            if (i < 0) {
+                result.push((toArray[j]).toUpperCase());
+            } else {
+                if (toArray[i] == " ") {
+                    if (toArray[j] == " ") {
+                        continue;
+                    } else if (UPPER.includes(toArray[j])) {
+                        result.push(toArray[j]);
+                    } else {
+                        result.push(toArray[j].toUpperCase());
+                    }
+                } else {
+                    if (toArray[j] == " ") {
+                        result.push(toArray[j]);
+                    } else if (LOWER.includes(toArray[j])) {
+                        result.push(toArray[j]);
+                    } else {
+                        result.push(toArray[j].toLowerCase());
+                    }
+                }
+            }
+        }
+        console.log(sentence);
+        console.log(toArray);
+        console.log(result);
+        console.log(result.join(""));
+    </script>
+</body>
+</html>

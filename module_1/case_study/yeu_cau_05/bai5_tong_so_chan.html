@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Tính tổng các số trong ma trận [m,n]</title>
+</head>
+<body>
+    <script>
+        let sum = 0;
+        let mIndex = +prompt(">> m");
+        let nIndex = +prompt(">> n");
+        let matrix = new Array(mIndex);
+        let column = new Array(nIndex);
+        //initial a matrix with the m row and the n column
+        //values will be between -100 and 100
+        for (let i = 0; i < mIndex; i++) {
+            if (Array.isArray(matrix[i])) {
+                for (let j = 0; j < nIndex; j++) {
+                    if (Array.isArray(column)) {
+                        column[j] = ((Math.random() < 0.5 ? -1 : 1)*(Math.floor(Math.random()*100)));
+                    }
+                }
+                matrix.push(column);
+            }
+        }
+        //enter the values of the matrix
+        // for (let i = 0; i < mIndex; i++) {
+        //     for (let j = 0; j < nIndex; j++) {
+        //         if (Array.isArray(matrix[i])) {
+        //             matrix[i][j] = +prompt();
+        //         }
+        //     }
+        //     matrix.push(column);
+        // }
+        //calculating
+        // for (let i = 0; i < mIndex; i++) {
+        //     for (let j = 0; j < nIndex; j++) {
+        //         if (Array.isArray(matrix[i])) {
+        //             if (matrix[i][j] % 2 == 0) {
+        //                 sum += matrix[i][j];
+        //             }
+        //         }
+
+        //     }
+        // }
+        console.log(matrix);
+        // console.log("sum = " + sum);
+    </script>
+</body>
+</html>
