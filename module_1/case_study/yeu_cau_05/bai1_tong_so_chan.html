@@ -9,8 +9,23 @@
         let sum = 0;
         let mIndex = +prompt(">> m");
         let nIndex = +prompt(">> n");
-        let matrix = [[]];
-        
+        let matrix = new Array(mIndex);
+        for (let i = 0; i < mIndex; i++) {
+            matrix[i] = new Array(nIndex);
+            for (let j = 0; j < nIndex; j++) {
+                matrix[i][j] = (Math.random() < 0.5 ? -1 : 1)*(Math.floor(Math.random()*100));
+            }
+        }
+        //calculating...
+        for (let i = 0; i < matrix.length; i++) {
+            for (let j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] % 2 == 0) {
+                    sum += matrix[i][j];
+                }
+            }
+        }
+        console.log(matrix);
+        console.log("sum = " + sum);
     </script>
 </body>
 </html>

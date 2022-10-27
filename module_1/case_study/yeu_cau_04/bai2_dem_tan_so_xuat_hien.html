@@ -6,34 +6,23 @@
 </head>
 <body>
     <script>
-        const UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        const LOWER = "abcdefghijklmnopqrstuvwxyz";
-        let count = 0;
-        let result = [];
-        let upperList = UPPER.split("");
-        let lowerList = LOWER.split("");
         let sentence = prompt();
         let toArray = sentence.split("");
+        let result = [];
         for (let i = 0; i < toArray.length; i++) {
-            for (let j = 0; j < upperList.length; j++) {
-                if (toArray[i] == upperList[j]) {
-                    result.push(toArray[i]);
-                    count++;
-                    upperList.splice(j, 1);
-                }
-            }
-            for (let j = 0; j < lowerList.length; j++) {
-                if (toArray[i] == lowerList[j]) {
-                    result.push(toArray[i]);
-                    count++;
-                    lowerList.splice(j, 1);
+            for (let j = i; j < toArray.length; j++) {
+                if (toArray[i] == toArray[j]) {
+                    if (i == j) {
+                        result.push(toArray[i]);
+                    } else {
+                        toArray.splice(j, 1);
+                    }
                 }
             }
         }
-        console.log(sentence);
-        console.log(toArray);
-        console.log("Count: " + count);
-        console.log(result.join(", "));
+        document.write(sentence);
+        document.write("<br>");
+        document.write(result.join(", "));
     </script>
 </body>
 </html>

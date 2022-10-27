@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Tìm min-max</title>
+</head>
+<body>
+    <script>
+        const M = 2;
+        const N = 2;
+        let matrix = new Array();
+        for (let i = 0; i < M; i++) {
+            matrix[i] = new Array();
+            for (let j = 0; j < N; j++) {
+                matrix[i][j] = (Math.random() < 0.5 ? -1 : 1)*(Math.floor(Math.random()*100));
+            }
+        }
+        // find minimun value
+        let minValue = matrix[0][0];
+        for (let i = 0; i < M; i++) {
+            for (let j = 0; j < N; j++) {
+                if (matrix[i][j] < minValue) {
+                    minValue = matrix[i][j];
+                }
+            }
+        }
+        // find maximun value
+        let maxValue = matrix[0][0];
+        for (let i = 0; i < M; i++) {
+            for (let j = 0; j < N; j++) {
+                if (matrix[i][j] > maxValue) {
+                    maxValue = matrix[i][j];
+                }
+            }
+        }
+        console.log(matrix);
+        console.log("Min value: " + minValue);
+        console.log("Max value: " + maxValue);
+    </script>
+</body>
+</html>

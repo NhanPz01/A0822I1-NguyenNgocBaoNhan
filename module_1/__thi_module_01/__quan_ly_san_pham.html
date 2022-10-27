@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quản lý sản phẩm</title>
+  </head>
+  <body>
+    <span>
+      <input type="text" id="getProductId" placeholder="Product ID" style="width: 150pxpx">
+      <input type="text" id="getProductName" placeholder="Product name" style="width: 150px">
+      <input type="text" id="getProductPrice" placeholder="Product price" style="width: 150px">
+    </span>
+    <div>
+      <input type="button" value="Add" onclick="addProduct(products)" style="width: 57px">
+    </div>
+    <div id="display"></div>
+    <script>
+      class Product {
+        constructor(id, name, price) {
+          this.id = id;
+          this.name = name;
+          this.price = price;
+        }
+        getId() {
+          return this.id;
+        }
+        getName() {
+          return this.name;
+        }
+        getPrice() {
+          return this.price;
+        }
+        setId(value) {
+          this.id = value;
+        }
+        setName(value) {
+          this.name = value;
+        }
+        setPrice(value) {
+          this.price = value;
+        }
+      }
+      function display(list) {
+        let data =
+          '<table border="1" width="300px">\n' +
+          '<tr>\n' +
+          '   <th>STT</th>\n' +
+          '               <th>ID</th>\n' +
+          '               <th>Name</th>\n' +
+          '               <th>Price</th>\n' +
+          '               <th>Delete</th>\n' +
+          '           </tr>';
+        for (let i = 0; i < list.length; i++) {
+          data +=
+            '<tr>\n' +
+            ' <th>\n' +
+                (i + 1) +
+            ' </th>\n' +
+            ' <th>\n' +
+              list[i].getId() +
+            ' </th>\n' +
+            ' <th>' +
+                list[i].getName() +
+            ' </th>\n' +
+            ' <th>' +
+                list[i].getPrice() +
+            ' </th>\n' +
+            ' <th>\n' +
+            '   <input type="button" value="Delete" onclick="deleteProduct(' + i + ')">' +
+            ' </th>\n' +
+            '</tr>';
+        }
+        data += '</table>';
+        document.getElementById("display").innerHTML = data;
+      }
+      function addProduct(product) {
+        let addId = document.getElementById("getProductId").value;
+        let addName = document.getElementById("getProductName").value;
+        let addPrice = document.getElementById("getProductPrice").value;
+        products.push(new Product(addId, addName, addPrice));
+        document.getElementById("getProductId").value = '';
+        document.getElementById("getProductName").value = '';
+        document.getElementById("getProductPrice").value = '';
+        display(products);
+      }
+      function deleteProduct(index) {
+        let checkDelete = confirm("Are you sure you want to delete: " + products[index].getName());
+        if (checkDelete == true) {
+          products.splice(index, 1);
+        }
+        display(products);
+      }
+      let product1 = new Product(1, "Chair", 10000);
+      let product2 = new Product(2, "Table", 20000);
+      let product3 = new Product(3, "Lamp", 5000);
+      let products = [product1, product2, product3];
+      display(products);
+    </script>
+  </body>
+</html>
