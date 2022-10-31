@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Check if array is sorted</title>
+</head>
+<body>
+    <script>
+        function checkIfSorted(arr) {
+            let flag = true;
+            if (arr[0] < arr[1]) {
+                for (let i = 0; i < arr.length - 1; i++) {
+                    if (arr[i] > arr[i + 1]) {
+                        flag = false;
+                    }
+                }
+            } else if (arr[0] > arr[1]) {
+                for (let i = 0; i < arr.length - 1; i++) {
+                    if (arr[i] < arr[i + 1]) {
+                        flag = false;
+                    }
+                }
+            } else {
+                for (let i = 0; i < arr.length - 1; i++) {
+                    if (arr[i] != arr[i + 1]) {
+                        if (arr[i] < arr[i + 1]) {
+                            for (let j = i; j < arr.length; j++) {
+                                if (arr[j] > arr[j + 1]) {
+                                    flag = false;
+                                }
+                            }
+                        } else if (arr[i] > arr[i + 1]) {
+                            for (let i = j; j < arr.length; j++) {
+                                if (arr[j] < arr[j + 1]) {
+                                    flag = false;
+                                }
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
+            if (flag) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        let length = +prompt("length");
+        let array = [];
+        for (let i = 0; i < length; i++) {
+            array[i] = +prompt();
+        }
+        if (checkIfSorted(array)) {
+            console.log(array);
+            console.log("OK");
+            document.write("OK");
+        } else {
+            console.log(array);
+            console.log("NO");
+            document.write("NO");
+        }
+    </script>
+</body>
+</html>

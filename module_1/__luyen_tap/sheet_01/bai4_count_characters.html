@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Count the Upper/Lower characters and compare</title>
+</head>
+<body>
+    <script>
+        const UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const LOWER = "abcdefghijklmnopqrstuvwxyz";
+        function checkString(str) {
+            if (typeof(str) === "string") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function checkUpperAndLower(str) {
+            let upper = 0;
+            let lower = 0;
+            let toArr = str.split("");
+            for (let i = 0; i < toArr.length; i++) {
+                if (UPPER.includes(toArr[i])) {
+                    upper++;
+                }
+                if (LOWER.includes(toArr[i])) {
+                    lower++;
+                }
+            }
+            if (upper == lower) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        let sentence = prompt();
+        if (checkString(sentence)) {
+            if (checkUpperAndLower(sentence)) {
+                console.log("OK");
+                document.write("OK");
+            } else {
+                console.log("ERROR");
+                document.write("ERROR");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kiểm tra số nửa mảng sau là chính phương của nửa mảng trước</title>
+  </head>
+  <body>
+    <script>
+        function ifSquare(number1, number2) {
+            if (Math.pow(number1, 2) == number2) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function checkWantedArray(arr) {
+            for (let i = 0; i < arr.length / 2; i++) {
+                for (let j = arr.length / 2; j < arr.length; j++) {
+                    if (ifSquare(arr[i], arr[j])) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            }
+        }
+        let length = +prompt("length");
+        let array = [];
+        for (let i = 0; i < length; i++) {
+            array[i] = prompt();
+        }
+        if (checkWantedArray(array)) {
+            console.log(array);
+            console.log("true");
+            document.write(true);
+        } else {
+            console.log(array);
+            console.log("false");
+            document.write(false);
+        }
+    </script>
+  </body>
+</html>

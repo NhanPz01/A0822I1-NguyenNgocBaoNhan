@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Đếm số chẵn và lẻ từ chuỗi</title>
+  </head>
+  <body>
+    <script>
+      function countOdds(nums) {
+        let countOdds = 0;
+        for (let i = 0; i < nums.length; i++) {
+          if (nums[i] % 2 == 0) {
+            continue;
+          } else {
+            countOdds++;
+          }
+        }
+        return countOdds;
+      }
+      function countEvens(nums) {
+        let countEvens = 0;
+        for (let i = 0; i < nums.length; i++) {
+          if (nums[i] % 2 == 0) {
+            countEvens++;
+          } else {
+            continue;
+          }
+        }
+        return countEvens;
+      }
+
+      let length = prompt("Length of nums[]");
+      let nums = new Array(length);
+      for (let i = 0; i < length; i++) {
+        nums[i] = +prompt();
+        nums[i] = nums[i] > 0 ? nums[i] : -1 * nums[i];
+      }
+      let odds = countOdds(nums);
+      let evens = countEvens(nums);
+      if (odds == evens) {
+        document.write(nums.join(", "));
+        document.write("\nOK");
+      } else {
+        document.write(nums.join(", "));
+        document.write("<br>" + "NO");
+      }
+    </script>
+  </body>
+</html>
