@@ -1,0 +1,7 @@
+function fibonacy(x) {
+    if (x == 1 || x == 2) {
+        return 1;
+    } else {
+        return fibonacy(x - 1) + fibonacy(x - 2);
+    }
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Bài 4</title>
+</head>
+<body>
+<span>
+    <input type="text" id="itemId" placeholder="ID of product">
+    <input type="text" id="itemName" placeholder="Name of product">
+    <input type="text" id="itemFromInc" placeholder="Brand of product">
+    <input type="text" id="itemPrice" placeholder="Price of product">
+    <input type="button" id="add" value="Add" onclick="add()">
+</span>
+<div id="message"></div>
+<div id="list"></div>
+<script>
+    class Product {
+        constructor(id, name, fromInc, price) {
+            this.id = id;
+            this.name = name;
+            this.fromInc = fromInc;
+            this.price = price;
+        }
+        setId(id) {
+            this.id = id;
+        }
+        setName(name) {
+            this.name = name;
+        }
+        setFromInc(fromInc) {
+            this.fromInc = fromInc;
+        }
+        setPrice(price) {
+            this.price = price;
+        }
+        getId() {
+            return this.id;
+        }
+        getName() {
+            return this.name;
+        }
+        getFromInc() {
+            return this.fromInc;
+        }
+        getPrice() {
+            return this.price;
+        }
+        toString() {
+            return (this.getId() + ", " + this.getName() + ", " + this.getFromInc() + ", " + this.getPrice());
+        }
+    }
+    let product1 = new Product(1, "Chair", "Thien Long", 10000);
+    let product2 = new Product(2, "Lamp", "Hoang Ha", 6000);
+    let product3 = new Product(3, "Table", "Song Long", 15000);
+    let listProduct = [product1, product2, product3];
+        show(listProduct);
+        function show(list) {
+            let data = '<table border="1">\n' +
+                '           <tr>\n' +
+                '               <th>ID</th>\n' +
+                '               <th>Name of product</th>\n' +
+                '               <th>Brand</th>\n' +
+                '               <th>Price of product</th>\n' +
+                '               <th>Remove</th>\n' +
+                '           </tr>\n';
+            for (let i = 0; i < list.length; i++) {
+                data += '<tr>\n' +
+                    '       <td style="text-align: center;">' + list[i].getId() + '</td>\n' +
+                    '       <td>' + list[i].getName() + '</td>\n' +
+                    '       <td>' + list[i].getFromInc() + '</td>\n' +
+                    '       <td>' + list[i].getPrice() + '</td>\n' +
+                    '       <td>' +
+                    '           <input type="button" onclick="remove(' + i + ')" value="Remove" />' +
+                    '       </td>\n' +
+                    '   </tr>\n';
+            }
+            data += '</table>';
+            document.getElementById("list").innerHTML = data;
+        }
+
+        function add() {
+            let newId = document.getElementById("itemId").value;
+            let newName = document.getElementById("itemName").value;
+            let newFromInc = document.getElementById("itemFromInc").value;
+            let newPrice = document.getElementById("itemPrice").value;
+            if (newId * 0 != 0) {
+                alert("ID must be a number!");
+                document.getElementById("itemId").value = '';
+            } else if (newPrice  * 0 != 0) {
+                alert("Price must be a number!");
+                document.getElementById("itemPrice").value = '';
+            } else {
+                let newItem = new Product(newId, newName, newFromInc, newPrice);
+                if (newItem != '') {
+                    listProduct.push(newItem);
+                    document.getElementById("message").innerHTML = '';
+                }
+                else {
+                    document.getElementById("message").innerHTML = "Please enter a product name!";
+                }
+                show(listProduct);
+                document.getElementById("itemId").value = '';
+                document.getElementById("itemName").value = '';
+                document.getElementById("itemFromInc").value = '';
+                document.getElementById("itemPrice").value = '';
+            }
+        }
+
+        function remove(index) {
+            let checkRemove = confirm("Remove " + listProduct[index].getName() + " ?")
+            if (checkRemove) {
+                listProduct.splice(index, 1);
+            }
+            show(listProduct);
+        }
+</script>
+</body>
+</html>

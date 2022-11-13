@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra 3 cạnh của tam giác vuông</title>
+</head>
+<body>
+<script>
+    function checkTriangle(x, y, z) {
+        if (x < 0 || y < 0 || z < 0) {
+            document.write("không phải là cạnh tam giác");
+        } else {
+            if (x + y <= z || y + z <= x || z + x <= y) {
+                document.write("không phải là cạnh tam giác");
+            } else {
+                if (Math.pow(x, 2) + Math.pow(y, 2) == Math.pow(z, 2) ||
+                    Math.pow(y, 2) + Math.pow(z, 2) == Math.pow(x, 2) ||
+                    Math.pow(z, 2) + Math.pow(x, 2) == Math.pow(y, 2)) {
+                    document.write("Là 3 cạnh của tạm giác vuông");
+                } else {
+                    document.write("chỉ là 3 cạnh của một tam giác");
+                }
+            }
+        }
+    }
+
+    let a = +prompt("first side");
+    let b = +prompt("second side");
+    let c = +prompt("third side");
+    checkTriangle(a, b, c);
+</script>
+</body>
+</html>

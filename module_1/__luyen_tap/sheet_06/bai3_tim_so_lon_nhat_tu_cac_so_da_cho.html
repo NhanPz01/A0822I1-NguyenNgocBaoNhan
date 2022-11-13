@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loại 1 số từ số có 4 chữ số đã cho để tìm số 3 chữ số lớn nhất</title>
+</head>
+<script>
+    function findMaxNumber(num) {
+        if ((num > -10000 && num < -1000) || (num > 1000 && num < 10000)) {
+            if (num > 0) {
+                let toFindNum = [];
+                let toArr = num.split("");
+                for (let i = 0; i < toArr.length; i++) {
+                    toArr = num.split("");
+                    toArr.splice(i, 1);
+                    toFindNum.push(toArr.join(""));
+                }
+                let max = toFindNum[0];
+                for (let i = 1; i < toFindNum.length; i++) {
+                    max = (max < toFindNum[i]) ? toFindNum[i] : max;
+                }
+                return max;
+            } else if (num < 0) {
+                let toFindNum = [];
+                // console.log(toArr.length);
+                for (let i = 1; i < num.length; i++) {
+                    let tempArr = num.split("");
+                    tempArr.splice(i, 1);
+                    let temp = tempArr.join("");
+                    toFindNum.push(temp);
+                    console.log(toFindNum);
+                }
+                let min = toFindNum[0];
+                for (let i = 1; i < toFindNum.length; i++) {
+                    // min = (min > toFindNum[i]) ? toFindNum[i] : min;
+                    if (min > toFindNum[i]) {
+                        min = toFindNum[i];
+                    }
+                }
+                return min;
+            }
+        } else {
+            return "-1";
+        }
+    }
+
+    let number = prompt();
+    let findNum = findMaxNumber(number);
+    document.write(number);
+    document.write("<br>");
+    document.write(findNum);
+</script>
+<body>
+</body>
+</html>

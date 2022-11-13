@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Bài 3</title>
+</head>
+<body>
+<script>
+    function findPrime(array) {
+        let primes = [];
+        for (let i = 0; i < array.length; i++) {
+            let num = array[i];
+            let check = 0;
+            if (num >= 2) {
+                for (let i = 2; i <= Math.sqrt(num); i++) {
+                    if (num % i === 0) {
+                        check++;
+                    }
+                }
+            } else {
+                check++;
+            }
+            if (check == 0) {
+                primes.push(num);
+            }
+        }
+        sortAsc(primes);
+        return primes;
+    }
+
+    function sortAsc(array) {
+        for (let i = 0; i < array.length - 1; i++) {
+            for (let j = i + 1; j < array.length; j++) {
+                if (array[i] > array[j]) {
+                    let temp = array[j];
+                    array[j] = array[i];
+                    array[i] = temp;
+                }
+            }
+        }
+    }
+
+    let length = +prompt("length of array: ");
+    let array = [];
+
+    for (let i = 0; i < length; i++) {
+        array[i] = +prompt();
+    }
+
+    document.write("[" + findPrime(array) + "]");
+</script>
+</body>
+</html>

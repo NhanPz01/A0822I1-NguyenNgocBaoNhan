@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra mảng tăng dần</title>
+</head>
+<body>
+    <script>
+        function ifAscending(arr) {
+            for (let i = 0; i < arr.length - 1; i++) {
+                if (arr[i] > arr[i + 1]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        let length = +prompt("length");
+        let arr = new Array();
+        for (let i = 0; i < length; i++) {
+            arr[i] = +prompt();
+        }
+        document.write(arr);
+        document.write("<br>");
+        if (ifAscending(arr)) {
+            document.write("YES");
+        } else {
+            document.write("NO");
+        }
+    </script>
+</body>
+</html>

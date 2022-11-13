@@ -27,11 +27,7 @@
                     lower++;
                 }
             }
-            if (upper == lower) {
-                return true;
-            } else {
-                return false;
-            }
+            return upper == lower;
         }
         let sentence = prompt();
         if (checkString(sentence)) {

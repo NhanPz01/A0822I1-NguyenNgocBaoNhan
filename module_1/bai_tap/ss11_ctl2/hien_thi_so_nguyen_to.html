@@ -6,22 +6,45 @@
 </head>
 <body>
 <script>
-    let nums = +prompt("Số lượng số nguyên tố muốn xem?");
-    let count = 0;
-    let num = 2;
-    while (count < nums) {
-        let check = 0;
-        for (let i = 2; i <= Math.sqrt(num); i++) {
-            if (num % i == 0) {
-                check++;
-            }
+    // function isPrime(number) {
+    //     let check = 0;
+    //     for (let i = 2; i <= Math.sqrt(number); i++) {
+    //         if (number % i == 0) {
+    //             return false;
+    //         }
+    //     }
+    //     return number > 2;
+    // }
+    function fibonacy(x) {
+        if (x == 1 || x == 2) {
+            return 1;
+        } else {
+            return fibonacy(x - 1) + fibonacy(x - 2);
         }
-        if (check == 0) {
-            document.write(num + "<br>");
-            count++;
-        }
-        num++;
     }
+    let nums = +prompt("Số lượng số nguyên tố muốn xem?");
+    document.write(fibonacy(nums));
+    // let count = 0;
+    // let num = 2;
+    // while (count < nums) {
+    //     let check = 0;
+    //     for (let i = 2; i <= Math.sqrt(num); i++) {
+    //         if (num % i == 0) {
+    //             check++;
+    //         }
+    //     }
+    //     if (check == 0) {
+    //         document.write(num + "<br>");
+    //         count++;
+    //     }
+    //     num++;
+    // }
+
+    // if (isPrime(nums)) {
+    //     document.write("OK");
+    // } else {
+    //     document.write("Ngu!!")
+    // }
 </script>
 </body>
 </html>

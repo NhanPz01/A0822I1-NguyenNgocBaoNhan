@@ -69,6 +69,8 @@
           }
           alert("Payment: " + payment);
           document.getElementById("order").value = "";
+          orderList = [];
+          orderAmount = [];
         } else {
           let order_item_amount = +prompt(
             "Enter the amount of " + menuDrink[order_item_index],
