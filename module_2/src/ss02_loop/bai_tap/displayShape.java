@@ -11,7 +11,7 @@ public class displayShape {
     }
 
     static void printSquareTriangle(int heigth, int width) {
-        // bottom-left
+        // top-left
         for (int i = 0; i < heigth; i++) {
             for (int j = 0; j < width; j++) {
                 if (i == 0) {
@@ -27,16 +27,48 @@ public class displayShape {
             System.out.println("");
         }
 
-        // bottom-right
+        // top-right
         for (int i = 0; i < heigth; i++) {
             for (int j = 0; j < width; j++) {
                 if (i == 0) {
-                    System.out.print("*");
+                    System.out.print("* ");
                 } else {
                     if (j >= i) {
+                        System.out.print("* ");
+                    } else {
+                        System.out.print("   ");
+                    }
+                }
+            }
+            System.out.println("");
+        }
+
+        // bottom-left
+        for (int i = 0; i < heigth; i++) {
+            for (int j = 0; j < width; j++) {
+                if (i == heigth) {
+                    System.out.print("*");
+                } else {
+                    if (j <= i) {
                         System.out.print("*");
                     } else {
-                        System.out.print("_");
+                        System.out.print(" ");
+                    }
+                }
+            }
+            System.out.println("");
+        }
+
+        // bottom-right
+        for (int i = 1; i <= heigth; i++) {
+            for (int j = 1; j <= width; j++) {
+                if (i == heigth) {
+                    System.out.print("* ");
+                } else {
+                    if (j > width - i) {
+                        System.out.print("* ");
+                    } else {
+                        System.out.print("   ");
                     }
                 }
             }
@@ -44,8 +76,17 @@ public class displayShape {
         }
     }
 
+    static void printIsoscelesTriangle(int heigth) {
+        for (int i = 1; i <= heigth; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+    }
     public static void main(String[] args) {
 //        printSolidRectangle(3, 15);
-        printSquareTriangle(8, 6);
+//        printSquareTriangle(3, 4);
+        printIsoscelesTriangle(5);
     }
 }
