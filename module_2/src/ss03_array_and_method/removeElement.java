@@ -1,17 +1,17 @@
 package ss03_array_and_method;
 
 public class removeElement {
-    static void remove(int[] array, int value) {
+    static int[] remove(int[] array, int value) {
         for (int i = 0; i < array.length; i++) {
             if (value == array[i]) {
                 for (int j = i; j < array.length - 1; j++) {
                     array[j] = array[j + 1];
                 }
-
-            } else {
-                System.out.println("element " + value + " is not exist");
+                int[] newArray = new int[array.length - 1];
+                return newArray;
             }
         }
+
     }
 
     public static void main(String[] args) {
@@ -20,8 +20,8 @@ public class removeElement {
             System.out.print(value + " ");
         }
         System.out.println();
-        remove(nums, 5);
-        for (int value : nums) {
+        int[] newNums = remove(nums, 5);
+        for (int value : newNums) {
             System.out.print(value + " ");
         }
     }
