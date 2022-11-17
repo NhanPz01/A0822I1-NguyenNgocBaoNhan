@@ -33,7 +33,7 @@ public class addElement {
                     newArray[i] = array[i];
                 }
                 for (int i = index + 1; i < newArray.length; ++i) {
-                    newArray[i] = array[i - 2];
+                    newArray[i] = array[i - 1];
                 }
             }
             return newArray;
