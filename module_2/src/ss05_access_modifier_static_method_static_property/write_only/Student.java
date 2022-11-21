@@ -6,7 +6,7 @@ public class Student {
 
     public Student() {
         this.name = "John";
-        this.classes = "CO2"
+        this.classes = "CO2";
     }
 
     public Student(String name, String classes) {
