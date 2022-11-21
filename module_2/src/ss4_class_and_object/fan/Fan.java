@@ -13,5 +13,8 @@ public class Fan {
 
     Fan() { }
 
+    Fan(int speed, boolean on, double radius, String color) {
+        
+    }
 
 }
