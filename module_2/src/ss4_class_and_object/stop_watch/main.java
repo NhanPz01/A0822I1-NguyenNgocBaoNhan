@@ -26,6 +26,6 @@ public class main {
         StopWatch watch = new StopWatch();
         watch.start();
         selectionSort(array);
-        System.out.println("The time it take is: " + watch.getElapsedTime());
+        System.out.println("The time it takes is: " + watch.getElapsedTime());
     }
 }
