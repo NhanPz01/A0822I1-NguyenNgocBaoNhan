@@ -1,8 +1,8 @@
 package ss06_inheritance.point_and_moveablepoint;
 
 public class Point {
-    private float x = 0.0f;
-    private float y = 0.0f;
+    protected float x = 0.0f;
+    protected float y = 0.0f;
 
     public Point(float x, float y) {
         this.x = x;
