@@ -22,7 +22,7 @@ public class FuramaController {
                 case 1:
                     // Employee
                     System.out.println(
-                            "/-----/Main menu/-----/" +
+                            "/-----/Employee menu/-----/" +
                                     "\n\t1. Display list employees" +
                                     "\n\t2. Add new employee" +
                                     "\n\t3. Edit employee" +
@@ -48,7 +48,7 @@ public class FuramaController {
                 case 2:
                     // Customer
                     System.out.println(
-                            "/-----/Main menu/-----/" +
+                            "/-----/Customer menu/-----/" +
                                     "\n\t1. Display list customers" +
                                     "\n\t2. Add new customer" +
                                     "\n\t3. Edit customer" +
@@ -74,7 +74,7 @@ public class FuramaController {
                 case 3:
                     // Facility
                     System.out.println(
-                            "/-----/Main menu/-----/" +
+                            "/-----/Facility menu/-----/" +
                                     "\n\t1. Display list facility" +
                                     "\n\t2. Add new facility" +
                                     "\n\t3. Display list facility maintenance" +
@@ -100,7 +100,7 @@ public class FuramaController {
                 case 4:
                     // Booking
                     System.out.println(
-                            "/-----/Main menu/-----/" +
+                            "/-----/Booking menu/-----/" +
                                     "\n\t1. Add new booking" +
                                     "\n\t2. Display list booking" +
                                     "\n\t3. Create new contracts" +
@@ -134,7 +134,7 @@ public class FuramaController {
                 case 5:
                     // Promotion
                     System.out.println(
-                            "/-----/Main menu/-----/" +
+                            "/-----/Promotion menu/-----/" +
                                     "\n\t1. Display list customers use service" +
                                     "\n\t2. Display list customers get voucher" +
                                     "\n\t6. Return main menu"

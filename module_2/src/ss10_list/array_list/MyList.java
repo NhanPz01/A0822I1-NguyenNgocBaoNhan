@@ -22,9 +22,9 @@ public class MyList<E> {
         if (index < 0) {
             size++;
             for (int i = size - 1; i > 0; --i) {
-               elements[i] = elements[i - 1];
-           }
-           elements[0] = element;
+                elements[i] = elements[i - 1];
+            }
+            elements[0] = element;
         } else if (index >= size) {
             index = size++;
             elements[index] = element;
@@ -38,14 +38,17 @@ public class MyList<E> {
     }
 
     public E remove(int index) {
+        E returnedElement = null;
         if (index < 0 || index >= size) {
             // do nothing
         } else {
+            returnedElement = (E) elements[index];
             for (int i = index; i < size; ++i) {
                 elements[i] = elements[i + 1];
             }
             size--;
         }
+        return returnedElement;
     }
 
     public int size() {
@@ -68,6 +71,7 @@ public class MyList<E> {
                 return true;
             }
         }
+        return false;
     }
 
     public int indexOf(E object) {
@@ -77,9 +81,8 @@ public class MyList<E> {
                     return i;
                 }
             }
-        } else {
-            return -1;
         }
+        return -1;
     }
 
     public boolean add(E element) {
@@ -96,8 +99,17 @@ public class MyList<E> {
     }
 
     public E get(int index) {
-        if (index < 0 || index >= size) {
-            throw IndexOutOfBoundsException
+        if (index < 0 || index >= elements.length) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size " + index);
         }
+        return (E) elements[index];
+    }
+
+    public void clear() {
+        for (int i = size - 1; i >= 0; --i) {
+            elements[i] = null;
+            size--;
+        }
+        elements = Arrays.copyOf(elements, size);
     }
 }
