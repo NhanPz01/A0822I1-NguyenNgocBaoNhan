@@ -5,17 +5,13 @@ import java.util.Scanner;
 
 public class Main {
     public static int binarySearch(ArrayList<Integer> list, int left, int right, int value) {
-        if (list.contains(value)) {
-            while (left < right) {
-                int middle = (right + left) / 2;
-                if (list.get(middle) == value) {
-                    return middle;
-                } else if (list.get(middle) < value) {
-                    left = middle + 1;
-                } else if (list.get(middle) > value) {
-                    right = middle - 1;
-                }
-            }
+        int middle = (right + left) / 2;
+        if (list.get(middle) == value) {
+            return middle;
+        } else if (list.get(middle) < value) {
+            return binarySearch(list, middle + 1, right, value);
+        } else if (list.get(middle) > value) {
+            return binarySearch(list, left, middle - 1, value);
         }
         return -1;
     }
