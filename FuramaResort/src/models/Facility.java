@@ -1,15 +1,26 @@
 package models;
 
 public abstract class Facility {
-    protected final int FOR_YEAR = 1;
-    protected final int FOR_MONTH = 2;
-    protected final int FOR_DAY = 3;
-    protected final int FOR_HOUR = 4;
+    enum TypeRent {
+        ForYear, ForMonth, ForDay, ForHour
+    }
+
     protected String serviceName;
     protected String serviceArea;
     protected double rent;
     protected int maxCustomer;
-    protected String typeRent;
+    protected TypeRent typeRent;
+
+    public Facility() {
+    }
+
+    public Facility(String serviceName, String serviceArea, double rent, int maxCustomer, TypeRent typeRent) {
+        this.serviceName = serviceName;
+        this.serviceArea = serviceArea;
+        this.rent = rent;
+        this.maxCustomer = maxCustomer;
+        this.typeRent = typeRent;
+    }
 
     public String getServiceName() {
         return serviceName;
@@ -43,11 +54,11 @@ public abstract class Facility {
         this.maxCustomer = maxCustomer;
     }
 
-    public String getTypeRent() {
+    public TypeRent getTypeRent() {
         return typeRent;
     }
 
-    public void setTypeRent(String typeRent) {
+    public void setTypeRent(TypeRent typeRent) {
         this.typeRent = typeRent;
     }
 }

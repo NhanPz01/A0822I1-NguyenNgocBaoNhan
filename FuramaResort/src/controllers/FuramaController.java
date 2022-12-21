@@ -6,29 +6,29 @@ public class FuramaController {
     public static void displayMainMenu() {
         boolean flag = true;
         do {
-            System.out.println(
+            System.out.print(
                     "/-----/Main menu/-----/" +
-                            "\n\t1. Employee Management" +
-                            "\n\t2. Customer Management" +
-                            "\n\t3. Facility Management" +
-                            "\n\t4. Booking Management" +
-                            "\n\t5. Promotion Management" +
-                            "\n\t6. Exit"
+                            "\n1. Employee Management" +
+                            "\n2. Customer Management" +
+                            "\n3. Facility Management" +
+                            "\n4. Booking Management" +
+                            "\n5. Promotion Management" +
+                            "\n6. Exit" +
+                            "\nYour choice : "
             );
-            System.out.println("Your choice : ");
             Scanner scanner = new Scanner(System.in);
             int choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
                 case 1:
                     // Employee
-                    System.out.println(
+                    System.out.print(
                             "/-----/Employee menu/-----/" +
-                                    "\n\t1. Display list employees" +
-                                    "\n\t2. Add new employee" +
-                                    "\n\t3. Edit employee" +
-                                    "\n\t4. Return main menu"
+                                    "\n1. Display list employees" +
+                                    "\n2. Add new employee" +
+                                    "\n3. Edit employee" +
+                                    "\n4. Return main menu" +
+                                    "\nYour choice : "
                     );
-                    System.out.println("Your choice : ");
                     int employeeChoose = Integer.parseInt(scanner.nextLine());
                     switch (employeeChoose) {
                         case 1:
@@ -47,14 +47,14 @@ public class FuramaController {
                     break;
                 case 2:
                     // Customer
-                    System.out.println(
+                    System.out.print(
                             "/-----/Customer menu/-----/" +
-                                    "\n\t1. Display list customers" +
-                                    "\n\t2. Add new customer" +
-                                    "\n\t3. Edit customer" +
-                                    "\n\t4. Return main menu"
+                                    "\n1. Display list customers" +
+                                    "\n2. Add new customer" +
+                                    "\n3. Edit customer" +
+                                    "\n4. Return main menu" +
+                                    "\nYour choice : "
                     );
-                    System.out.println("Your choice : ");
                     int customerChoose = Integer.parseInt(scanner.nextLine());
                     switch (customerChoose) {
                         case 1:
@@ -73,14 +73,14 @@ public class FuramaController {
                     break;
                 case 3:
                     // Facility
-                    System.out.println(
+                    System.out.print(
                             "/-----/Facility menu/-----/" +
-                                    "\n\t1. Display list facility" +
-                                    "\n\t2. Add new facility" +
-                                    "\n\t3. Display list facility maintenance" +
-                                    "\n\t4. Return main menu"
+                                    "\n1. Display list facility" +
+                                    "\n2. Add new facility" +
+                                    "\n3. Display list facility maintenance" +
+                                    "\n4. Return main menu" +
+                                    "\nYour choice : "
                     );
-                    System.out.println("Your choice : ");
                     int facilityChoose = Integer.parseInt(scanner.nextLine());
                     switch (facilityChoose) {
                         case 1:
@@ -99,16 +99,16 @@ public class FuramaController {
                     break;
                 case 4:
                     // Booking
-                    System.out.println(
+                    System.out.print(
                             "/-----/Booking menu/-----/" +
-                                    "\n\t1. Add new booking" +
-                                    "\n\t2. Display list booking" +
-                                    "\n\t3. Create new contracts" +
-                                    "\n\t4. Display list contracts" +
-                                    "\n\t5. Edit contracts" +
-                                    "\n\t6. Return main menu"
+                                    "\n1. Add new booking" +
+                                    "\n2. Display list booking" +
+                                    "\n3. Create new contracts" +
+                                    "\n4. Display list contracts" +
+                                    "\n5. Edit contracts" +
+                                    "\n6. Return main menu" +
+                                    "\nYour choice : "
                     );
-                    System.out.println("Your choice : ");
                     int contractChoose = Integer.parseInt(scanner.nextLine());
                     switch (contractChoose) {
                         case 1:
@@ -133,13 +133,13 @@ public class FuramaController {
                     break;
                 case 5:
                     // Promotion
-                    System.out.println(
+                    System.out.print(
                             "/-----/Promotion menu/-----/" +
-                                    "\n\t1. Display list customers use service" +
-                                    "\n\t2. Display list customers get voucher" +
-                                    "\n\t6. Return main menu"
+                                    "\n1. Display list customers use service" +
+                                    "\n2. Display list customers get voucher" +
+                                    "\n6. Return main menu" +
+                                    "\nYour choice : "
                     );
-                    System.out.println("Your choice : ");
                     int promotionChoose = Integer.parseInt(scanner.nextLine());
                     switch (promotionChoose) {
                         case 1:
