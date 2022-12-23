@@ -16,8 +16,8 @@ public class Oto extends PhuongTien {
         this.kieuXe = kieuXe;
     }
 
-    public Oto(String bienSo, String tenHang, String chuSoHuu, int namSanXuat, int soCho, KieuXe kieuXe) {
-        super(bienSo, tenHang, chuSoHuu, namSanXuat);
+    public Oto(String bienSo, String maSanXuat, String chuSoHuu, int namSanXuat, int soCho, KieuXe kieuXe) {
+        super(bienSo, maSanXuat, chuSoHuu, namSanXuat);
         this.soCho = soCho;
         this.kieuXe = kieuXe;
     }
@@ -36,5 +36,15 @@ public class Oto extends PhuongTien {
 
     public void setKieuXe(KieuXe kieuXe) {
         this.kieuXe = kieuXe;
+    }
+
+    @Override
+    public String toString() {
+        return "Biển số : " + this.bienSo + " | " +
+                "Mã sản xuất : " + this.maSanXuat + " | " +
+                "Chủ sở hữu : " + this.chuSoHuu + " | " +
+                "Năm sản xuất : " + this.namSanXuat + " | " +
+                "Kiểu xe : " + this.kieuXe + " | " +
+                "Số chỗ : " + this.soCho + " | ";
     }
 }

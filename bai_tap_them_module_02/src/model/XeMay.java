@@ -10,12 +10,12 @@ public class XeMay extends PhuongTien {
         this.congSuat = congSuat;
     }
 
-    public XeMay(String bienSo, String tenHang, String chuSoHuu, int namSanXuat) {
-        super(bienSo, tenHang, chuSoHuu, namSanXuat);
+    public XeMay(String bienSo, String maSanXuat, String chuSoHuu, int namSanXuat) {
+        super(bienSo, maSanXuat, chuSoHuu, namSanXuat);
     }
 
-    public XeMay(String bienSo, String tenHang, String chuSoHuu, int namSanXuat, double congSuat) {
-        super(bienSo, tenHang, chuSoHuu, namSanXuat);
+    public XeMay(String bienSo, String maSanXuat, String chuSoHuu, int namSanXuat, double congSuat) {
+        super(bienSo, maSanXuat, chuSoHuu, namSanXuat);
         this.congSuat = congSuat;
     }
 
@@ -25,5 +25,14 @@ public class XeMay extends PhuongTien {
 
     public void setCongSuat(double congSuat) {
         this.congSuat = congSuat;
+    }
+
+    @Override
+    public String toString() {
+        return "Biển số : " + this.bienSo + " | " +
+               "Mã sản xuất : " + this.maSanXuat + " | " +
+               "Chủ sở hữu : " + this.chuSoHuu + " | " +
+               "Năm sản xuất : " + this.namSanXuat + " | " +
+               "Công suất : " + this.congSuat;
     }
 }

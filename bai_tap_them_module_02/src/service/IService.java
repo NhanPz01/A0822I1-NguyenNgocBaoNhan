@@ -1,5 +1,5 @@
 package service;
 
 public interface IService {
-    public void add();
+    public abstract void displayAll();
 }

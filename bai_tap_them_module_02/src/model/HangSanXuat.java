@@ -37,4 +37,11 @@ public class HangSanXuat {
     public void setQuocGia(String quocGia) {
         this.quocGia = quocGia;
     }
+
+    @Override
+    public String toString() {
+        return "Mã sản xuất : " + this.maSanXuat + " | " +
+               "Tên hãng : " + this.tenHang + " | " +
+               "Tên quốc gia : " + this.quocGia;
+    }
 }

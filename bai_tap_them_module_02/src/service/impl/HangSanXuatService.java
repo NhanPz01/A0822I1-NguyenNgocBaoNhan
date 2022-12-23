@@ -1,25 +1,31 @@
 package service.impl;
 
 import model.HangSanXuat;
+import service.IService;
 
 import java.util.ArrayList;
 
-public class HangSanXuatService {
-    public static ArrayList<HangSanXuat> hangSanXuat = new ArrayList<>();
-    static {
-        new HangSanXuat("01", "Honda", "Viet Nam");
-        new HangSanXuat("02", "Yamaha", "Viet Bac");
-        new HangSanXuat("03", "Toyota", "Viet Dong");
-        new HangSanXuat("04", "Hyundai", "Viet Tay");
+public class HangSanXuatService implements IService {
+    public  ArrayList<HangSanXuat> hangSanXuat = new ArrayList<>();
+
+    public HangSanXuatService() {
+       hangSanXuat.add(new HangSanXuat("M1", "Honda", "Viet Nam 1"));
+       hangSanXuat.add(new HangSanXuat("M2", "Toyota", "Viet Nam 3"));
+       hangSanXuat.add(new HangSanXuat("M3", "Hyundai", "Viet Nam 4"));
     }
-    public HangSanXuat choose(int input) {
-        switch (input) {
-            case 1 : {
-                return hangSanXuat.get(0);
+
+    public void display(String maSanXuat) {
+        for (HangSanXuat element : hangSanXuat) {
+            if (element.getMaSanXuat().equals(maSanXuat)) {
+                System.out.println(element);
+                break;
             }
-            default : {
-                return hangSanXuat.get(3);
-            }
+        }
+    }
+    @Override
+    public void displayAll() {
+        for (HangSanXuat element : hangSanXuat) {
+            System.out.println(element);
         }
     }
 }

@@ -10,12 +10,12 @@ public class XeTai extends PhuongTien {
         this.trongTai = trongTai;
     }
 
-    public XeTai(String bienSo, String tenHang, String chuSoHuu, int namSanXuat) {
-        super(bienSo, tenHang, chuSoHuu, namSanXuat);
+    public XeTai(String bienSo, String maSanXuat, String chuSoHuu, int namSanXuat) {
+        super(bienSo, maSanXuat, chuSoHuu, namSanXuat);
     }
 
-    public XeTai(String bienSo, String tenHang, String chuSoHuu, int namSanXuat, double trongTai) {
-        super(bienSo, tenHang, chuSoHuu, namSanXuat);
+    public XeTai(String bienSo, String maSanXuat, String chuSoHuu, int namSanXuat, double trongTai) {
+        super(bienSo, maSanXuat, chuSoHuu, namSanXuat);
         this.trongTai = trongTai;
     }
 
@@ -25,5 +25,14 @@ public class XeTai extends PhuongTien {
 
     public void setTrongTai(double trongTai) {
         this.trongTai = trongTai;
+    }
+
+    @Override
+    public String toString() {
+        return "Biển số : " + this.bienSo + " | " +
+                "Mã sản xuất : " + this.maSanXuat + " | " +
+                "Chủ sở hữu : " + this.chuSoHuu + " | " +
+                "Năm sản xuất : " + this.namSanXuat + " | " +
+                "Trọng tải : " + this.trongTai;
     }
 }
