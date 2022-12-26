@@ -13,6 +13,7 @@ public class XeTaiService implements IService {
     }
 
     public void add(String _bienSo, String _maSanXuat, String _chuSoHuu, int _namSanXuat, double _trongTai) {
+
         xeTai.add(new XeTai(_bienSo, _maSanXuat, _chuSoHuu, _namSanXuat, _trongTai));
     }
     public void remove(String _bienSo) {

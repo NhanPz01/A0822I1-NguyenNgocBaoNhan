@@ -1,6 +1,6 @@
 package model;
 
-public class PhuongTien {
+public abstract class PhuongTien {
     protected String bienSo;
     protected String maSanXuat;
     protected String chuSoHuu;

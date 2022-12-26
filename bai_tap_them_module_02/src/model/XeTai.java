@@ -27,6 +27,15 @@ public class XeTai extends PhuongTien {
         this.trongTai = trongTai;
     }
 
+    public String getInfoToCSV() {
+        String info = this.bienSo + "," +
+                this.maSanXuat + "," +
+                this.chuSoHuu + "," +
+                this.namSanXuat + "," +
+                this.trongTai;
+        return info;
+    }
+
     @Override
     public String toString() {
         return "Biển số : " + this.bienSo + " | " +
