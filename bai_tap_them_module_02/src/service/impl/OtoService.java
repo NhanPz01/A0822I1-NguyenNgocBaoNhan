@@ -1,39 +1,50 @@
 package service.impl;
 
 import model.Oto;
-import model.XeTai;
 import service.IService;
+import util.ReadAndWriteOto;
+import util.ReadAndWriteXeMay;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class OtoService implements IService {
-    public ArrayList<Oto> oto = new ArrayList<>();
+    private final String OTO_DATA = "src/data/otoList.csv";
 
-    public OtoService() {
-        oto.add(new Oto("103001", "M1", "Nhan 1", 2010, 4, Oto.KieuXe.DuLich));
-        oto.add(new Oto("103002", "M2", "Nhan 2", 2018, 16, Oto.KieuXe.XeKhach));
-    }
     public void add(String _bienSo, String _maSanXuat, String _chuSoHuu, int _namSanXuat, int _soCho, Oto.KieuXe _kieuXe) {
-        oto.add(new Oto(_bienSo, _maSanXuat, _chuSoHuu, _namSanXuat, _soCho, _kieuXe));
+        List<Oto> otoList = new ArrayList<>();
+        otoList = ReadAndWriteOto.readOtoListFromCSV(OTO_DATA);
+        otoList.add(new Oto(_bienSo, _maSanXuat, _chuSoHuu, _namSanXuat, _soCho, _kieuXe));
+        ReadAndWriteOto.writeOtoListToCSV(OTO_DATA, otoList, false);
     }
 
     public void remove(String _bienSo) {
-        for (Oto element : oto) {
+        List<Oto> otoList = new ArrayList<>();
+        otoList = ReadAndWriteOto.readOtoListFromCSV(OTO_DATA);
+        for (Oto element : otoList) {
             if (element.getBienSo().equals(_bienSo)) {
-                oto.remove(element);
+                otoList.remove(element);
+                break;
             }
         }
+        ReadAndWriteOto.writeOtoListToCSV(OTO_DATA, otoList, false);
     }
+    @Override
     public void display(String _bienSo) {
-        for (Oto element : oto) {
+        List<Oto> otoList = new ArrayList<>();
+        otoList = ReadAndWriteOto.readOtoListFromCSV(OTO_DATA);
+        for (Oto element : otoList) {
             if (element.getBienSo().equals(_bienSo)) {
                 System.out.println(element);
+                break;
             }
         }
     }
     @Override
     public void displayAll() {
-        for (Oto element : oto) {
+        List<Oto> otoList = new ArrayList<>();
+        otoList = ReadAndWriteOto.readOtoListFromCSV(OTO_DATA);
+        for (Oto element : otoList) {
             System.out.println(element);
         }
     }

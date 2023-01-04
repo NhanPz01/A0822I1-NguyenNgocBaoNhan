@@ -47,4 +47,15 @@ public class Oto extends PhuongTien {
                 "Kiểu xe : " + this.kieuXe + " | " +
                 "Số chỗ : " + this.soCho + " | ";
     }
+
+    @Override
+    public String getInfoToCSV() {
+        String info = this.bienSo + "," +
+                this.maSanXuat + "," +
+                this.chuSoHuu + "," +
+                this.namSanXuat + "," +
+                this.kieuXe + "," +
+                this.soCho;
+        return info;
+    }
 }

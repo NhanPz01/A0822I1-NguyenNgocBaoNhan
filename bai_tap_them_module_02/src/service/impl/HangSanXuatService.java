@@ -2,20 +2,18 @@ package service.impl;
 
 import model.HangSanXuat;
 import service.IService;
+import util.ReadAndWriteHangSanXuat;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class HangSanXuatService implements IService {
-    public  ArrayList<HangSanXuat> hangSanXuat = new ArrayList<>();
 
-    public HangSanXuatService() {
-       hangSanXuat.add(new HangSanXuat("M1", "Honda", "Viet Nam 1"));
-       hangSanXuat.add(new HangSanXuat("M2", "Toyota", "Viet Nam 3"));
-       hangSanXuat.add(new HangSanXuat("M3", "Hyundai", "Viet Nam 4"));
-    }
-
+    private final String HANG_SAN_XUAT_DATA = "src/data/hangSanXuat.csv";
     public void display(String maSanXuat) {
-        for (HangSanXuat element : hangSanXuat) {
+        List<HangSanXuat> hangSanXuatList = new ArrayList<>();
+        hangSanXuatList = ReadAndWriteHangSanXuat.readHangSanXuatListFromCSV(HANG_SAN_XUAT_DATA );
+        for (HangSanXuat element : hangSanXuatList) {
             if (element.getMaSanXuat().equals(maSanXuat)) {
                 System.out.println(element);
                 break;
@@ -24,7 +22,9 @@ public class HangSanXuatService implements IService {
     }
     @Override
     public void displayAll() {
-        for (HangSanXuat element : hangSanXuat) {
+        List<HangSanXuat> hangSanXuatList = new ArrayList<>();
+        hangSanXuatList = ReadAndWriteHangSanXuat.readHangSanXuatListFromCSV(HANG_SAN_XUAT_DATA );
+        for (HangSanXuat element : hangSanXuatList) {
             System.out.println(element);
         }
     }

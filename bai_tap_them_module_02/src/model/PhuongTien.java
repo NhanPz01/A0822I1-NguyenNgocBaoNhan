@@ -47,4 +47,5 @@ public abstract class PhuongTien {
     public void setNamSanXuat(int namSanXuat) {
         this.namSanXuat = namSanXuat;
     }
+    public abstract String getInfoToCSV();
 }

@@ -44,4 +44,9 @@ public class HangSanXuat {
                "Tên hãng : " + this.tenHang + " | " +
                "Tên quốc gia : " + this.quocGia;
     }
+    public String getInfoToCSV() {
+        return this.maSanXuat + "," +
+                this.tenHang + "," +
+                this.quocGia;
+    }
 }

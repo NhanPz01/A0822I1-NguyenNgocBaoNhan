@@ -35,4 +35,14 @@ public class XeMay extends PhuongTien {
                "Năm sản xuất : " + this.namSanXuat + " | " +
                "Công suất : " + this.congSuat;
     }
+
+    @Override
+    public String getInfoToCSV() {
+        String info = this.bienSo + "," +
+                this.maSanXuat + "," +
+                this.chuSoHuu + "," +
+                this.namSanXuat + "," +
+                this.congSuat;
+        return info;
+    }
 }
