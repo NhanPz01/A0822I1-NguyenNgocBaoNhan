@@ -8,7 +8,7 @@ public class Oto extends PhuongTien {
     private int soCho;
     private KieuXe kieuXe;
 
-    public Oto() {
+    public Oto(String s, String s1, String s2, int i, double v) {
     }
 
     public Oto(int soCho, KieuXe kieuXe) {

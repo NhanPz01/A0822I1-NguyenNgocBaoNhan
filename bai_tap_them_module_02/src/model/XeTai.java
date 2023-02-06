@@ -1,6 +1,6 @@
 package model;
 
-public class XeTai extends PhuongTien {
+public class XeMay extends PhuongTien {
     private double trongTai;
 
     public XeTai() {
