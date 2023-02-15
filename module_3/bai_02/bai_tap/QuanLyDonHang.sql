@@ -15,7 +15,7 @@ create table PhieuNhap (
 	SoPN int auto_increment not null,
     NgayNhap date not null,
 primary key (SoPN));
-
+alter table DonDH
 create table DonDH (
 	SoDH int not null,
     NgayDH date not null,
@@ -56,11 +56,4 @@ create table ChiTietDonDatHang (
     SoDH int not null,
 	foreign key (MaVTU) references VatTU (MaVTU),
     foreign key (SoDH) references DonDH (SoDH)
-);
-
-create table CungCap (
-	MaNCC int not null,
-    SoDH int not null,
-    foreign key (SoDH) references DonDH (SoDH),
-    foreign key (MaNCC) references NhaCC (MaNCC)
 );
