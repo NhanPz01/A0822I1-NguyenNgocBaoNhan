@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Muc luc truyen</title>
+</head>
+<style>
+    img {
+        display: block;
+        width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #muc_luc {
+        display: block;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #chuong_1 {
+        display: none;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    ol {
+        padding-left: 0px;
+    }
+
+    /*button {*/
+    /*    border: none;*/
+    /*    background-color: white;*/
+    /*}*/
+</style>
+<body>
+<div id="muc_luc">
+    <h3 style="margin-bottom: auto">
+        <button onclick="troVeMucLuc()">MUC LUC</button>
+    </h3>
+    <ul>
+        <div>
+            <ol><h5>Chuong 1: Bat dau...</h5></ol>
+            <img src="https://cdn.sforum.vn/sforum/wp-content/uploads/2021/09/photo-1-1615870720601745881145.jpg"/>
+        </div>
+
+        <div>
+            <ol><h5>Chuong 2: Dien bien...</h5></ol>
+            <img src="https://booksandbao.com/wp-content/uploads/2021/03/best-romance-manga.jpg"/>
+        </div>
+
+        <div>
+            <ol><h5>Chuong 3: Ket thuc...</h5></ol>
+            <img src="https://songhantourist.com/upload/articles-images/1589266935-tim-hieu-van-hoa-nhat-ban-qua-truyen-tranh-manga.jpg"/>
+        </div>
+    </ul>
+</div>
+
+<div id="chuong_1">
+    <h5>Chuong 1: Bat dau...</h5>
+    <img src="https://cdn.sforum.vn/sforum/wp-content/uploads/2021/09/photo-1-1615870720601745881145.jpg"/>
+    <p>
+        ước 2: Tạo nội dung ứng với từng mục lục truyện
+
+        Bước 3: Tạo liên kết từng mục lục. Mỗi lần click vào một mục lục chuyển đến nội dung tương ứng.
+
+        Bước 4: Tạo ảnh truyện đặt ở đầu trang.
+    </p>
+</div>
+<script>
+    function troVeMucLuc() {
+        let mucLuc = document.querySelectorAll("#muc_luc");
+        mucLuc.forEach(chuong => {
+            chuong.addEventListener("click", () => {
+                s.classList.remove("active");
+            });
+            chuong.classList.add("active");
+        });
+    }
+
+    function chuong1() {
+        let chuong = document.querySelectorAll("#chuong_1");
+        dong.forEach(dong => {
+            dong.addEventListener("click", () => {
+                s.classList.remove("active");
+            });
+            dong.classList.add("active");
+        });
+    }
+</script>
+</body>
+</html>
