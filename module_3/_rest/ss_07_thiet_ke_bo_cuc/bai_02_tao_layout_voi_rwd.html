@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Layout voi RWD</title>
+</head>
+<style>
+    body {
+        margin: 0px;
+        font-family: Verdana, sans-serif;
+        font-size: 0.9em;
+    }
+
+    header {
+        padding: 10px;
+        background-color: black;
+        margin-bottom: 0px;
+    }
+
+    footer {
+        padding: 5px;
+        bottom: 0;
+        text-align: center;
+        color: white;
+        background-color: black;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 25% 50% 25%;
+        padding: 0px;
+        width: 100%;
+        background-color: white;
+    }
+
+    aside {
+        padding: 10px;
+        background-color: gray;
+    }
+
+    aside div {
+        margin: 20px;
+        padding: 25px;
+        text-align: center;
+        background-color: silver;
+    }
+
+    aside ul {
+        padding: 0;
+    }
+
+    aside ul ol {
+        padding: 0;
+        text-align: center;
+    }
+
+    nav ul {
+        padding: 0px;
+    }
+
+    nav ul ol {
+        display: inline;
+        padding: 10px;
+        margin: 5px;
+        color: white;
+    }
+
+    a {
+        color: mediumblue;
+
+    }
+
+    section {
+        top: ;
+    }
+
+    section p {
+        margin: 10px;
+    }
+
+    #login {
+        padding-left: 69%;
+        padding-right: 0px;
+    }
+
+    #header1, #header2 {
+        margin-top: 5px;
+        margin-left: 10px;
+        margin-bottom: 5px;
+    }
+</style>
+<body>
+<header>
+    <nav>
+        <ul>
+            <ol id="logo">Logo</ol>
+            <ol>Home</ol>
+            <ol>About</ol>
+            <ol>Projects</ol>
+            <ol>Contact</ol>
+            <ol id="login">Login</ol>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <aside>
+        <ul>
+            <ol><a href="https://www.google.com.vn/?hl=vi">Link</a></ol>
+            <ol><a href="https://www.google.com.vn/?hl=vi">Link</a></ol>
+            <ol><a href="https://www.google.com.vn/?hl=vi">Link</a></ol>
+        </ul>
+    </aside>
+    <section>
+        <h2 id="header1">Welcome</h2>
+        <article>
+            <p><span style="margin-left: 20px">Tương tự như khi tạo bố cục sử dụng div và các thuộc tính css, chúng ta có thể sử dụng các thẻ của HTML5
+                để tạo bố cục cho trang web.</span><span> Đây là cách làm được khuyến khích và sử dụng phổ biến hiện nay.</span>
+                <span>Các thẻ HTML5 được sử dụng để tạo layout trong bài này bao gồm: header, nav, section, article, aside và
+                    footer.</span></p>
+        </article>
+        <hr width="90%"/>
+        <article>
+            <h2 id="header2">Test</h2>
+            <p style="margin-left: 20px">Còn tiếp...</p>
+        </article>
+    </section>
+    <aside style="grid-column-start: 3">
+        <div>ADS</div>
+        <div>ADS</div>
+    </aside>
+</main>
+
+<footer>
+    <h4>Footer text</h4>
+</footer>
+</body>
+</html>
