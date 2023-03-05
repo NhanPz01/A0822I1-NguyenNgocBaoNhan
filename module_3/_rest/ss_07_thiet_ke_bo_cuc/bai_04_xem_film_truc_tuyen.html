@@ -11,6 +11,7 @@
         }
 
         header {
+            display: block;
             margin: 0;
             padding: 10px;
             width: 100%;
@@ -18,12 +19,16 @@
             font-family: Bahnschrift;
         }
 
-        nav {
-
+        nav ul {
+            padding: 0;
         }
 
-        main {
-
+        nav ul li {
+            display: inline;
+            list-style: none;
+            padding: 10px;
+            width: 100%;
+            background-color: #cecece;
         }
 
         footer {
@@ -35,26 +40,13 @@
             background-color: #a1a1a1;
             position: static;
         }
-
-        nav ul {
-            margin: auto;
-        }
-
-        nav ul li {
-            display: inline;
-            list-style: none;
-            margin: 10px;
-            padding: 10px;
-            width: 100%;
-            text-align: center;
-            background-color: #cecece;
-        }
     </style>
 </head>
 <body>
 <header>
     <h1>PHIM HOAT HINH</h1>
 </header>
+
 <nav>
     <ul>
         <li>Phim hoat hinh</li>
