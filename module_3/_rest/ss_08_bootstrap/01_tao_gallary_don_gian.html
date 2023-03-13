@@ -3,7 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Basic Gallery</title>
-    <link href="module_3/_rest/bootstrap-5.3.0-alpha1-dist/bootstrap-5.3.0-alpha1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../bootstrap-5.3.0-alpha1-dist/bootstrap-5.3.0-alpha1-dist/css/bootstrap.css">
+    <style>
+        @media only screen and (max-width: 700px) {
+            .card-group {
+                display: flex;
+            }
+            .card {
+                width: 49.999999%;
+                margin: 6px 0;
+            }
+        }
+        @media only screen and (max-width: 500px){
+            .card-group {
+                float: none;
+            }
+            .card {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
 <div class="container-fluid">
@@ -12,10 +31,52 @@
         <h4>Resize the browser window to see the effect.</h4>
     </header>
     <main>
-
+        <div class="card-group">
+            <div class="card" style="width: 18rem;">
+                <img src="http://demo.codegym.vn/web/15/gallery/img_fjords.jpg" class="card-img-top" alt="Hill">
+                <div class="card-body">
+                    <h5 class="card-title">Hill</h5>
+                    <p class="card-text">Description...</p>
+                    <a target="_blank" href="http://demo.codegym.vn/web/15/gallery/img_fjords.jpg"
+                       class="btn btn-primary">Open
+                        in new tab</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="http://demo.codegym.vn/web/15/gallery/img_forest.jpg" class="card-img-top" alt="Bridge">
+                <div class="card-body">
+                    <h5 class="card-title">Bridge</h5>
+                    <p class="card-text">Description...</p>
+                    <a target="_blank" href="http://demo.codegym.vn/web/15/gallery/img_forest.jpg"
+                       class="btn btn-primary">Open
+                        in new tab</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="http://demo.codegym.vn/web/15/gallery/img_lights.jpg" class="card-img-top" alt="Light">
+                <div class="card-body">
+                    <h5 class="card-title">Light</h5>
+                    <p class="card-text">Description...</p>
+                    <a target="_blank" href="http://demo.codegym.vn/web/15/gallery/img_lights.jpg"
+                       class="btn btn-primary">Open
+                        in new tab</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="http://demo.codegym.vn/web/15/gallery/img_mountains.jpg" class="card-img-top" alt="Lake">
+                <div class="card-body">
+                    <h5 class="card-title">Lake</h5>
+                    <p class="card-text">Description...</p>
+                    <a target="_blank" href="http://demo.codegym.vn/web/15/gallery/img_mountains.jpg"
+                       class="btn btn-primary">Open in new tab</a>
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
-        
+        <p>This example use media queries to re-arrange the images on different screen sizes: for screens larger than
+            700px wide, it will show four images side by side, for screens smaller than 700px, it will show two images
+            side by side. For screens smaller than 500px, the images will stack vertically (100%).</p>
     </footer>
 </div>
 </body>
