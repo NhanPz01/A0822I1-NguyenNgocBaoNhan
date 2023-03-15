@@ -14,10 +14,10 @@ public class CalculatorServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        double first = Double.parseDouble(request.getParameter("first_operand"));
-        double second = Double.parseDouble(request.getParameter("second_operand"));
+        double firstOperand = Double.parseDouble(request.getParameter("first_operand"));
+        double secondOperand = Double.parseDouble(request.getParameter("second_operand"));
         char operator = request.getParameter("operators").charAt(0);
-        String result = Calculator.calculate(first, second, operator);
+        double result = Calculator.calculate(firstOperand, secondOperand, operator);
         request.setAttribute("result", result);
         request.getRequestDispatcher("/calculate.jsp").forward(request, response);
     }

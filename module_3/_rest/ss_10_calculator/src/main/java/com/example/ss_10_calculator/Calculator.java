@@ -1,22 +1,21 @@
 package com.example.ss_10_calculator;
 
 public class Calculator {
-    public static String calculate(double first, double second, char operator) {
-        String result = null;
-        switch (operator) {
+    public static double calculate(double firstOperand, double secondOperand, char operator ){
+        switch (operator){
             case '+':
-                result = String.valueOf(first) + " + " + String.valueOf(second) + " = " + String.valueOf(first + second);
-                break;
+                return firstOperand + secondOperand;
             case '-':
-                result = String.valueOf(first) + " - " + String.valueOf(second) + " = " + String.valueOf(first - second);
-                break;
+                return firstOperand - secondOperand;
             case '*':
-                result = String.valueOf(first) + " * " + String.valueOf(second) + " = " + String.valueOf(first * second);
-                break;
+                return firstOperand * secondOperand;
             case '/':
-                result = String.valueOf(first) + " / " + String.valueOf(second) + " = " + String.valueOf(first / second);
-                break;
+                if(secondOperand != 0)
+                    return firstOperand / secondOperand;
+                else
+                    throw new RuntimeException("Can't divide by zero");
+            default:
+                throw new RuntimeException("Invalid operation");
         }
-        return result;
     }
 }

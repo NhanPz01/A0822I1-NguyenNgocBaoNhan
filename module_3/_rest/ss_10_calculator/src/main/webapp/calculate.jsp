@@ -6,6 +6,6 @@
 </head>
 <body>
 <h1>Result</h1>
-<p><%=request.getAttribute("result")%></p>
+<p><%=request.getAttribute("first_operand")%><%=request.getAttribute("operators")%><%=request.getAttribute("second_operand")%>=<%=request.getAttribute("result")%></p>
 </body>
 </html>

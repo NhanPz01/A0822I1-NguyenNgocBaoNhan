@@ -7,13 +7,13 @@
 <body>
 <fieldset>
     <legend>Simple Calculator</legend>
-    <form class="calculator" method="post" action="/calculator">
+    <form method="post" action="/calculator">
         <h4>Calculator</h4>
         <h4>First operand</h4>
         <input type="text" class="first_operand" placeholder="first">
         <h4>First operand</h4>
         <label>Operator:</label>
-        <select name="operators" class="operators">
+        <select name="operators">
             <option value="+">Addition</option>
             <option value="-">Subtraction</option>
             <option value="*">Multiple</option>
