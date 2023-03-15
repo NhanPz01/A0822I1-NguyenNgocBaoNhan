@@ -18,6 +18,9 @@ public class CalculatorServlet extends HttpServlet {
         double secondOperand = Double.parseDouble(request.getParameter("second_operand"));
         char operator = request.getParameter("operators").charAt(0);
         double result = Calculator.calculate(firstOperand, secondOperand, operator);
+        request.setAttribute("first_operand", firstOperand);
+        request.setAttribute("second_operand", secondOperand);
+        request.setAttribute("operators", operator);
         request.setAttribute("result", result);
         request.getRequestDispatcher("/calculate.jsp").forward(request, response);
     }

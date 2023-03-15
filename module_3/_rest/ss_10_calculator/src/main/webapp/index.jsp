@@ -10,7 +10,7 @@
     <form method="post" action="/calculator">
         <h4>Calculator</h4>
         <h4>First operand</h4>
-        <input type="text" class="first_operand" placeholder="first">
+        <input type="text" name="first_operand" placeholder="first">
         <h4>First operand</h4>
         <label>Operator:</label>
         <select name="operators">
@@ -21,7 +21,7 @@
         </select>
         <br>
         <h4>Second operand</h4>
-        <input type="text" class="second_operand" placeholder="second">
+        <input type="text" name="second_operand" placeholder="second">
         <input type="submit" value="Calculate">
     </form>
 
