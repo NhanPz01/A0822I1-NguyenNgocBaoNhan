@@ -1,13 +1,12 @@
-package com.example.ss_11_product_manager.repo;
+package com.example.ss_11_product_manager.service;
 
 import com.example.ss_11_product_manager.bean.Product;
-import com.example.ss_11_product_manager.servlet.ProductServlet;
 
 import java.util.List;
 
-public interface Service {
+public interface ProductService {
     List<Product> findAll();
-    Product find(int id);
+    Product findById(int id);
     void create(Product product);
     void delete(int id);
     void update(Product product);
