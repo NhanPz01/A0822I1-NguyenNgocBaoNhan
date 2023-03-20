@@ -20,7 +20,7 @@
 <p>
     <a href="/product"> Back List Product </a>
 </p>
-<form action="/product" method="post">
+<form method="post">
     <h3>Are you sure?</h3>
     <fieldset>
         <legend>Product information</legend>
