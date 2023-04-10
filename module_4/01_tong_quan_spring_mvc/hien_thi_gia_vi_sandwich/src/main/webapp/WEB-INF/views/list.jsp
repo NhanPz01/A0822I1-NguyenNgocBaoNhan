@@ -19,8 +19,12 @@
     <tr>
         <th>Choice</th>
     </tr>
-    <c:forEach var="choice" items="choices" >
-        ${choice}
+    <c:forEach var="choices" items="choice">
+        <tr>
+            <td>
+                <c:out value="${choice}"/>
+            </td>
+        </tr>
     </c:forEach>
 </table>
 </body>
