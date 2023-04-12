@@ -1,0 +1,15 @@
+p{
+    font-family: 'Plus Jakarta Sans';
+    font-weight: 500;
+    color: white;
+    font-size: 13px;
+}
+.profile-menu{
+    display: none;
+}
+.profile-menu.clicked{
+    display: flex;
+}
+.menu-item:hover{
+    background-color: rgb(196, 196, 196);
+}

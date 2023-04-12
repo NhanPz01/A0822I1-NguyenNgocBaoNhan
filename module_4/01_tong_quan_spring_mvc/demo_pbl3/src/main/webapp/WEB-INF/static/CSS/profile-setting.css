@@ -1,0 +1,14 @@
+.menu-item{
+    font-family: 'Plus Jakarta Sans';
+    font-size: 18px;
+    padding: 20px;
+    font-weight: 500;
+    display: flex;
+    gap: 6px;
+}
+.menu-item:hover{
+    background-color: rgb(217, 217, 217);
+}
+.menu-item.sub-item{
+    padding-left: 40px;
+}

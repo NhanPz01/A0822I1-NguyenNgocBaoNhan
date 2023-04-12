@@ -1,0 +1,81 @@
+body{
+    background-color: #EAEAEA;
+}
+p{
+    font-family: 'Plus Jakarta Sans';
+    font-weight: 500;
+    color: white;
+    font-size: 13px;
+}
+.main-decor{
+    width: calc(100% - 72px);
+}
+.main-decor-vector{
+    width: calc(100% - 100px);
+    height: 280px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 5px;
+}
+.news-decor-vector{
+    width: calc(100%);
+    height: 270px;
+}
+.col-text{
+    font-family: 'Plus Jakarta Sans';
+    font-weight: 700;
+    color: black;
+    font-size: 13px;
+    rotate: 270deg;
+}
+.news-header-text::before{
+    content: '';
+    background-image: url('../IMG/Line 12.png');
+    width: 40px;
+    height: 2px;
+    display: inline-block;
+    transform: translateY(-7px);
+    margin-right: 10px;
+}
+.news-header-text::after{
+    content: '';
+    background-image: url('../IMG/Line 12.png');
+    width: 40px;
+    height: 2px;
+    display: inline-block;
+    transform: translateY(-7px);
+    margin-left: 10px;
+}
+.representative{
+    background: url('../IMG/OIP.jpg');
+    background-size: cover;
+}
+
+.profile-btn{
+    aspect-ratio: 1;
+    box-sizing: border-box;
+}
+
+.profile-menu.clicked{
+    display: flex;
+    height: 350px;
+}
+
+.profile-menu{
+    height: 0;
+}
+
+.profile-menu.clicked .menu-item{
+    display: flex;
+}
+
+.profile-menu .menu-item{
+    display: none;
+}
+
+.menu-item:hover{
+    background-color: rgb(196, 196, 196);
+}

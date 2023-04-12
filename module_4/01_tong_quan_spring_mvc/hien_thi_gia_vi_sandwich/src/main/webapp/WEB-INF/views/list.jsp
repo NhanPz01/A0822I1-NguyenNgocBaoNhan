@@ -15,14 +15,14 @@
 <h2>
     Your Sandwich Condiments
 </h2>
-<table center border="1">
+<table border="1">
     <tr>
         <th>Choice</th>
     </tr>
-    <c:forEach var="choices" items="choice">
+    <c:forEach items="${condiment}" var="s">
         <tr>
             <td>
-                <c:out value="${choice}"/>
+                <c:out value="${s}"/>
             </td>
         </tr>
     </c:forEach>

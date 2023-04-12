@@ -11,26 +11,26 @@
     <title>Flavor choice</title>
 </head>
 <body>
-<form method="post">
+<form action="/save" method="get">
     <h2>
         Sandwich Condiments
     </h2>
     <table>
         <tr>
             <td>
-                <input type="checkbox" name="lettuce" id="lettuce" value="Lettuce">
+                <input type="checkbox" name="condiment" value="Lettuce"/>
                 <span>Lettuce</span>
             </td>
             <td>
-                <input type="checkbox" name="tomato" id="tomato" value="Tomato">
+                <input type="checkbox" name="condiment" value="Tomato">
                 <span>Tomato</span>
             </td>
             <td>
-                <input type="checkbox" name="mustard" id="mustard" value="Mustard">
+                <input type="checkbox" name="condiment" value="Mustard">
                 <span>Mustard</span>
             </td>
             <td>
-                <input type="checkbox" name="sprouts" id="sprouts" value="Sprouts">
+                <input type="checkbox" name="condiment" value="Sprouts">
                 <span>Sprouts</span>
             </td>
         </tr>
