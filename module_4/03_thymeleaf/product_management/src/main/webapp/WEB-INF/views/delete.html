@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Management</title>
+</head>
+<body>
+<form style="width: 100%" method="post" th:object="${product}">
+    <table>
+        <tr>
+            <th>
+                <label>ID:</label>
+            </th>
+            <td>
+                <p th:text="${product.id}" name="id"></p>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <label>Name:</label>
+            </th>
+            <td>
+                <p th:text="${product.name}" name="name"></p>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <label>Price:</label>
+            </th>
+            <td>
+                <p th:text="${product.price}" name="price"></p>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <label>Color:</label>
+            </th>
+            <td>
+                <p th:text="${product.color}" name="color"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Delete">
+            </td>
+            <td>
+                <a href="/product"><input type="button" value="Cancel"></a>
+            </td>
+        </tr>
+        <tr>
+            <p th:text="${msg}"></p>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

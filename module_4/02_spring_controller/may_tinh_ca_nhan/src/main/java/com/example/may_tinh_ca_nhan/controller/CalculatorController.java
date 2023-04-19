@@ -13,12 +13,11 @@ public class CalculatorController {
         return "calculator";
     }
     @PostMapping("")
-    public String calculate(@RequestParam("num1")String num1Str,
-                            @RequestParam("num2")String num2Str,
+    public String calculate(@RequestParam("num1")double num1,
+                            @RequestParam("num2")double num2,
                             @RequestParam("way")String way,
                             RedirectAttributes redirect) {
-        double num1 = Double.parseDouble(num1Str);
-        double num2 = Double.parseDouble(num2Str);
+
         double result = 0;
         switch (way) {
             case "Addition (+)":
