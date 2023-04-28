@@ -11,25 +11,25 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 <!--    Config component scan được dùng để tạo bean-->
-    <context:component-scan base-package="com.example.product_management"/>
+    <context:component-scan base-package="com.example.hom_thu_dien_tu"/>
     <mvc:annotation-driven/>
 
 <!--    Config nơi chứa view-->
-<!--    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
-<!--    <property name="prefix" value="/WEB-INF/views/"/>-->
-<!--    <property name="suffix" value=".jsp"/>-->
-<!--</bean>-->
-
-    <bean id="viewResolver" class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/"/>
-        <property name="suffix" value=".html"/>
+        <property name="suffix" value=".jsp"/>
     </bean>
 
-    <bean id="engine" class="org.thymeleaf.spring5.SpringTemplateEngine">
-        <property name="templateResolver" ref="viewResolver"/>
-    </bean>
+<!--    <bean id="viewResolver" class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">-->
+<!--        <property name="prefix" value="/WEB-INF/views/"/>-->
+<!--        <property name="suffix" value=".html"/>-->
+<!--    </bean>-->
 
-    <bean class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
-        <property name="templateEngine" ref="engine"/>
-    </bean>
+<!--    <bean id="engine" class="org.thymeleaf.spring5.SpringTemplateEngine">-->
+<!--        <property name="templateResolver" ref="viewResolver"/>-->
+<!--    </bean>-->
+
+<!--    <bean class="org.thymeleaf.spring5.view.ThymeleafViewResolver">-->
+<!--        <property name="templateEngine" ref="engine"/>-->
+<!--    </bean>-->
 </beans>
