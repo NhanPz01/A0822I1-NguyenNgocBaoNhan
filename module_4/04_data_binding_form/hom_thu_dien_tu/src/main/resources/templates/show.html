@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Setting</title>
+</head>
+<body>
+<form>
+  <table th:object="setting">
+    <tr>
+      <td>
+        <h2>Settings</h2>
+      </td>
+    </tr>
+    <tr>
+      <th>Language:</th>
+      <td>
+        <select th:each="language : ${laguages}">
+
+        </select>
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

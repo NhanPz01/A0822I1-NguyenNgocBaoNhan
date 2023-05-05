@@ -1,11 +1,20 @@
 package com.example.hom_thu_dien_tu.model;
 
+import javax.persistence.*;
 
+@Entity
 public class Setting {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", columnDefinition = "integer")
     private int id;
+    @Column(name = "language", columnDefinition = "VARCHAR(100)")
     private String language;
+    @Column(name = "page_size", columnDefinition = "integer")
     private int pageSize;
+    @Column(name = "spams_filter", columnDefinition = "boolean")
     private boolean spamsFilter;
+    @Column(name = "signature", columnDefinition = "VARCHAR(100)")
     private String signature;
 
     public Setting() {
@@ -43,7 +52,7 @@ public class Setting {
         this.pageSize = pageSize;
     }
 
-    public boolean getSpamsFilter() {
+    public boolean isSpamsFilter() {
         return spamsFilter;
     }
 

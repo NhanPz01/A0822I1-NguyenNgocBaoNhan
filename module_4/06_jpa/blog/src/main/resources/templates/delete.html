@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
+<form method="post" th:object="${blog}">
+    <h3>Are you sure ???</h3>
+    <a th:href="@{/{id}/detail(id = ${blog.id})}">
+        <input type="button" value="(-) Cancel">
+    </a>
+    <input type="submit" value="(X) Delete">
+    <table border="1" align="center" width="50%">
+        <tr>
+            <th th:text="${blog.title}"></th>
+        </tr>
+        <tr>
+            <td th:text="${blog.author}"></td>
+        </tr>
+        <tr>
+            <td th:text="${blog.content}"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

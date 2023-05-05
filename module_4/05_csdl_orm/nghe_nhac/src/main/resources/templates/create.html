@@ -1,10 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Music App</title>
 </head>
 <body>
-
+<form action="/create" method="post">
+    <table border="1" width="50%" align="center">
+        <tr>
+            <th>Name:</th>
+            <td>
+                <input type="text" name="name" size="99"/>
+            </td>
+        </tr>
+        <tr>
+            <th>Author:</th>
+            <td>
+                <input type="text" name="author" size="99"/>
+            </td>
+        </tr>
+        <tr>
+            <th>Type:</th>
+            <td>
+                <input type="text" name="type" size="99" />
+            </td>
+        </tr>
+        <tr>
+            <th>Link:</th>
+            <td>
+                <input type="text" name="link" size="99"/>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" colspan="2">
+                <input type="submit" value="Add"/>
+                <a href="/">
+                    <button>Cancel</button>
+                </a>
+            </td>
+        </tr>
+    </table>
+</form>
 </body>
 </html>

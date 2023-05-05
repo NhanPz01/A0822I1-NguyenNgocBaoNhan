@@ -14,6 +14,7 @@ import javax.jws.WebParam;
 public class MusicController {
     @Autowired
     private MusicService service;
+
     @GetMapping("/")
     public String showList(Model model) {
         model.addAttribute("musicList", service.findAll());
@@ -25,6 +26,7 @@ public class MusicController {
         model.addAttribute("music", service.findById(id));
         return "detail";
     }
+
     @GetMapping("/{id}/delete")
     public String showDelete(@PathVariable int id, Model model) {
         model.addAttribute("music", service.findById(id));
@@ -36,22 +38,31 @@ public class MusicController {
         return "create";
     }
 
+
     @PostMapping("/create")
-    public String create(@RequestBody Music music, Model model) {
-        service.add(music);
-        model.addAttribute("message", "Add Success !!!");
-        return "list";
+    public String create(@RequestParam String name,
+                         @RequestParam String author,
+                         @RequestParam String type,
+                         @RequestParam String link, RedirectAttributes redirect) {
+        service.add(new Music(name, author, type, link));
+        redirect.addFlashAttribute("musicList", service.findAll());
+        redirect.addFlashAttribute("message", "Add Success !!!");
+        return "redirect:/";
     }
 
     @PostMapping("/{id}/detail")
-    public String update(@PathVariable int id, @RequestBody Music music, RedirectAttributes redirect) {
+    public String update(@PathVariable int id, @ModelAttribute Music music, RedirectAttributes redirect) {
         service.update(id, music);
+        redirect.addFlashAttribute("musicList", service.findAll());
         redirect.addFlashAttribute("message", "Updated !!!");
-        return "redirect:/id/detail";
+        return "redirect:/";
     }
 
-//    @PostMapping("/{id}")
-//    public String delete() {
-//
-//    }
+    @PostMapping("/{id}/delete")
+    public String delete(@PathVariable int id, RedirectAttributes redirect) {
+        service.delete(id);
+        redirect.addFlashAttribute("musicList", service.findAll());
+        redirect.addFlashAttribute("message", "Delete Success !!!");
+        return "redirect:/";
+    }
 }

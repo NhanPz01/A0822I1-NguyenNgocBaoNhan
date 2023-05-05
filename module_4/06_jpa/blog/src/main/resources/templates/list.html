@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
+<a href="/create">
+    <input type="button" value="(+) Add">
+</a>
+<p th:text="${message}"></p>
+<table border="1" align="center" width="50%" th:object="${blogList}">
+    <tr th:each="blog : ${blogList}">
+        <th th:text="${blog.title}"></th>
+        <td th:text="'Author: ' + ${blog.author}"></td>
+        <td colspan="2" align="center">
+            <a th:href="@{/{id}/detail(id = ${blog.id})}">
+                <input type="button" value="Detail">
+            </a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

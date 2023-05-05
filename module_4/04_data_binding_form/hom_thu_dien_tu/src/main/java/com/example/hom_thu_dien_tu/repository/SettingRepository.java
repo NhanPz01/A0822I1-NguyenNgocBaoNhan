@@ -1,10 +1,10 @@
 package com.example.hom_thu_dien_tu.repository;
 
 import com.example.hom_thu_dien_tu.model.Setting;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
+import javax.transaction.Transactional;
 
-public interface SettingRepository {
-    List<Setting> findAll();
-    void update(Setting setting);
+@Transactional
+public interface SettingRepository extends JpaRepository<Setting, Integer> {
 }

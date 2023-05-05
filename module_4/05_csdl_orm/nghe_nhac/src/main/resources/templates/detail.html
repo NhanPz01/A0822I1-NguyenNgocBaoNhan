@@ -5,7 +5,7 @@
     <title>Music App</title>
 </head>
 <body>
-<form action="/{id}/detail" method="post" th:object="${music}">
+<form method="post" th:object="${music}">
     <table border="1" width="50%" align="center">
         <tr>
             <th>ID:</th>
@@ -14,26 +14,32 @@
         <tr>
             <th>Name:</th>
             <td>
-                <input th:value="${music.name}" size="99"/>
+                <input th:field="*{name}" size="99" />
             </td>
         </tr>
         <tr>
             <th>Author:</th>
             <td>
-                <input th:value="${music.author}" size="99"/>
+                <input th:field="*{author}" size="99" />
+            </td>
+        </tr>
+        <tr>
+            <th>Type:</th>
+            <td>
+                <input th:field="*{type}" size="99" />
             </td>
         </tr>
         <tr>
             <th>Link:</th>
             <td>
-                <input th:value="${music.link}" size="99"/>
+                <input th:field="*{link}" size="99" />
             </td>
         </tr>
         <tr>
             <td align="center" colspan="2">
-                <input type="submit" value="Save"/>
-                <a href="/">
-                    <button>Cancel</button>
+                <input type="submit" value="Save" />
+                <a href="http://localhost:8080/">
+                    <input type="button" value="Cancel" />
                 </a>
             </td>
         </tr>

@@ -20,6 +20,13 @@ public class Music {
     public Music() {
     }
 
+    public Music(String name, String author, String type, String link) {
+        this.name = name;
+        this.author = author;
+        this.type = type;
+        this.link = link;
+    }
+
     public Music(int id, String name, String author, String type, String link) {
         this.id = id;
         this.name = name;

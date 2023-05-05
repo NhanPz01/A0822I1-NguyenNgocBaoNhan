@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
+<form method="post" th:object="${blog}">
+    <table border="1" align="center" width="50%">
+        <tr>
+            <th>
+                <input th:field="*{title}" style="width: 50vmax"/>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <input th:field="*{author}" style="width: 50vmax"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <textarea id="content" th:field="*{content}" style="width: 50vmax; border-radius: 5px; resize: none"></textarea>
+            </td>
+        </tr>
+        <tr align="center">
+            <td>
+                <input type="submit" value="Save">
+                <a th:href="@{/{id}/detail(id = ${blog.id})}">
+                    <input type="button" value="Cancel">
+                </a>
+            </td>
+        </tr>
+    </table>
+</form>
+<script type="text/javascript">
+    textarea = document.querySelector("#content");
+    textarea.addEventListener('input', autoResize, false);
+
+    function autoResize() {
+        this.style.height = 'auto';
+        this.style.height = this.scrollHeight + 'px';
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
+<a href="/">
+    <input type="button" value="(-) Cancel">
+</a>
+<a th:href="@{/{id}/update(id = ${blog.id})}">
+    <input type="button" value="(/) Edit">
+</a>
+<a th:href="@{/{id}/delete(id = ${blog.id})}">
+    <input type="button" value="(X) Delete">
+</a>
+<p th:text="${message}"></p>
+<table border="1" align="center" width="50%" th:object="${blog}">
+    <tr>
+        <th th:text="${blog.title}"></th>
+    </tr>
+    <tr>
+        <td th:text="${blog.author}"></td>
+    </tr>
+    <tr>
+        <td th:text="${blog.content}"></td>
+    </tr>
+</table>
+</body>
+</html>
