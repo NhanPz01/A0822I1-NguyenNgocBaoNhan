@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Updated Blog</title>
+</head>
+<body>
+<form method="post">
+    <h3>You can not undo this action !!!</h3>
+    <a th:href="@{/{id}/detail(id = ${blog.id})}">
+        <input type="button" value="(-) Cancel">
+    </a>
+    <input type="submit" value="(X) Delete">
+    <table align="center" border="1" style="border-radius: 5px; width: 50%" th:object="${blog}">
+        <tr>
+            <th>Title</th>
+            <td th:text="${blog.title}" style="width: 50vmax"></td>
+        </tr>
+        <tr>
+            <th>Author</th>
+            <td th:text="${blog.author}" style="width: 50vmax; border-radius: 5px"></td>
+        </tr>
+        <tr>
+            <th>Category</th>
+            <td th:text="${blog.category.categoryName}" style="width: 50vmax; border-radius: 5px"></td>
+        </tr>
+        <tr>
+            <th>Content</th>
+            <td th:text="${blog.content}" style="width: 50vmax; border-radius: 5px"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

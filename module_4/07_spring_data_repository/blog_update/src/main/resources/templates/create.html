@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Updated Blog</title>
+</head>
+<body>
+<form method="post" th:object="${blog}">
+    <table align="center" border="1" style="border-radius: 5px; width: 50%">
+        <tr>
+            <th>Title</th>
+            <td>
+                <input th:field="*{title}" placeholder="Title..." style="width: 50vmax">
+            </td>
+        </tr>
+        <tr>
+            <th>Author</th>
+            <td>
+                <input th:field="*{author}" placeholder="Author..." style="width: 50vmax">
+            </td>
+        </tr>
+        <tr>
+            <th>Category</th>
+            <td>
+                <select th:field="*{category}" style="width: 50vmax">
+                    <option th:each="category : ${categoryList}" th:text="${category.categoryName}"
+                            th:value="${category.id}"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Content</th>
+            <td>
+                <textarea th:field="*{content}" placeholder="Content..."
+                          style="width: 50vmax; border-radius: 5px; resize: none"></textarea>
+            </td>
+        </tr>
+        <tr align="center">
+            <td colspan="2">
+                <input type="submit" value="(+) Save">
+                <a  href="/">
+                    <input type="button" value="(-) Cancel">
+                </a>
+            </td>
+        </tr>
+    </table>
+</form>
+<script type="text/javascript">
+    textarea = document.querySelector("#content");
+    textarea.addEventListener('input', autoResize, false);
+
+    function autoResize() {
+        this.style.height = 'auto';
+        this.style.height = this.scrollHeight + 'px';
+    }
+</script>
+</body>
+</html>
