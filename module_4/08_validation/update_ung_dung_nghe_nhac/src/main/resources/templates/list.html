@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music App</title>
+</head>
+<body>
+<span>
+    <a href="/create">
+        <button>(+) Add</button>
+    </a>
+</span>
+<p th:text="${message}"></p>
+
+<table border="1" width="100%" align="center">
+    <tr>
+        <th>No</th>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Type</th>
+        <th>Link</th>
+        <th>Detail</th>
+        <th>Delete</th>
+    </tr>
+    <tr th:each="music, loop : ${musicList}">
+        <td th:text="${loop.count}" align="center"></td>
+        <td th:text="${music.name}"></td>
+        <td th:text="${music.author}"></td>
+        <td th:text="${music.type}"></td>
+        <td align="center">
+            <a target="_blank" th:href="@{${music.link}}">
+                <button>Youtube Link</button>
+            </a>
+        </td>
+        <td align="center">
+            <a th:href="@{/{id}/detail(id = ${music.id})}">
+                <button>Detail</button>
+            </a>
+        </td>
+        <td align="center">
+            <a th:href="@{/{id}/delete(id = ${music.id})}">
+                <button>Delete</button>
+            </a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
