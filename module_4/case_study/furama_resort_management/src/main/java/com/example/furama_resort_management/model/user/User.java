@@ -1,8 +1,5 @@
 package com.example.furama_resort_management.model.user;
 
-import jdk.nashorn.internal.ir.annotations.Reference;
-import net.bytebuddy.agent.builder.AgentBuilder;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;

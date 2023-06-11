@@ -4,6 +4,8 @@ import com.example.furama_resort_management.dto.CreateVillaDTO;
 import com.example.furama_resort_management.model.facility.Facility;
 import com.example.furama_resort_management.model.facility.FacilityType;
 import com.example.furama_resort_management.service.FacilityService;
+import com.example.furama_resort_management.service.FacilityTypeService;
+import com.example.furama_resort_management.service.RentTypeService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,18 +15,29 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.util.List;
-
 @Controller
 @RequestMapping("/service")
 public class ServiceController {
     @Autowired
-    private FacilityService facility;
+    private FacilityService facilityService;
+    @Autowired
+    private FacilityTypeService facilityType;
+    @Autowired
+    private RentTypeService rentTypeService;
+
     @GetMapping("/detail/{id}")
-    public String showDetail(@PathVariable("id") Integer id, RedirectAttributes redirect, Model model) {
-        model.addAttribute("villa", facility.findById(id));
+    public String showDetail(@PathVariable("id") Integer id, Model model) {
+        model.addAttribute("villa", facilityService.findById(id));
 
         return "service/detail";
+    }
+
+    @GetMapping("/detail/edit/{id}")
+    public String showEdit(@PathVariable("id") Integer id, Model model) {
+        model.addAttribute("villa", facilityService.findById(id));
+        model.addAttribute("facilityTypeList", facilityType.findAll());
+        model.addAttribute("rentTypeList", rentTypeService.findAll());
+        return "service/edit";
     }
 
     @PostMapping("/")
@@ -38,7 +51,7 @@ public class ServiceController {
         Facility villa = new Facility();
         villa.setFacilityType(new FacilityType(1, "Villa"));
         BeanUtils.copyProperties(villaDTO, villa);
-        facility.add(villa);
+        facilityService.add(villa);
         return "redirect:/service";
     }
 //    @PostMapping("/detail/{id}/edit")

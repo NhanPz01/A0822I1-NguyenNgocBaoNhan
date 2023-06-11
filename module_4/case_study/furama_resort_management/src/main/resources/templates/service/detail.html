@@ -24,10 +24,12 @@
                     </button>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-outline-secondary"
-                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 100px; --bs-btn-font-size: .90rem;">
-                        Edit
-                    </button>
+                    <a th:href="@{/service/detail/edit/{id}(id = ${villa.id})}">
+                        <button type="button" class="btn btn-outline-secondary"
+                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 100px; --bs-btn-font-size: .90rem;">
+                            Edit
+                        </button>
+                    </a>
                 </li>
                 <li>
                     <button type="button" class="btn btn-outline-secondary"
@@ -38,13 +40,12 @@
             </ul>
         </div>
         <div class="p-2 flex-fill" style="text-align: center">
-            <div class="card">
+            <div class="card" style="height: inherit">
                 <div class="card-body">
-                    <h5 class="card-title">Facility Detail</h5>
                     <div class="card-text">
                         <table class="table table-borderless" th:object="${villa}">
                             <tr>
-                                <th scope="col" style="text-align: right">Name:</th>
+                                <th scope="col" style="text-align: right; width: 20%">Name:</th>
                                 <td th:text="${villa.name}"></td>
                             </tr>
                             <tr>
