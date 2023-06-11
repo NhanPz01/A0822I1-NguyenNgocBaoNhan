@@ -33,7 +33,7 @@ public class Employee {
     @ManyToOne
     @JoinColumn(name = "division_id")
     private Division division;
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "username")
     private User user;
 

@@ -4,6 +4,7 @@ import com.example.furama_resort_management.model.customer.Customer;
 import com.example.furama_resort_management.repository.customer.CustomerRepository;
 import com.example.furama_resort_management.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,9 +13,10 @@ import java.util.List;
 public class CustomerServiceImpl implements CustomerService {
     @Autowired
     private CustomerRepository repository;
+
     @Override
-    public List<Customer> findAll() {
-        return repository.findAll();
+    public Page<Customer> findAll(int page, int pageSize) {
+        return null;
     }
 
     @Override

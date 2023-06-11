@@ -1,6 +1,11 @@
 package com.example.furama_resort_management.model.user;
 
+import jdk.nashorn.internal.ir.annotations.Reference;
+import net.bytebuddy.agent.builder.AgentBuilder;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "user")
@@ -9,27 +14,12 @@ public class User {
     private String username;
     private String password;
 
-    public User() {
-    }
+    @ManyToMany
+    @JoinTable(
+        name = "user_role",
+        joinColumns = @JoinColumn(name = "username"),
+        inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private List<Role> roles = new ArrayList<>();
 
-    public User(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }
