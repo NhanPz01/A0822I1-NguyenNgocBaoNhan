@@ -3,6 +3,7 @@ package com.example.furama_resort_management.model.employee;
 import com.example.furama_resort_management.model.user.User;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 import java.sql.Date;
 
 @Entity
@@ -20,6 +21,7 @@ public class Employee {
     private Double salary;
     @Column(name = "phone_number", columnDefinition = "VARCHAR(45)")
     private String phoneNumber;
+    @Pattern(regexp = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$")
     @Column(name = "email", columnDefinition = "VARCHAR(45)")
     private String email;
     @Column(name = "address", columnDefinition = "VARCHAR(45)")

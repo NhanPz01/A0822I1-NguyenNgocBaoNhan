@@ -18,13 +18,15 @@
         <div id="items" class="p-2">
             <ul>
                 <li>
-                    <button type="button" class="btn btn-outline-secondary"
-                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 98px; --bs-btn-font-size: .90rem;">
-                        Back
-                    </button>
+                    <a href="/service">
+                        <button type="button" class="btn btn-outline-secondary"
+                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 98px; --bs-btn-font-size: .90rem;">
+                            Back
+                        </button>
+                    </a>
                 </li>
                 <li>
-                    <a th:href="@{/service/detail/edit/{id}(id = ${villa.id})}">
+                    <a th:href="@{/service/detail/edit/{id}(id = ${facility.id})}">
                         <button type="button" class="btn btn-outline-secondary"
                                 style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 100px; --bs-btn-font-size: .90rem;">
                             Edit
@@ -32,7 +34,9 @@
                     </a>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-outline-secondary"
+                    <!-- Button trigger delete modal -->
+                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
+                            data-bs-target="#deleteModal"
                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 92px; --bs-btn-font-size: .90rem;">
                         Delete
                     </button>
@@ -43,54 +47,76 @@
             <div class="card" style="height: inherit">
                 <div class="card-body">
                     <div class="card-text">
-                        <table class="table table-borderless" th:object="${villa}">
+                        <table class="table table-borderless" th:object="${facility}">
                             <tr>
                                 <th scope="col" style="text-align: right; width: 20%">Name:</th>
-                                <td th:text="${villa.name}"></td>
+                                <td th:text="${facility.name}"></td>
                             </tr>
                             <tr>
                                 <th scope="col" style="text-align: right">Area:</th>
-                                <td th:text="${villa.area}"></td>
+                                <td th:text="${facility.area}"></td>
                             </tr>
                             <tr>
                                 <th scope="col" style="text-align: right">Cost:</th>
-                                <td th:text="${#numbers.formatDecimal(villa.cost, 0, 'COMMA', 2, 'POINT')}"></td>
+                                <td th:text="${#numbers.formatDecimal(facility.cost, 0, 'COMMA', 2, 'POINT')}"></td>
                             </tr>
                             <tr>
                                 <th scope="col" style="text-align: right">Max people:</th>
-                                <td th:text="${villa.maxPeople}"></td>
+                                <td th:text="${facility.maxPeople}"></td>
                             </tr>
                             <tr>
                                 <th scope="col" style="text-align: right">Rent type:</th>
-                                <td th:text="${villa.rentType.name}"></td>
+                                <td th:text="${facility.rentType.name}"></td>
                             </tr>
                             <tr>
                                 <th scope="col" style="text-align: right">Facility Type:</th>
-                                <td th:text="${villa.facilityType.name}"></td>
+                                <td th:text="${facility.facilityType.name}"></td>
                             </tr>
                             <tr>
                                 <th scope="col" style="text-align: right">Standard Room:</th>
-                                <td th:text="${villa.standardRoom}"></td>
+                                <td th:text="${facility.standardRoom}"></td>
                             </tr>
                             <tr>
                                 <th scope="col" style="text-align: right">Description other convenience:</th>
-                                <td th:text="${villa.descriptionOtherConvenience} == null ? 'Không có' : ${villa.descriptionOtherConvenience}"></td>
+                                <td th:text="${facility.descriptionOtherConvenience} == null ? 'Không có' : ${facility.descriptionOtherConvenience}"></td>
                             </tr>
                             <tr>
                                 <th scope="col" style="text-align: right">Pool area:</th>
-                                <td th:text="${villa.poolArea} == null ? 'Không có' : ${villa.poolArea}"></td>
+                                <td th:text="${facility.poolArea} == null ? 'Không có' : ${facility.poolArea}"></td>
                             </tr>
                             <tr>
                                 <th scope="col" style="text-align: right">Number of floors:</th>
-                                <td th:text="${villa.numberOfFloors} == null ? '1' : ${villa.numberOfFloors}"></td>
+                                <td th:text="${facility.numberOfFloors} == null ? '1' : ${facility.numberOfFloors}"></td>
                             </tr>
                             <tr>
                                 <th scope="col" style="text-align: right">Free facility:</th>
-                                <td th:text="${villa.facilityFree} == null ? 'Không có' : ${villa.facilityFree}"></td>
+                                <td th:text="${facility.facilityFree == null || facility.facilityFree.equals('')} ? 'Không có' : ${facility.facilityFree}"></td>
                             </tr>
                         </table>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form method="post" th:action="@{/service/detail/{id}(id = ${facility.id})}">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Delete facility</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure?
+                        Select "Delete" to delete, can not undo !
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Delete</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
