@@ -54,17 +54,19 @@
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <p th:if="${alert != null || alert != ''}" th:text="${alert}" style="color: red; font-weight: bold"></p>
+                </li>
             </ul>
         </div>
         <div class="p-2 flex-fill" style="text-align: center">
-            <p th:if="${alert != null}" th:text="${alert}"></p>
             <table class="table">
                 <thead>
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Detail</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Are</th>
+                    <th scope="col">Area</th>
                     <th scope="col">Cost</th>
                     <th scope="col">Max people</th>
                     <th scope="col">Standard Room</th>

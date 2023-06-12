@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
-@RequestMapping("/service")
 public class ServiceController {
     @Autowired
     private FacilityService facilityService;
@@ -25,14 +24,14 @@ public class ServiceController {
     @Autowired
     private RentTypeService rentTypeService;
 
-    @GetMapping("/detail/{id}")
+    @GetMapping("/service/detail/{id}")
     public String showDetail(@PathVariable("id") Integer id, Model model) {
         model.addAttribute("villa", facilityService.findById(id));
 
         return "service/detail";
     }
 
-    @GetMapping("/detail/edit/{id}")
+    @GetMapping("/service/detail/edit/{id}")
     public String showEdit(@PathVariable("id") Integer id, Model model) {
         model.addAttribute("villa", facilityService.findById(id));
         model.addAttribute("facilityTypeList", facilityType.findAll());
@@ -40,23 +39,24 @@ public class ServiceController {
         return "service/edit";
     }
 
-    @PostMapping("/")
+    @PostMapping("/service")
     public String addVilla(@Validated @ModelAttribute("villa") CreateVillaDTO villaDTO, BindingResult bindingResult, RedirectAttributes redirect, Model model, @RequestParam(defaultValue = "0") int page) {
-        if (villaDTO.getName().equals("")) {
-            model.addAttribute("alert", "Content could not be blank");
+        if (bindingResult.hasErrors()) {
+            redirect.addFlashAttribute("alert", "Name could not empty");
             return "redirect:/service";
         }
         int pageSize = 5;
         System.out.println(villaDTO.getName());
         Facility villa = new Facility();
-        villa.setFacilityType(new FacilityType(1, "Villa"));
         BeanUtils.copyProperties(villaDTO, villa);
+        villa.setFacilityType(new FacilityType(1, "Villa"));
         facilityService.add(villa);
         return "redirect:/service";
     }
-//    @PostMapping("/detail/{id}/edit")
+//    @PostMapping("/service/detail/{id}/edit")
 //    public String updateVilla(@ModelAttribute("villa")) {
 //
 //        return "redirect:/service/detail";
 //    }
+
 }

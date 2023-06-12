@@ -18,10 +18,12 @@
         <div id="items" class="p-2">
             <ul>
                 <li>
-                    <button type="button" class="btn btn-outline-secondary"
-                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 98px; --bs-btn-font-size: .90rem;">
-                        Back
-                    </button>
+                    <a th:href="@{/service/detail/{id}(id = ${villa.id})}">
+                        <button type="button" class="btn btn-outline-secondary"
+                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 98px; --bs-btn-font-size: .90rem;">
+                            Back
+                        </button>
+                    </a>
                 </li>
                 <li>
                     <a th:href="@{/service/detail/edit/{id}(id = ${villa.id})}">
@@ -95,7 +97,8 @@
                                     <td>
                                         <select id="facility-type" class="form-select" th:field="*{facilityType}">
                                             <option th:each="facilityType : ${facilityTypeList}"
-                                                    th:value="${facilityType.id}" th:text="${facilityType.name}"></option>
+                                                    th:value="${facilityType.id}"
+                                                    th:text="${facilityType.name}"></option>
                                         </select>
                                     </td>
                                 </tr>
@@ -108,20 +111,41 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="col" style="text-align: right">Description other convenience:</th>
-                                    <td th:text="${villa.descriptionOtherConvenience} == null ? 'Không có' : ${villa.descriptionOtherConvenience}"></td>
+                                    <th scope="col" style="text-align: right">
+                                        <label for="description-other-convenience" class="form-label">Description other
+                                            convenience:</label>
+                                    </th>
+                                    <td>
+                                        <input id="description-other-convenience" class="form-control"
+                                               th:field="*{descriptionOtherConvenience}">
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <th scope="col" style="text-align: right">Pool area:</th>
-                                    <td th:text="${villa.poolArea} == null ? 'Không có' : ${villa.poolArea}"></td>
+                                    <th scope="col" style="text-align: right">
+                                        <label for="pool-area" class="form-label">Pool area:</label>
+                                    </th>
+                                    <td>
+                                        <input id="pool-area" class="form-control"
+                                               th:field="*{poolArea}">
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <th scope="col" style="text-align: right">Number of floors:</th>
-                                    <td th:text="${villa.numberOfFloors} == null ? '1' : ${villa.numberOfFloors}"></td>
+                                    <th scope="col" style="text-align: right">
+                                        <label for="number-of-floors" class="form-label">Number of floors:</label>
+                                    </th>
+                                    <td>
+                                        <input id="number-of-floors" class="form-control"
+                                               th:field="*{numberOfFloors}">
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <th scope="col" style="text-align: right">Free facility:</th>
-                                    <td th:text="${villa.facilityFree} == null ? 'Không có' : ${villa.facilityFree}"></td>
+                                    <th scope="col" style="text-align: right">
+                                        <label for="facility-free" class="form-label">Free facility:</label>
+                                    </th>
+                                    <td>
+                                        <input id="facility-free" class="form-control"
+                                               th:field="*{facilityFree}">
+                                    </td>
                                 </tr>
                             </table>
                         </div>

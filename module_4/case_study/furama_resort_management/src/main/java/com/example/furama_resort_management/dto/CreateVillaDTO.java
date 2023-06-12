@@ -1,12 +1,10 @@
 package com.example.furama_resort_management.dto;
 
 import com.example.furama_resort_management.model.facility.RentType;
-import com.sun.xml.bind.api.impl.NameConverter;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PositiveOrZero;
 
@@ -14,37 +12,38 @@ import javax.validation.constraints.PositiveOrZero;
 public class CreateVillaDTO implements Validator {
     @NotBlank(message = "You should fill it")
     private String name;
-    @NotBlank(message = "You should fill it")
-    private String area;
+    @NotNull(message = "You should fill it")
+    private Integer area;
     @NotNull(message = "You should fill it")
     @PositiveOrZero(message = "Cost couldn't positive")
     private Double cost;
     @NotNull(message = "You should fill it")
     @PositiveOrZero(message = "Number of people couldn't negative")
-    private Integer maxNumberOfPeople;
+    private Integer maxPeople;
     private RentType rentType;
     private String standardRoom;
     private String descriptionOtherConvenience;
     @NotNull(message = "You should fill it")
     @PositiveOrZero(message = "Area couldn't positive")
     private Double poolArea;
-    @NotNull(message = "You should fill it")
     @PositiveOrZero(message = "Number of floors couldn't negative")
     private Integer numberOfFloors;
+    private String facilityFree;
 
     public CreateVillaDTO() {
     }
 
-    public CreateVillaDTO(String name, String area, Double cost, Integer maxNumberOfPeople, RentType rentType, String standardRoom, String descriptionOtherConvenience, Double poolArea, Integer numberOfFloors) {
+    public CreateVillaDTO(String name, Integer area, Double cost, Integer maxNumberOfPeople, RentType rentType, String standardRoom, String descriptionOtherConvenience, Double poolArea, Integer numberOfFloors, String facilityFree) {
         this.name = name;
         this.area = area;
         this.cost = cost;
-        this.maxNumberOfPeople = maxNumberOfPeople;
+        this.maxPeople = maxNumberOfPeople;
         this.rentType = rentType;
         this.standardRoom = standardRoom;
         this.descriptionOtherConvenience = descriptionOtherConvenience;
         this.poolArea = poolArea;
         this.numberOfFloors = numberOfFloors;
+        this.facilityFree = facilityFree;
     }
 
     public String getName() {
@@ -55,11 +54,11 @@ public class CreateVillaDTO implements Validator {
         this.name = name;
     }
 
-    public String getArea() {
+    public Integer getArea() {
         return area;
     }
 
-    public void setArea(String area) {
+    public void setArea(Integer area) {
         this.area = area;
     }
 
@@ -71,12 +70,12 @@ public class CreateVillaDTO implements Validator {
         this.cost = cost;
     }
 
-    public Integer getMaxNumberOfPeople() {
-        return maxNumberOfPeople;
+    public Integer getMaxPeople() {
+        return maxPeople;
     }
 
-    public void setMaxNumberOfPeople(Integer maxNumberOfPeople) {
-        this.maxNumberOfPeople = maxNumberOfPeople;
+    public void setMaxPeople(Integer maxPeople) {
+        this.maxPeople = maxPeople;
     }
 
     public RentType getRentType() {
@@ -117,6 +116,14 @@ public class CreateVillaDTO implements Validator {
 
     public void setNumberOfFloors(Integer numberOfFloors) {
         this.numberOfFloors = numberOfFloors;
+    }
+
+    public String getFacilityFree() {
+        return facilityFree;
+    }
+
+    public void setFacilityFree(String facilityFree) {
+        this.facilityFree = facilityFree;
     }
 
     @Override

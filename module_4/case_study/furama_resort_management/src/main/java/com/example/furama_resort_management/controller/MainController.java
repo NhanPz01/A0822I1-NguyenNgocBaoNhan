@@ -1,5 +1,6 @@
 package com.example.furama_resort_management.controller;
 
+import com.example.furama_resort_management.dto.CreateVillaDTO;
 import com.example.furama_resort_management.model.facility.Facility;
 import com.example.furama_resort_management.model.facility.FacilityType;
 import com.example.furama_resort_management.model.facility.RentType;
@@ -27,8 +28,7 @@ public class MainController {
     @GetMapping("/service")
     public String showService(Model model, @RequestParam(defaultValue = "0") int page) {
         int pageSize = 5;
-        Facility villa = new Facility();
-        villa.setFacilityType(new FacilityType(1, "Villa"));
+        CreateVillaDTO villa = new CreateVillaDTO();
         Facility house = new Facility();
         house.setFacilityType(new FacilityType(2, "House"));
         Facility room = new Facility();
