@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Q&A</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+</head>
+<body>
+<header th:fragment="header">
+    <div class="float-start">
+        <img src="/img/logo.jpg" class="rounded" alt="Profile Image">
+    </div>
+    <div class="float-end">
+        <h4>Danh sách câu hỏi</h4>
+    </div>
+</header>
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow bg-body-tertiary rounded">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/create">(+) Tạo câu hỏi</a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Tiêu đề" aria-label="Search">
+                <select>
+                    <option selected th:value="null">-- Chọn loại câu hỏi --</option>
+                    <option th:each="questionType : ${questionTypeList}"
+                            th:value="${questionType.id}" th:text="${questionType.name}"></option>
+                </select>
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+<main>
+    <form action="/create" method="post" th:object="${question}">
+        <table class="table">
+            <thead>
+            <h4>Chi tiết câu hỏi</h4>
+            </thead>
+            <tbody class="table-group-divider">
+            <tr>
+                <th scope="col" style="width: 15%">
+                    <label for="title" class="form-label">Tiêu đề</label>
+                </th>
+                <td id="title" class="form-control" th:text="${question.title}"></td>
+            </tr>
+            <tr>
+                <th scope="col" style="width: 15%">
+                    <label for="content" class="form-label">Nội dung</label>
+                </th>
+                <td id="content" class="form-control" th:text="${question.content}"></td>
+
+            </tr>
+            <tr>
+                <th scope="col" style="width: 15%">
+                    <label for="question-type" class="form-label">Tiêu đề</label>
+                </th>
+                <td id="question-type" class="form-control" th:text="${question.questionType.name}"></td>
+            </tr>
+            <tr>
+                <th scope="col" style="width: 15%">
+                    <label for="anwser" class="form-label">Phản hồi</label>
+                </th>
+                <td id="anwser" class="form-control" th:text="${question.answer}"></td>
+            </tr>
+            <tr>
+                <th scope="col" style="width: 15%">
+                    <label for="date" class="form-label">Ngày đăng</label>
+                </th>
+                <td id="date" class="form-control" th:text="${question.dateCreate}"></td>
+            </tr>
+            <tr>
+                <th scope="col" style="width: 15%">
+                    <label for="status" class="form-label">Tình trạng</label>
+                </th>
+                <td id="status" class="form-control" th:text="${question.status}"></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <a href="/service">
+                        <button type="button" class="btn btn-outline-secondary"
+                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 98px; --bs-btn-font-size: .90rem;">
+                            Hủy
+                        </button>
+                    </a>
+                    <button type="submit" class="btn btn-outline-primary"
+                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 98px; --bs-btn-font-size: .90rem;">
+                        Tạo câu hỏi
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+    <!--Change page button-->
+    <div>
+        <!--                <a th:href="@{service(page=${facilityList.number - 1})}"-->
+        <!--                   th:if="${facilityList.hasPrevious()}">Previous</a>-->
+        <!--                <span th:text="${facilityList.number + 1}"></span>/<span th:text="${facilityList.totalPages}"></span>-->
+        <!--                <a th:href="@{service(page=${facilityList.number + 1})}" th:if="${facilityList.hasNext()}">Next</a>-->
+    </div>
+
+    <!--    &lt;!&ndash; Add Villa Modal &ndash;&gt;-->
+    <!--    <div class="modal fade" id="addVillaModal" tabindex="-1" aria-labelledby="addVillaModalLabel" aria-hidden="true">-->
+    <!--        <div class="modal-dialog">-->
+    <!--            <div class="modal-content">-->
+    <!--                <form action="/service" method="post" th:object="${villa}">-->
+    <!--                    <div class="modal-header">-->
+    <!--                        <h5 class="modal-title" id="addVillaModalLabel">Add new service</h5>-->
+    <!--                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+    <!--                    </div>-->
+    <!--                    <div class="modal-body">-->
+    <!--                        <div class="mb-3">-->
+    <!--                            <label for="villa-name" class="form-label">Facility name</label>-->
+    <!--                            <input class="form-control" id="villa-name"-->
+    <!--                                   th:field="*{name}">-->
+    <!--                            <label for="villa-area" class="form-label">Area</label>-->
+    <!--                            <input class="form-control" id="villa-area"-->
+    <!--                                   th:field="*{area}">-->
+    <!--                            <label for="villa-cost" class="form-label">Cost</label>-->
+    <!--                            <input class="form-control" id="villa-cost"-->
+    <!--                                   th:field="*{cost}">-->
+    <!--                            <label for="max-people" class="form-label">Max people</label>-->
+    <!--                            <input class="form-control" id="max-people"-->
+    <!--                                   th:field="*{maxPeople}">-->
+    <!--                            <label for="rent-type" class="form-label">Rent type</label>-->
+    <!--                            <select class="form-select" id="rent-type" th:field="*{rentType}">-->
+    <!--                                <option th:value="null" selected>For...</option>-->
+    <!--                                <option th:each="rentType : ${rentTypes}" th:value="${rentType.id}"-->
+    <!--                                        th:text="${rentType.name}"></option>-->
+    <!--                            </select>-->
+    <!--                            <label for="standard-room" class="form-label">Standard room</label>-->
+    <!--                            <select class="form-select" id="standard-room" th:field="*{standardRoom}">-->
+    <!--                                <option th:value="'normal'">Normal</option>-->
+    <!--                                <option th:value="'vip'">VIP</option>-->
+    <!--                            </select>-->
+    <!--                            <label for="description-other-convenience" class="form-label">Description other-->
+    <!--                                convenience</label>-->
+    <!--                            <input class="form-control" id="description-other-convenience"-->
+    <!--                                   th:field="*{descriptionOtherConvenience}">-->
+    <!--                            <label for="pool-area" class="form-label">Pool area</label>-->
+    <!--                            <input class="form-control" id="pool-area"-->
+    <!--                                   th:field="*{poolArea}">-->
+    <!--                            <label for="number-of-floors" class="form-label">Number of floors</label>-->
+    <!--                            <input class="form-control" id="number-of-floors"-->
+    <!--                                   th:field="*{numberOfFloors}">-->
+    <!--                            <label for="facility-free" class="form-label">Free service</label>-->
+    <!--                            <input class="form-control" id="facility-free"-->
+    <!--                                   th:field="*{facilityFree}">-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                    <div class="modal-footer">-->
+    <!--                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+    <!--                        <button type="submit" class="btn btn-primary" id="addVillaBtn">Submit</button>-->
+    <!--                    </div>-->
+    <!--                </form>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+
+    <!--    &lt;!&ndash; Add House Modal &ndash;&gt;-->
+    <!--    <div class="modal fade" id="addHouseModal" tabindex="-1" aria-labelledby="addHouseModalLabel" aria-hidden="true">-->
+    <!--        <div class="modal-dialog">-->
+    <!--            <div class="modal-content">-->
+    <!--                <form action="/service" method="post" th:object="${house}">-->
+    <!--                    <div class="modal-header">-->
+    <!--                        <h5 class="modal-title" id="addHouseModalLabel">Add new service</h5>-->
+    <!--                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+    <!--                    </div>-->
+    <!--                    <div class="modal-body">-->
+    <!--                        <div class="mb-3">-->
+    <!--                            <label for="house-name" class="form-label">Facility name</label>-->
+    <!--                            <input class="form-control" id="house-name"-->
+    <!--                                   th:field="*{name}">-->
+    <!--                            <label for="house-area" class="form-label">Area</label>-->
+    <!--                            <input class="form-control" id="house-area"-->
+    <!--                                   th:field="*{area}">-->
+    <!--                            <label for="house-cost" class="form-label">Cost</label>-->
+    <!--                            <input class="form-control" id="house-cost"-->
+    <!--                                   th:field="*{cost}">-->
+    <!--                            <label for="house-max-people" class="form-label">Max perple</label>-->
+    <!--                            <input class="form-control" id="house-max-people"-->
+    <!--                                   th:field="*{maxPeople}">-->
+    <!--                            <label for="house-rent-type" class="form-label">Rent type</label>-->
+    <!--                            <select class="form-select" id="house-rent-type" th:field="*{rentType}">-->
+    <!--                                <option th:value="null" selected>For...</option>-->
+    <!--                                <option th:each="rentType : ${rentTypes}" th:value="${rentType.id}"-->
+    <!--                                        th:text="${rentType.name}"></option>-->
+    <!--                            </select>-->
+    <!--                            <label for="house-standard-room" class="form-label">Standard room</label>-->
+    <!--                            <select class="form-select" id="house-standard-room" th:field="*{standardRoom}">-->
+    <!--                                <option th:value="'normal'">Normal</option>-->
+    <!--                                <option th:value="'vip'">VIP</option>-->
+    <!--                            </select>-->
+    <!--                            <label for="house-description-other-convenience" class="form-label">Description other-->
+    <!--                                convenience</label>-->
+    <!--                            <input class="form-control" id="house-description-other-convenience"-->
+    <!--                                   th:field="*{descriptionOtherConvenience}">-->
+    <!--                            <label for="house-pool-area" class="form-label">Pool area</label>-->
+    <!--                            <input class="form-control" id="house-pool-area"-->
+    <!--                                   th:field="*{poolArea}">-->
+    <!--                            <label for="house-number-of-floors" class="form-label">Number of floors</label>-->
+    <!--                            <input class="form-control" id="house-number-of-floors"-->
+    <!--                                   th:field="*{numberOfFloors}">-->
+    <!--                            <label for="house-facility-free" class="form-label">Free service</label>-->
+    <!--                            <input class="form-control" id="house-facility-free"-->
+    <!--                                   th:field="*{facilityFree}">-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                    <div class="modal-footer">-->
+    <!--                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+    <!--                        <button type="submit" class="btn btn-primary">Submit</button>-->
+    <!--                    </div>-->
+    <!--                </form>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+</main>
+<!--<div th:replace="layout/layout :: footer"></div>-->
+</body>
+</html>
