@@ -3,48 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Music App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"></script>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-info">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/create">New</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 <form method="post" th:object="${music}">
-    <table border="1" width="50%" align="center">
-        <tr>
-            <th>ID:</th>
-            <td th:text="${music.id}"></td>
-        </tr>
-        <tr>
-            <th>Name:</th>
-            <td>
-                <input th:field="*{name}" size="99" />
-            </td>
-        </tr>
-        <tr>
-            <th>Author:</th>
-            <td>
-                <input th:field="*{author}" size="99" />
-            </td>
-        </tr>
-        <tr>
-            <th>Type:</th>
-            <td>
-                <input th:field="*{type}" size="99" />
-            </td>
-        </tr>
-        <tr>
-            <th>Link:</th>
-            <td>
-                <input th:field="*{link}" size="99" />
-            </td>
-        </tr>
-        <tr>
-            <td align="center" colspan="2">
-                <input type="submit" value="Save" />
-                <a href="http://localhost:8080/">
-                    <input type="button" value="Cancel" />
-                </a>
-            </td>
-        </tr>
-    </table>
+    <div class="mb-3">
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" class="form-control" id="name" th:field="*{name}">
+    </div>
+    <div class="mb-3">
+        <label for="author" class="form-label">Author:</label>
+        <input type="text" class="form-control" id="author" th:field="*{author}">
+    </div>
+    <div class="mb-3">
+        <label for="type" class="form-label">Type:</label>
+        <input type="text" class="form-control" id="type" th:field="*{type}">
+    </div>
+    <div class="mb-3">
+        <label for="link" class="form-label">Link:</label>
+        <input type="text" class="form-control" id="link" th:field="*{link}">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-<p th:text="${message}"></p>
 </body>
 </html>

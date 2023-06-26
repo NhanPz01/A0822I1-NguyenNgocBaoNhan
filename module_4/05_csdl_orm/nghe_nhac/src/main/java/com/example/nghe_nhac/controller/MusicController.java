@@ -8,8 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.jws.WebParam;
-
 @Controller
 public class MusicController {
     @Autowired
@@ -35,16 +33,14 @@ public class MusicController {
 
     @GetMapping("/create")
     public String showCreate(Model model) {
+        model.addAttribute("music", new Music());
         return "create";
     }
 
 
     @PostMapping("/create")
-    public String create(@RequestParam String name,
-                         @RequestParam String author,
-                         @RequestParam String type,
-                         @RequestParam String link, RedirectAttributes redirect) {
-        service.add(new Music(name, author, type, link));
+    public String create(@ModelAttribute("music") Music music, RedirectAttributes redirect) {
+        service.add(music);
         redirect.addFlashAttribute("musicList", service.findAll());
         redirect.addFlashAttribute("message", "Add Success !!!");
         return "redirect:/";
@@ -64,5 +60,16 @@ public class MusicController {
         redirect.addFlashAttribute("musicList", service.findAll());
         redirect.addFlashAttribute("message", "Delete Success !!!");
         return "redirect:/";
+    }
+
+    @PostMapping("/")
+    public String search(@RequestParam("search") String search, Model model) {
+        if (service.findMusicByNameContainingOrAuthorContaining(search, search, search).isEmpty() || search.isEmpty()) {
+            model.addAttribute("message", "Cannot find any result");
+            model.addAttribute("musicList", service.findAll());
+        } else {
+            model.addAttribute("musicList", service.findMusicByNameContainingOrAuthorContaining(search, search, search));
+        }
+        return "list";
     }
 }

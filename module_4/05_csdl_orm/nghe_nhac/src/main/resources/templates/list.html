@@ -3,46 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <title>Music App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"></script>
 </head>
 <body>
-<span>
-    <a href="/create">
-        <button>(+) Add</button>
-    </a>
-</span>
-<p th:text="${message}"></p>
+<nav class="navbar navbar-expand-lg navbar-light bg-info">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/create">New</a>
+                </li>
+            </ul>
+            <form class="d-flex" action="/" method="post">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
 
-<table border="1" width="100%" align="center">
+
+<table class="table">
+    <thead>
     <tr>
-        <th>No</th>
-        <th>Name</th>
-        <th>Author</th>
-        <th>Type</th>
-        <th>Link</th>
-        <th>Detail</th>
-        <th>Delete</th>
+        <th scope="col">No</th>
+        <th scope="col">Name</th>
+        <th scope="col">Author</th>
+        <th scope="col">Type</th>
+        <th scope="col">Link</th>
+        <th scope="col">Detail</th>
+        <th scope="col">Delete</th>
     </tr>
+    </thead>
+    <tbody>
     <tr th:each="music, loop : ${musicList}">
-        <td th:text="${loop.count}" align="center"></td>
+        <th scope="row" th:text="${loop.count}"></th>
         <td th:text="${music.name}"></td>
         <td th:text="${music.author}"></td>
         <td th:text="${music.type}"></td>
-        <td align="center">
+        <td>
             <a target="_blank" th:href="${music.link}">
-                <button>Youtube Link</button>
+                <button type="button" class="btn btn-outline-danger">Youtube Link</button>
             </a>
         </td>
-        <td align="center">
+        <td>
             <a th:href="@{/{id}/detail(id = ${music.id})}">
-                <button>Detail</button>
+                <button type="button" class="btn btn-outline-info">Detail</button>
             </a>
         </td>
-        <td align="center">
+        <td>
             <a th:href="@{/{id}/delete(id = ${music.id})}">
-                <button>Delete</button>
+                <button type="button" class="btn btn-outline-warning">Delete</button>
             </a>
         </td>
     </tr>
+    </tbody>
 </table>
+<div th:if="${message != null}" class="alert alert-danger" role="alert" th:text="${message}"></div>
 </body>
 </html>

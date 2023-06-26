@@ -17,7 +17,7 @@
         <img src="/img/logo.jpg" class="rounded" alt="Profile Image">
     </div>
     <div class="float-end">
-        <h4>Danh sách câu hỏi</h4>
+        <h4>Danh sách giao dịch nhà đất</h4>
     </div>
 </header>
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow bg-body-tertiary rounded">
@@ -28,20 +28,27 @@
                     <a class="nav-link active" aria-current="page" href="/">Trang chủ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/create">(+) Tạo câu hỏi</a>
+                    <a class="nav-link active" aria-current="page" href="/create">(+) Thêm mới</a>
                 </li>
                 <li class="nav-item">
-                    <span style="color: lawngreen; font-weight: bold" th:text="${message}"></span>
+                    <span th:if="${message != null}" style="color: lawngreen; font-weight: bold"
+                          th:text="${message}"></span>
                 </li>
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Tiêu đề" aria-label="Search">
-                <select>
-                    <option selected th:value="null">-- Chọn loại câu hỏi --</option>
-                    <option th:each="questionType : ${questionTypeList}"
-                            th:value="${questionType.id}" th:text="${questionType.name}"></option>
-                </select>
-                <button class="btn btn-outline-success" type="submit">Search</button>
+            <form class="d-flex" method="get" action="/search">
+                <label>
+                    <select class="form-select" name="type" style="width: 200px">
+                        <option selected th:value="null">-- Chọn loại bất động sản --</option>
+                        <option th:value="'Đất'" th:text="'Đất'"></option>
+                        <option th:value="'Nhà đất'" th:text="'Nhà đất'"></option>
+                    </select>
+                </label>
+                <input class="form-control me-2" type="search" placeholder="Tên khách hàng" aria-label="Search"
+                       name="search">
+                <button class="btn btn-outline-success" type="submit"
+                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 100px; --bs-btn-font-size: .90rem;">
+                    Tìm kiếm
+                </button>
             </form>
         </div>
     </div>
@@ -50,40 +57,61 @@
     <table class="table">
         <thead>
         <tr>
-            <th scope="col">STT</th>
-            <th scope="col">Tiêu đề</th>
-            <th scope="col">Loại câu hỏi</th>
-            <th scope="col">Ngày đăng</th>
-            <th scope="col">Tình trạng</th>
-            <th scope="col" colspan="2" style="text-align: center">Tính năng</th>
+            <th scope="col">Mã giao dịch</th>
+            <th scope="col">Tên khách hàng</th>
+            <th scope="col">Ngày giao dịch</th>
+            <th scope="col">Loại dịch vụ</th>
+            <th scope="col">Đơn giá (VND/m2)</th>
+            <th scope="col">Diện tích (m2)</th>
+            <th scope="col">Actions</th>
         </tr>
         </thead>
         <tbody class="table-group-divider">
-        <tr th:each="question, loop : ${questionList}">
-            <th th:text="${loop.count}"></th>
-            <td th:text="${question.title}"></td>
-            <td th:text="${question.questionType.name}"></td>
-            <td th:text="${question.dateCreate}"></td>
-            <td th:text="${question.status}"></td>
+        <tr th:each="deal : ${dealList}">
+            <th th:text="${deal.id}"></th>
+            <td th:text="${deal.customer.name}"></td>
+            <td th:text="${deal.dealDate}"></td>
+            <td th:text="${deal.dealType}"></td>
+            <td th:text="${#numbers.formatDecimal(deal.cost, 0, 'COMMA', 2, 'POINT')}"></td>
+            <td th:text="${deal.area}"></td>
             <td>
-                <a th:href="@{/service/detail/{id}(id = ${question.id})}">
-                    <button class="btn btn-outline-secondary"
-                            style="--bs-btn-padding-y: 2px; --bs-btn-font-size: .90rem;">
-                        Cập nhật
-                    </button>
-                </a>
-            </td>
-            <td>
-                <a th:href="@{{id}/delete (id = ${question.id})}">
-                    <button class="btn btn-outline-secondary"
-                            style="--bs-btn-padding-y: 2px; --bs-btn-font-size: .90rem;">
-                        Xóa
-                    </button>
+                <a th:href="@{/{id}/detail(id = ${deal.id})}">
+                    Chi tiết
                 </a>
             </td>
         </tr>
         </tbody>
     </table>
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="" id="delRef">
+                        <button type="button" class="btn btn-primary">Delete</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 </body>
+<script>
+    $('document').ready(function () {
+        $('table #deleteButton').on('click', function (event) {
+            event.preventDefault();
+            var href = $(this).attr('href');
+            $('#deleteModal #delRef').attr('href', href);
+            $('#deleteModal').modal();
+        });
+    });
+</script>
 </html>

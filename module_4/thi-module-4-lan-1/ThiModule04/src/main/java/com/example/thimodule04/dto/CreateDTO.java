@@ -1,56 +1,85 @@
 package com.example.thimodule04.dto;
 
-import com.example.thimodule04.model.QuestionType;
+import org.springframework.format.annotation.NumberFormat;
 
 import javax.validation.constraints.*;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Date;
+import java.sql.Date;
 
 public class CreateDTO {
     @NotBlank(message = "Không được để trống")
-//    @Min(value = 4, message = "Từ 5 ký tự")
-//    @Max(value = 100, message = "Không quá 100 ký tự")
-    @Size(min = 5, max = 100, message = "Tiêu đề từ 5 đến 100 ký tự")
-    private String title;
+    @Pattern(regexp = "^MGD-[0-9]{4}", message = "Phải có dạng MGD-XXXX trong đó XXXX là các số từ 0 đến 9")
+    private String id;
+    @NotNull(message = "Không được để trống")
+    private String name;
     @NotBlank(message = "Không được để trống")
-//    @Min(value = 10, message = "Từ 10 ký tự")
-//    @Max(value = 500, message = "Không quá 500 ký tự")
-    @Size(min = 10, max = 500, message = "Nội dung từ 10 đến 500 ký tự")
-    private String content;
-    @NotNull(message = "Phải chọn loại câu hỏi")
-    private QuestionType questionType;
+    private String dealType;
+    @NotNull(message = "Không được để trống")
+    @FutureOrPresent(message = "Ngày giao dịch không thể là quá khứ")
+    private Date dealDate;
+    @NotNull(message = "Không được để trống")
+    @Min(value = 500000, message = "Đơn giá phải cao hơn 500,000")
+    private Double cost;
+    @NotNull(message = "Không được để trống")
+    @Min(value = 20, message = "Diện tích phải cao hơn 20")
+    private Double area;
 
     public CreateDTO() {
     }
 
-    public CreateDTO(String title, String content, QuestionType questionType) {
-        this.title = title;
-        this.content = content;
-        this.questionType = questionType;
+    public CreateDTO(String id, String name, String dealType, Date dealDate, Double cost, Double area) {
+        this.id = id;
+        this.name = name;
+        this.dealType = dealType;
+        this.dealDate = dealDate;
+        this.cost = cost;
+        this.area = area;
     }
 
-    public String getTitle() {
-        return title;
+    public String getId() {
+        return id;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getContent() {
-        return content;
+    public String getName() {
+        return name;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public QuestionType getQuestionType() {
-        return questionType;
+    public String getDealType() {
+        return dealType;
     }
 
-    public void setQuestionType(QuestionType questionType) {
-        this.questionType = questionType;
+    public void setDealType(String dealType) {
+        this.dealType = dealType;
+    }
+
+    public Date getDealDate() {
+        return dealDate;
+    }
+
+    public void setDealDate(Date dealDate) {
+        this.dealDate = dealDate;
+    }
+
+    public Double getCost() {
+        return cost;
+    }
+
+    public void setCost(Double cost) {
+        this.cost = cost;
+    }
+
+    public Double getArea() {
+        return area;
+    }
+
+    public void setArea(Double area) {
+        this.area = area;
     }
 }

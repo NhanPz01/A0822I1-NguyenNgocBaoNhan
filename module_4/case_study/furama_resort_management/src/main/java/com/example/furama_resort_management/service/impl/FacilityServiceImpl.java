@@ -24,11 +24,6 @@ public class FacilityServiceImpl implements FacilityService {
     }
 
     @Override
-    public List<Facility> findByCustomerName(String name) {
-        return null;
-    }
-
-    @Override
     public Facility add(Facility facility) {
         if (facility.getName() == null || facility.getName().isEmpty())
             return null;

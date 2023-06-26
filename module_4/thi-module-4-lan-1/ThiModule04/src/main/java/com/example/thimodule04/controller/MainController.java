@@ -1,77 +1,87 @@
 package com.example.thimodule04.controller;
 
 import com.example.thimodule04.dto.CreateDTO;
-import com.example.thimodule04.model.QuestionContent;
-import com.example.thimodule04.service.QuestionContentService;
-import com.example.thimodule04.service.QuestionTypeService;
+import com.example.thimodule04.model.Customer;
+import com.example.thimodule04.model.Deal;
+import com.example.thimodule04.service.CustomerService;
+import com.example.thimodule04.service.DealService;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.BeanClassLoaderAware;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.jws.WebParam;
 import javax.validation.Valid;
-import java.sql.Date;
-import java.time.LocalDate;
+import java.util.List;
 
 @Controller
 public class MainController {
     @Autowired
-    private QuestionContentService contentService;
+    private CustomerService customer;
     @Autowired
-    private QuestionTypeService typeService;
+    private DealService deal;
 
     @GetMapping("/")
-    public String showHome(Model model, @RequestParam(defaultValue = "0") int page) {
-        int pageSize = 5;
+    public String showMain(Model model) {
         model.addAttribute("message", null);
-        model.addAttribute("questionTypeList", typeService.findAll());
-        model.addAttribute("questionList", contentService.findAll(page, pageSize));
+        model.addAttribute("dealList", deal.findAll());
         return "home/home";
     }
 
     @GetMapping("/create")
     public String showCreate(Model model) {
-        model.addAttribute("questionTypeList", typeService.findAll());
-        model.addAttribute("question", new CreateDTO());
+        model.addAttribute("customerList", customer.findAll());
+        model.addAttribute("typeList", deal.findAll());
+        model.addAttribute("deal", new CreateDTO());
         return "home/create";
     }
-    @GetMapping("/{id}/delete")
-    public String showDelete(Model model, @PathVariable("id") Integer id) {
-        model.addAttribute("question", contentService.findById(id));
-        return "home/delete";
-    }
-    @GetMapping("/{id}/detail")
-    public String showDetail(Model model, @PathVariable("id") Integer id) {
-        model.addAttribute("question", contentService.findById(id));
 
+    @GetMapping("/{id}/detail")
+    public String getDetail(@PathVariable("id") String id, Model model) {
+        model.addAttribute("deal", deal.findById(id));
         return "home/detail";
     }
 
-    @PostMapping("/create")
-    public String create(@Valid @ModelAttribute("question") CreateDTO questionDTO, BindingResult bindingResult, Model model, RedirectAttributes redirect, @RequestParam(defaultValue = "0") int page) {
-        if (bindingResult.hasErrors()) {
-            model.addAttribute("questionTypeList", typeService.findAll());
-            return "home/create";
+    @GetMapping("/{id}/delete")
+    public String showDelete(@PathVariable("id") String id, Model model) {
+        model.addAttribute("deal", deal.findById(id));
+        return "home/delete";
+    }
+
+    @GetMapping("/search")
+    public String search(@RequestParam("search") String name, @RequestParam("type") String type, Model model) {
+        if (type == null) {
+            model.addAttribute("dealList", deal.findByOne(name));
+        } else if (name == null) {
+            model.addAttribute("dealList", deal.findByType(type));
+        } else {
+            model.addAttribute("dealList", deal.findByTwo(name, type));
         }
-        int pageSize = 5;
-        QuestionContent questionContent = new QuestionContent();
-        BeanUtils.copyProperties(questionDTO, questionContent);
-        questionContent.setDateCreate(Date.valueOf(LocalDate.now()));
-        questionContent.setStatus("Chờ phản hồi");
-        contentService.add(questionContent);
-        model.addAttribute("questionTypeList", typeService.findAll());
-        model.addAttribute("message", "Add success");
-        model.addAttribute("questionList", contentService.findAll(page, pageSize));
         return "redirect:/";
     }
+
+    @PostMapping("/create")
+    public String create(@Valid @ModelAttribute("deal") CreateDTO dto, BindingResult bindingResult, Model model) {
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("customerList", customer.findAll());
+            model.addAttribute("typeList", deal.findAll());
+            return "home/create";
+        }
+        Deal newDeal = new Deal();
+        BeanUtils.copyProperties(dto, newDeal);
+        List<Customer> customers = customer.findByName(dto.getName());
+        newDeal.setCustomer(customers.get(0));
+        deal.add(newDeal);
+        model.addAttribute("message", "Thêm thành công");
+        return "redirect:/";
+    }
+
     @PostMapping("/{id}/delete")
-    public String delete(@RequestParam("id") Integer id, Model model, RedirectAttributes redirect) {
-        model.addAttribute("message", "Delete success");
-        contentService.deleteById(id);
+    public String delete(@PathVariable("id") String id, Model model) {
+        deal.deleteById(deal.findById(id));
+        model.addAttribute("message", "Xóa thành công");
         return "redirect:/";
     }
 }

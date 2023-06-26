@@ -1,6 +1,6 @@
 package com.example.furama_resort_management.model.employee;
 
-import com.example.furama_resort_management.model.user.User;
+import com.example.furama_resort_management.model.user.AppUser;
 
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;
@@ -37,12 +37,12 @@ public class Employee {
     private Division division;
     @OneToOne
     @JoinColumn(name = "username")
-    private User user;
+    private AppUser appUser;
 
     public Employee() {
     }
 
-    public Employee(Integer id, String name, Date dateOfBirth, String idCard, Double salary, String phoneNumber, String email, String address, Position position, EducationDegree educationDegree, Division division, User user) {
+    public Employee(Integer id, String name, Date dateOfBirth, String idCard, Double salary, String phoneNumber, String email, String address, Position position, EducationDegree educationDegree, Division division, AppUser appUser) {
         this.id = id;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
@@ -54,7 +54,7 @@ public class Employee {
         this.position = position;
         this.educationDegree = educationDegree;
         this.division = division;
-        this.user = user;
+        this.appUser = appUser;
     }
 
     public Integer getId() {
@@ -145,11 +145,11 @@ public class Employee {
         this.division = division;
     }
 
-    public User getUser() {
-        return user;
+    public AppUser getUser() {
+        return appUser;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(AppUser appUser) {
+        this.appUser = appUser;
     }
 }

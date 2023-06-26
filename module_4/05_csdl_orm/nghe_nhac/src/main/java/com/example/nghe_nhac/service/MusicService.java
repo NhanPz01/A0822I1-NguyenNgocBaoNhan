@@ -9,9 +9,7 @@ public interface MusicService {
 
     Music findById(int id);
 
-    List<Music> findByName(String name);
-
-    List<Music> findByAuthor(String author);
+    List<Music> findMusicByNameContainingOrAuthorContaining(String name, String author, String type);
 
     Music add(Music music);
 

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://jakarta.apache.org/taglibs/standard/permittedTaglibs" %>
 <%--
   Created by IntelliJ IDEA.
   User: ASUS
@@ -9,8 +10,11 @@
 <html>
 <head>
     <title>Calculator</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"></script>
 </head>
 <body>
 <form method="post">
@@ -24,8 +28,10 @@
         <tr>
             <td colspan="4">
                 <div class="input-group">
-                    <input type="text" aria-label="Number 1" class="form-control" placeholder="Number 1" name="num1" value="${num1}">
-                    <input type="text" aria-label="Number 2" class="form-control" placeholder="Number 2" name="num2" value="${num2}">
+                    <input type="text" aria-label="Number 1" class="form-control" placeholder="Number 1" name="num1"
+                           value="${num1}">
+                    <input type="text" aria-label="Number 2" class="form-control" placeholder="Number 2" name="num2"
+                           value="${num2}">
                 </div>
             </td>
         </tr>
@@ -45,9 +51,11 @@
         </tr>
         <tr>
             <td colspan="4">
-                <span>Result of </span>
-                <span>${way}</span>
-                <span>: ${result}</span>
+                <span>Result </span>
+                <span c:if="${way != null}">of ${way}</span>
+                <span c:if="${result != null}">is ${result}</span>
+<%--                <span>of ${way}</span>--%>
+<%--                <span>is ${result}</span>--%>
             </td>
         </tr>
         </tbody>

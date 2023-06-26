@@ -6,15 +6,10 @@ import javax.persistence.*;
 public class Music {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", columnDefinition = "integer")
-    private int id;
-    @Column(name = "name", columnDefinition = "VARCHAR(100)", nullable = false)
+    private Integer id;
     private String name;
-    @Column(name = "author", columnDefinition = "VARCHAR(100)", nullable = false)
     private String author;
-    @Column(name = "type", columnDefinition = "VARCHAR(100)", nullable = false)
     private String type;
-    @Column(name = "link", columnDefinition = "VARCHAR(100)", nullable = false)
     private String link;
 
     public Music() {
@@ -27,7 +22,7 @@ public class Music {
         this.link = link;
     }
 
-    public Music(int id, String name, String author, String type, String link) {
+    public Music(Integer id, String name, String author, String type, String link) {
         this.id = id;
         this.name = name;
         this.author = author;
@@ -35,11 +30,11 @@ public class Music {
         this.link = link;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

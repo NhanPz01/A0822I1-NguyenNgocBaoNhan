@@ -17,7 +17,7 @@
         <img src="/img/logo.jpg" class="rounded" alt="Profile Image">
     </div>
     <div class="float-end">
-        <h4>Danh sách câu hỏi</h4>
+        <h4>Danh sách giao dịch nhà đất</h4>
     </div>
 </header>
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow bg-body-tertiary rounded">
@@ -28,78 +28,102 @@
                     <a class="nav-link active" aria-current="page" href="/">Trang chủ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/create">(+) Tạo câu hỏi</a>
+                    <a class="nav-link active" aria-current="page" href="/create">(+) Thêm mới</a>
+                </li>
+                <li class="nav-item">
+                    <span th:if="${message != null}" style="color: lawngreen; font-weight: bold"
+                          th:text="${message}"></span>
                 </li>
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Tiêu đề" aria-label="Search">
-                <select>
-                    <option selected th:value="null">-- Chọn loại câu hỏi --</option>
-                    <option th:each="questionType : ${questionTypeList}"
-                            th:value="${questionType.id}" th:text="${questionType.name}"></option>
-                </select>
-                <button class="btn btn-outline-success" type="submit">Search</button>
+            <form class="d-flex" method="post" action="/">
+                <label>
+                    <select class="form-select" name="type" style="width: 200px">
+                        <option selected th:value="null">-- Chọn loại bất động sản --</option>
+                        <option th:value="'Đất'" th:text="'Đất'"></option>
+                        <option th:value="'Nhà đất'" th:text="'Nhà đất'"></option>
+                    </select>
+                </label>
+                <input class="form-control me-2" type="search" placeholder="Tên khách hàng" aria-label="Search"
+                       name="search">
+                <button class="btn btn-outline-success" type="submit"
+                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 100px; --bs-btn-font-size: .90rem;">
+                    Tìm kiếm
+                </button>
             </form>
         </div>
     </div>
 </nav>
 <main>
-    <form action="/create" method="post" th:object="${question}">
+    <form action="/delete" method="get" th:object="${deal}">
         <table class="table">
             <thead>
-            <h4>Chi tiết câu hỏi</h4>
+            <h4>Chi tiết giao dịch</h4>
             </thead>
             <tbody class="table-group-divider">
             <tr>
                 <th scope="col" style="width: 15%">
-                    <label for="title" class="form-label">Tiêu đề</label>
+                    <label for="id" class="form-label">Mã giao dịch</label>
                 </th>
-                <td id="title" class="form-control" th:text="${question.title}"></td>
+                <td id="id" class="form-control" th:text="${deal.id}"></td>
             </tr>
             <tr>
                 <th scope="col" style="width: 15%">
-                    <label for="content" class="form-label">Nội dung</label>
+                    <label for="dealType" class="form-label">Loại bất động sản</label>
                 </th>
-                <td id="content" class="form-control" th:text="${question.content}"></td>
+                <td id="dealType" class="form-control" th:text="${deal.dealType}"></td>
 
             </tr>
             <tr>
                 <th scope="col" style="width: 15%">
-                    <label for="question-type" class="form-label">Tiêu đề</label>
+                    <label for="dealDate" class="form-label">Ngày giao dịch</label>
                 </th>
-                <td id="question-type" class="form-control" th:text="${question.questionType.name}"></td>
+                <td id="dealDate" class="form-control" th:text="${deal.dealDate}"></td>
             </tr>
             <tr>
                 <th scope="col" style="width: 15%">
-                    <label for="anwser" class="form-label">Phản hồi</label>
+                    <label for="cost" class="form-label">Đơn giá (VND)</label>
                 </th>
-                <td id="anwser" class="form-control" th:text="${question.answer}"></td>
+                <td id="cost" class="form-control" th:text="${deal.cost}"></td>
             </tr>
             <tr>
                 <th scope="col" style="width: 15%">
-                    <label for="date" class="form-label">Ngày đăng</label>
+                    <label for="area" class="form-label">Diện tích (m2)</label>
                 </th>
-                <td id="date" class="form-control" th:text="${question.dateCreate}"></td>
+                <td id="area" class="form-control" th:text="${deal.area}"></td>
             </tr>
             <tr>
                 <th scope="col" style="width: 15%">
-                    <label for="status" class="form-label">Tình trạng</label>
+                    <label for="name" class="form-label">Tên khách hàng</label>
                 </th>
-                <td id="status" class="form-control" th:text="${question.status}"></td>
+                <td id="name" class="form-control" th:text="${deal.customer.name}"></td>
+            </tr>
+            <tr>
+                <th scope="col" style="width: 15%">
+                    <label for="phone" class="form-label">Số điện thoại</label>
+                </th>
+                <td id="phone" class="form-control" th:text="${deal.customer.phoneNumber}"></td>
+            </tr>
+            <tr>
+                <th scope="col" style="width: 15%">
+                    <label for="email" class="form-label">Email</label>
+                </th>
+                <td id="email" class="form-control" th:text="${deal.customer.email}"></td>
             </tr>
             <tr>
                 <th></th>
                 <td>
-                    <a href="/service">
-                        <button type="button" class="btn btn-outline-secondary"
+                    <a th:href="@{/{id}/delete (id = ${deal.id})}">
+                        <button type="button" class="btn btn-danger"
                                 style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 98px; --bs-btn-font-size: .90rem;">
-                            Hủy
+                            Xóa
                         </button>
                     </a>
-                    <button type="submit" class="btn btn-outline-primary"
-                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 98px; --bs-btn-font-size: .90rem;">
-                        Tạo câu hỏi
-                    </button>
+                    <a href="/">
+                        <button type="button" class="btn btn-outline-primary"
+                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 98px; --bs-btn-font-size: .90rem;">
+                            Quay lại
+                        </button>
+                    </a>
                 </td>
             </tr>
             </tbody>

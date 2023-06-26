@@ -1,9 +1,12 @@
 package com.example.furama_resort_management.controller;
 
 import com.example.furama_resort_management.dto.CreateVillaDTO;
+import com.example.furama_resort_management.dto.UserDTO;
 import com.example.furama_resort_management.model.facility.Facility;
 import com.example.furama_resort_management.model.facility.FacilityType;
 import com.example.furama_resort_management.model.facility.RentType;
+import com.example.furama_resort_management.service.CustomerService;
+import com.example.furama_resort_management.service.CustomerTypeService;
 import com.example.furama_resort_management.service.FacilityService;
 import com.example.furama_resort_management.service.RentTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +24,22 @@ public class MainController {
     private FacilityService facility;
     @Autowired
     private RentTypeService rentType;
-    @GetMapping("/")
+    @Autowired
+    public CustomerService customer;
+    @Autowired
+    public CustomerTypeService customerType;
+    @GetMapping("/login")
+    public String loginForm() {
+        return "home/login";
+    }
+    @GetMapping("/register")
+    public String showRegistrationForm(Model model){
+        // create model object to store form data
+        UserDTO user = new UserDTO();
+        model.addAttribute("user", user);
+        return "home/register";
+    }
+    @GetMapping("/home")
     public String showHome() {
         return "home/home";
     }
@@ -40,5 +58,14 @@ public class MainController {
         model.addAttribute("room", room);
         model.addAttribute("alert", null);
         return "home/service";
+    }
+
+    @GetMapping("/customer")
+    public String showCustomer(Model model, @RequestParam(defaultValue = "0") int page) {
+        int pageSize = 5;
+        model.addAttribute("customerList", customer.findAll(page, pageSize));
+        model.addAttribute("customerType", customerType.findAll());
+        model.addAttribute("alert", null);
+        return "home/customer";
     }
 }

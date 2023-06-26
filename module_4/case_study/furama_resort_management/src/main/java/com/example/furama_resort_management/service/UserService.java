@@ -1,7 +1,12 @@
 package com.example.furama_resort_management.service;
 
-import com.example.furama_resort_management.model.user.User;
+import com.example.furama_resort_management.dto.UserDTO;
+import com.example.furama_resort_management.model.user.AppUser;
+
+import java.util.List;
 
 public interface UserService {
-    User findById();
+    List<AppUser> findAll();
+    AppUser findByUsername(String username);
+    AppUser add(UserDTO userDTO);
 }

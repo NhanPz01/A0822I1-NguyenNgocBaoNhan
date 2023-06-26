@@ -5,6 +5,8 @@ import com.example.furama_resort_management.repository.customer.CustomerReposito
 import com.example.furama_resort_management.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,17 +18,12 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Page<Customer> findAll(int page, int pageSize) {
-        return null;
+        return repository.findAll(PageRequest.of(page, pageSize));
     }
 
     @Override
     public Customer findById(int id) {
         return repository.findById(id).orElse(null);
-    }
-
-    @Override
-    public List<Customer> findByCustomerName(String name) {
-        return repository.findByCustomerName(name);
     }
 
     @Override
@@ -69,5 +66,10 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void delete(int id) {
         repository.deleteById(id);
+    }
+
+    @Override
+    public Page<Customer> findByName(String name, Pageable pageable) {
+        return repository.findCustomerByNameContaining(name, pageable);
     }
 }

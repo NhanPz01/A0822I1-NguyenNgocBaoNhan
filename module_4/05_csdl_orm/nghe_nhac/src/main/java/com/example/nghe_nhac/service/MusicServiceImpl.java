@@ -23,14 +23,10 @@ public class MusicServiceImpl implements MusicService {
     }
 
     @Override
-    public List<Music> findByName(String name) {
-        return repository.findByName(name);
+    public List<Music> findMusicByNameContainingOrAuthorContaining(String name, String author, String type) {
+        return repository.findMusicByNameContainingOrAuthorContainingOrTypeContaining(name, author, type);
     }
 
-    @Override
-    public List<Music> findByAuthor(String author) {
-        return repository.findByAuthor(author);
-    }
 
     @Override
     public Music add(Music music) {
