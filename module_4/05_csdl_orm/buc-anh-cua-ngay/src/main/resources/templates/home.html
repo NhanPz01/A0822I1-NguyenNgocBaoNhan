@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Day of picture</title>
+</head>
+<style>
+    body {
+        margin: 0; padding: 0;
+    }
+    #img-of-the-day {
+        height: 70vh;
+        width: 100lvmax;
+    }
+</style>
+<body>
+<img id="img-of-the-day">
+<form action="/" method="post" th:object="${comment}">
+    <select></select>
+</form>
+</body>
+<script>
+    let query = 'https://api.nasa.gov/planetary/apod?api_key=CObmMUn5hfff5Xl1BId9K2JegNr5fvogwvcicsDR';
+    let request = new XMLHttpRequest();
+    request.open('GET', query);
+    request.onload = function() {
+        if (request.status === 200) {
+            let response = JSON.parse(request.responseText);
+            document.getElementById('img-of-the-day').setAttribute('src', response.url);
+        }
+    };
+    request.send();
+</script>
+</html>
