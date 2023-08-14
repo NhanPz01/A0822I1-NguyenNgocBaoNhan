@@ -1,5 +1,6 @@
 package com.example.thimodule04.dto;
 
+import org.hibernate.validator.constraints.UniqueElements;
 import org.springframework.format.annotation.NumberFormat;
 
 import javax.validation.constraints.*;
@@ -7,32 +8,35 @@ import java.sql.Date;
 
 public class CreateDTO {
     @NotBlank(message = "Không được để trống")
-    @Pattern(regexp = "^MGD-[0-9]{4}", message = "Phải có dạng MGD-XXXX trong đó XXXX là các số từ 0 đến 9")
+    @Pattern(regexp = "^DA-[0-9]{4}", message = "Phải có dạng DA-XXXX trong đó XXXX là các số từ 0 đến 9")
+//    @UniqueElements(message = "Mã dự án đã tồn tại")
     private String id;
-    @NotNull(message = "Không được để trống")
-    private String name;
     @NotBlank(message = "Không được để trống")
-    private String dealType;
+    private String businessName;
+    @NotBlank(message = "Không được để trống")
+    private String name;
     @NotNull(message = "Không được để trống")
-    @FutureOrPresent(message = "Ngày giao dịch không thể là quá khứ")
-    private Date dealDate;
-    @NotNull(message = "Không được để trống")
-    @Min(value = 500000, message = "Đơn giá phải cao hơn 500,000")
+    @Min(value = 30000000, message = "Kinh phí yêu cầu tối thiểu 30.000.000 VNĐ")
     private Double cost;
+    @NotBlank(message = "Không được để trống")
+    private String description;
     @NotNull(message = "Không được để trống")
-    @Min(value = 20, message = "Diện tích phải cao hơn 20")
-    private Double area;
+    @Min(value = 1, message = "Thời gian đăng ký trong khoảng 1 đến 12 tháng")
+    @Max(value = 1, message = "Thời gian đăng ký trong khoảng 1 đến 12 tháng")
+    private Integer registeringTime;
+    private Date createdDate;
 
     public CreateDTO() {
     }
 
-    public CreateDTO(String id, String name, String dealType, Date dealDate, Double cost, Double area) {
+    public CreateDTO(String id, String businessName, String name, Double cost, String description, Integer registeringTime, Date createdDate) {
         this.id = id;
+        this.businessName = businessName;
         this.name = name;
-        this.dealType = dealType;
-        this.dealDate = dealDate;
         this.cost = cost;
-        this.area = area;
+        this.description = description;
+        this.registeringTime = registeringTime;
+        this.createdDate = createdDate;
     }
 
     public String getId() {
@@ -43,28 +47,20 @@ public class CreateDTO {
         this.id = id;
     }
 
+    public String getBusinessName() {
+        return businessName;
+    }
+
+    public void setBusinessName(String businessName) {
+        this.businessName = businessName;
+    }
+
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getDealType() {
-        return dealType;
-    }
-
-    public void setDealType(String dealType) {
-        this.dealType = dealType;
-    }
-
-    public Date getDealDate() {
-        return dealDate;
-    }
-
-    public void setDealDate(Date dealDate) {
-        this.dealDate = dealDate;
     }
 
     public Double getCost() {
@@ -75,11 +71,27 @@ public class CreateDTO {
         this.cost = cost;
     }
 
-    public Double getArea() {
-        return area;
+    public String getDescription() {
+        return description;
     }
 
-    public void setArea(Double area) {
-        this.area = area;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Integer getRegisteringTime() {
+        return registeringTime;
+    }
+
+    public void setRegisteringTime(Integer registeringTime) {
+        this.registeringTime = registeringTime;
+    }
+
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
     }
 }

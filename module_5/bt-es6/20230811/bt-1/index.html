@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let courses = [
+            {
+                id: 1,
+                title: 'ReactJS Tutorial',
+                rating: 4.2
+            },
+            {
+                id: 2,
+                title: 'Angular Tutorial',
+                rating: 2.5
+            },
+            {
+                id: 3,
+                title: 'VueJS Tutorial',
+                rating: 3.8
+            },
+            {
+                id: 4,
+                title: 'Java Tutorial',
+                rating: 4
+            },
+            {
+                id: 5,
+                title: 'Js Tutorial',
+                rating: 3.5
+            },
+
+        ]
+
+        let results = courses.filter((course) => {
+            if (course.rating >= 4)
+            return course
+        })
+        results.forEach((item) => {
+            console.log(item)
+        })
+    </script>
+</body>
+</html>

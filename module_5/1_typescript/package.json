@@ -1,0 +1,8 @@
+{
+  "name": "typescript-fibonacy",
+  "version": "1.0.0",
+  "dependencies": {
+    "typescript": "^4.1.5"
+  },
+  "start": "tsc && node dist/index.js"
+}

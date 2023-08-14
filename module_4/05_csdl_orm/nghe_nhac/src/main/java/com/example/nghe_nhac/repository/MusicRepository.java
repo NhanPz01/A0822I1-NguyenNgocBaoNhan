@@ -1,7 +1,6 @@
 package com.example.nghe_nhac.repository;
 
 import com.example.nghe_nhac.model.Music;
-import org.springframework.data.jpa.repository.JpaRepository;
 
 import javax.transaction.Transactional;
 import java.util.List;
