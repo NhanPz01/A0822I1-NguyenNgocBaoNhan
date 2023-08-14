@@ -1,48 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
+
 <body>
-    <script>
-        let courses = [
-            {
-                id: 1,
-                title: 'ReactJS Tutorial',
-                rating: 4.2
-            },
-            {
-                id: 2,
-                title: 'Angular Tutorial',
-                rating: 2.5
-            },
-            {
-                id: 3,
-                title: 'VueJS Tutorial',
-                rating: 3.8
-            },
-            {
-                id: 4,
-                title: 'Java Tutorial',
-                rating: 4
-            },
-            {
-                id: 5,
-                title: 'Js Tutorial',
-                rating: 3.5
-            },
+  <script>
+    let courses = [{
+        id: 1,
+        title: 'ReactJS Tutorial',
+        rating: 4.2
+      },
+      {
+        id: 2,
+        title: 'Angular Tutorial',
+        rating: 2.5
+      },
+      {
+        id: 3,
+        title: 'VueJS Tutorial',
+        rating: 3.8
+      },
+      {
+        id: 4,
+        title: 'Java Tutorial',
+        rating: 4
+      },
+      {
+        id: 5,
+        title: 'Js Tutorial',
+        rating: 3.5
+      },
+    ];
 
-        ]
+    let addedCourses = [{
+        id: 6,
+        title: "PHP Tutorial",
+        rating: 3,
+      },
+      {
+        id: 7,
+        title: "C# Tutorial",
+        rating: 2,
+      },
+      {
+        id: 8,
+        title: "Docker Tutorial",
+        rating: 3.8,
+      },
+    ];
 
-        let results = courses.filter((course) => {
-            if (course.rating >= 4)
-            return course
-        })
-        results.forEach((item) => {
-            console.log(item)
-        })
-    </script>
+    // Task 1
+    console.group('Task 1');
+    let results1 = courses.filter((course) => {
+      if (course.rating >= 4)
+        return course
+    });
+    console.log(results1.map(course => {
+        return course
+    }));
+    console.groupEnd();
+
+    // Task 2
+    console.group('Task 2');
+    let results2 = [];
+    let tmp = courses.filter((course) => {
+        if (course.rating < 4) {
+            return course;
+        }
+    });
+    tmp.forEach((course) => {
+        let {id, title, rating} = course;
+        course = '' + id + '-' + title + '-' + rating;
+        results2.push(course);
+    });
+    console.log(results2);
+    console.groupEnd();
+
+    // Task 3
+    console.group('Task 3');
+    let fullCourses = [...courses, ...addedCourses];
+    console.log(fullCourses);
+    console.groupEnd();
+  </script>
 </body>
+
 </html>
