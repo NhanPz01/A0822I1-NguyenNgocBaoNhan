@@ -1,9 +1,8 @@
 import { students } from './index.js';
-import './App.css';
 
-function App() {
-  return (
-    <table className="table">
+function StudentInfoComponent() {
+    return (
+        <table className="table">
       <thead>
         <tr>
           <th scope="col">Id</th>
@@ -23,7 +22,7 @@ function App() {
         ))}
       </tbody>
     </table>
-  );
+    );
 }
 
-export default App;
+export default StudentInfoComponent;
