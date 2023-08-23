@@ -14,32 +14,32 @@ root.render(
 
 export const students = [
   {
-    company: 'Alfreds Futterkiste',
+    company: 'Codegym 1',
     contact: 'Maria Anders',
     country: 'Germany'
   },
   {
-    company: 'Centro comercial Moctezuma',
+    company: 'Codegym 2',
     contact: 'Francisco Chang',
     country: 'Mexico'
   },
   {
-    company: 'Ernst Handel',
+    company: 'Codegym 3',
     contact: 'Roland Mendel',
     country: 'Austria'
   },
   {
-    company: 'Island Trading',
+    company: 'Codegym 4',
     contact: 'Helen Bennett',
     country: 'UK'
   },
   {
-    company: 'Laughing Bacchus Winecellars',
+    company: 'Codegym 5',
     contact: 'Yoshi Tannamuri',
     country: 'Canada'
   },
   {
-    company: 'Magazzini Alimentari Riuniti',
+    company: 'Codegym 6',
     contact: 'Giovanni Rovelli',
     country: 'Italy'
   }
