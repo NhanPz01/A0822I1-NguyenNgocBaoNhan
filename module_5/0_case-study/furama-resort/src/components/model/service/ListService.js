@@ -4,7 +4,7 @@ import {AlarmFill, AspectRatioFill, PencilSquare, PeopleFill, PlusCircleFill, Tr
 const serviceData = [
     {
         id: 1,
-        name: "Villa Rose",
+        name: "Villa A",
         usageArea: 100,
         rentalCost: 200,
         maxGuest: 15,
@@ -14,7 +14,7 @@ const serviceData = [
     },
     {
         id: 2,
-        name: "Villa Violet",
+        name: "Villa B",
         usageArea: 150,
         rentalCost: 100,
         maxGuest: 10,
@@ -24,7 +24,7 @@ const serviceData = [
     },
     {
         id: 3,
-        name: "Villa Sunflower",
+        name: "Villa C",
         usageArea: 150,
         rentalCost: 100,
         maxGuest: 5,
@@ -34,7 +34,7 @@ const serviceData = [
     },
     {
         id: 4,
-        name: "House Rose",
+        name: "House A",
         usageArea: 150,
         rentalCost: 100,
         maxGuest: 5,
@@ -44,7 +44,7 @@ const serviceData = [
     },
     {
         id: 5,
-        name: "House Violet",
+        name: "House B",
         usageArea: 150,
         rentalCost: 100,
         maxGuest: 5,
