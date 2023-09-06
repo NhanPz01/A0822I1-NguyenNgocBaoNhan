@@ -4,9 +4,9 @@
 
 .body {
     font-family: Tahoma, serif;
-    font-size: 20px;
-    height: 100vh;
-    resize: none;
+    font-size: 16px;
+    height: 70rem;
+    /*resize: none;*/
     padding: 0;
     margin: 0;
 }
@@ -42,18 +42,20 @@ header {
     align-items: center;
 }
 
-.navbar {
+nav {
     display: flex;
     width: 100%;
+    margin-bottom: 50px;
 }
 
 main {
     font-family: Tahoma, serif;
     font-size: 15px;
-    height: 68vh; /* 800 - 100 - 60 - 50 */
+    height: 80vh; /* 800 - 100 - 60 - 50 */
 }
 
 footer {
+    font-size: 15px;
     position: fixed;
     left: 0;
     bottom: 0;
