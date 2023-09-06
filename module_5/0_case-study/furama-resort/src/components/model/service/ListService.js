@@ -84,7 +84,8 @@ export default function ListService() {
                                 <AlarmFill/> &nbsp;
                                 {service.rentalType}
                             </p>
-                            <button className="btn btn-grad">More</button>
+                            <button className="btn btn-outline-warning">Edit</button>
+                            <button className="btn btn-outline-danger">Delete</button>
                         </div>
                     </div>
                 </div>
