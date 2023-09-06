@@ -1,262 +1,539 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Furama Resort</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    <head>
+        <meta charset="UTF-8" />
+        <title>Furama Resort</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-            crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link rel="stylesheet" type="text/css" href="/css/service-style.css">
-
-</head>
-<style>
-
-</style>
-<body>
-<div th:replace="layout/layout :: header"></div>
-<div class="navbar">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow bg-body-tertiary rounded">
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/employee">Employee</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/customer">Customer</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/service">Service</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contract">Contract</a>
-                    </li>
-                </ul>
-                <form class="d-flex" method="get" action="/service/searching/">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
+            crossorigin="anonymous"
+        ></script>
+        <link rel="stylesheet" type="text/css" href="/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/css/service-style.css" />
+    </head>
+    <style></style>
+    <body>
+        <div th:replace="layout/layout :: header"></div>
+        <div class="navbar">
+            <nav
+                class="navbar navbar-expand-lg navbar-light bg-light shadow bg-body-tertiary rounded"
+            >
+                <div class="container-fluid">
+                    <div
+                        class="collapse navbar-collapse"
+                        id="navbarSupportedContent"
+                    >
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link active"
+                                    aria-current="page"
+                                    href="/home"
+                                    >Home</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/employee"
+                                    >Employee</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/customer"
+                                    >Customer</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/service">Service</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/contract"
+                                    >Contract</a
+                                >
+                            </li>
+                        </ul>
+                        <form
+                            class="d-flex"
+                            method="get"
+                            action="/service/searching/"
+                        >
+                            <input
+                                class="form-control me-2"
+                                type="search"
+                                placeholder="Search"
+                                aria-label="Search"
+                                name="search"
+                            />
+                            <button
+                                class="btn btn-outline-success"
+                                type="submit"
+                            >
+                                Search
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
         </div>
-    </nav>
-</div>
-<main>
-    <div class="d-flex justify-content-start">
-        <div id="items" class="p-2">
-            <ul>
-                <li>
-                    <button type="button" class="btn btn-outline-secondary"
-                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 100px; --bs-btn-font-size: .90rem;">
-                        Show
-                    </button>
-                </li>
-                <li>
-                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 97px; --bs-btn-font-size: .90rem;">
-                        Add
-                    </button>
-                    <ul class="dropdown-menu">
+        <main>
+            <div class="d-flex justify-content-start">
+                <div id="items" class="p-2">
+                    <ul>
                         <li>
-                            <button class="dropdown-item"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#addVillaModal">
-                                Villa
+                            <button
+                                type="button"
+                                class="btn btn-outline-secondary"
+                                style="
+                                    --bs-btn-padding-y: 0.25rem;
+                                    --bs-btn-padding-x: 100px;
+                                    --bs-btn-font-size: 0.9rem;
+                                "
+                            >
+                                Show
                             </button>
                         </li>
                         <li>
-                            <button class="dropdown-item" href="#">
-                                House
+                            <button
+                                class="btn btn-outline-secondary dropdown-toggle"
+                                type="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                                style="
+                                    --bs-btn-padding-y: 0.25rem;
+                                    --bs-btn-padding-x: 97px;
+                                    --bs-btn-font-size: 0.9rem;
+                                "
+                            >
+                                Add
                             </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <button
+                                        class="dropdown-item"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#addVillaModal"
+                                    >
+                                        Villa
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="dropdown-item" href="#">
+                                        House
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="dropdown-item" href="#">
+                                        Room
+                                    </button>
+                                </li>
+                            </ul>
                         </li>
                         <li>
-                            <button class="dropdown-item" href="#">
-                                Room
-                            </button>
+                            <p
+                                th:if="${alert != null || alert != ''}"
+                                th:text="${alert}"
+                                style="color: red; font-weight: bold"
+                            ></p>
                         </li>
                     </ul>
-                </li>
-                <li>
-                    <p th:if="${alert != null || alert != ''}" th:text="${alert}" style="color: red; font-weight: bold"></p>
-                </li>
-            </ul>
-        </div>
-        <div class="p-2 flex-fill" style="text-align: center">
-            <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Detail</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Area</th>
-                    <th scope="col">Cost</th>
-                    <th scope="col">Max people</th>
-                    <th scope="col">Standard Room</th>
-                    <th scope="col">Description other convenience</th>
-                    <th scope="col">Pool area</th>
-                    <th scope="col">Number of floors</th>
-                    <th scope="col">Free facility</th>
-                    <th scope="col">Rent Type</th>
-                    <th scope="col">Facility Type</th>
-                </tr>
-                </thead>
-                <tbody class="table-group-divider">
-                <tr th:each="facility, loop : ${facilityList}">
-                    <th th:text="${loop.count}"></th>
-                    <td>
-                        <a th:href="@{/service/detail/{id}(id = ${facility.id})}">
-                            <button class="btn btn-outline-secondary"
-                                    style="--bs-btn-padding-y: 2px; --bs-btn-font-size: .90rem;">
-                                Detail
-                            </button>
-                        </a>
-                    </td>
-                    <td th:text="${facility.name}"></td>
-                    <td th:text="${facility.area}"></td>
-                    <td th:text="${#numbers.formatDecimal(facility.cost, 0, 'COMMA', 2, 'POINT')}"></td>
-                    <td th:text="${facility.maxPeople}"></td>
-                    <td th:text="${facility.standardRoom}"></td>
-                    <td th:text="${facility.descriptionOtherConvenience == null || facility.descriptionOtherConvenience.equals('')} ? 'Không' : ${facility.descriptionOtherConvenience}"></td>
-                    <td th:text="${facility.poolArea == null} ? 'Không' : ${facility.poolArea}"></td>
-                    <td th:text="${facility.numberOfFloors == null} ? 'Không' : ${facility.numberOfFloors}"></td>
-                    <td th:text="${facility.facilityFree == null || facility.facilityFree.equals('')} ? 'Không' : ${facility.facilityFree}"></td>
-                    <td th:text="${facility.rentType.name}"></td>
-                    <td th:text="${facility.facilityType.name}"></td>
-                </tr>
-                </tbody>
-            </table>
-            <!--Change page button-->
-            <div>
-                <a th:href="@{service(page=${facilityList.number - 1})}"
-                   th:if="${facilityList.hasPrevious()}">Previous</a>
-                <span th:text="${facilityList.number + 1}"></span>/<span th:text="${facilityList.totalPages}"></span>
-                <a th:href="@{service(page=${facilityList.number + 1})}" th:if="${facilityList.hasNext()}">Next</a>
+                </div>
+                <div class="p-2 flex-fill" style="text-align: center">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Detail</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Area</th>
+                                <th scope="col">Cost</th>
+                                <th scope="col">Max people</th>
+                                <th scope="col">Standard Room</th>
+                                <th scope="col">
+                                    Description other convenience
+                                </th>
+                                <th scope="col">Pool area</th>
+                                <th scope="col">Number of floors</th>
+                                <th scope="col">Free facility</th>
+                                <th scope="col">Rent Type</th>
+                                <th scope="col">Facility Type</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr th:each="facility, loop : ${facilityList}">
+                                <th th:text="${loop.count}"></th>
+                                <td>
+                                    <a
+                                        th:href="@{/service/detail/{id}(id = ${facility.id})}"
+                                    >
+                                        <button
+                                            class="btn btn-outline-secondary"
+                                            style="
+                                                --bs-btn-padding-y: 2px;
+                                                --bs-btn-font-size: 0.9rem;
+                                            "
+                                        >
+                                            Detail
+                                        </button>
+                                    </a>
+                                </td>
+                                <td th:text="${facility.name}"></td>
+                                <td th:text="${facility.area}"></td>
+                                <td
+                                    th:text="${#numbers.formatDecimal(facility.cost, 0, 'COMMA', 2, 'POINT')}"
+                                ></td>
+                                <td th:text="${facility.maxPeople}"></td>
+                                <td th:text="${facility.standardRoom}"></td>
+                                <td
+                                    th:text="${facility.descriptionOtherConvenience == null || facility.descriptionOtherConvenience.equals('')} ? 'Không' : ${facility.descriptionOtherConvenience}"
+                                ></td>
+                                <td
+                                    th:text="${facility.poolArea == null} ? 'Không' : ${facility.poolArea}"
+                                ></td>
+                                <td
+                                    th:text="${facility.numberOfFloors == null} ? 'Không' : ${facility.numberOfFloors}"
+                                ></td>
+                                <td
+                                    th:text="${facility.facilityFree == null || facility.facilityFree.equals('')} ? 'Không' : ${facility.facilityFree}"
+                                ></td>
+                                <td th:text="${facility.rentType.name}"></td>
+                                <td
+                                    th:text="${facility.facilityType.name}"
+                                ></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--Change page button-->
+                    <div>
+                        <a
+                            th:href="@{service(page=${facilityList.number - 1})}"
+                            th:if="${facilityList.hasPrevious()}"
+                            >Previous</a
+                        >
+                        <span th:text="${facilityList.number + 1}"></span>/<span
+                            th:text="${facilityList.totalPages}"
+                        ></span>
+                        <a
+                            th:href="@{service(page=${facilityList.number + 1})}"
+                            th:if="${facilityList.hasNext()}"
+                            >Next</a
+                        >
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <!-- Add Villa Modal -->
-    <div class="modal fade" id="addVillaModal" tabindex="-1" aria-labelledby="addVillaModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form action="/service" method="post" th:object="${villa}">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="addVillaModalLabel">Add new service</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <!-- Add Villa Modal -->
+            <div
+                class="modal fade"
+                id="addVillaModal"
+                tabindex="-1"
+                aria-labelledby="addVillaModalLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form
+                            action="/service"
+                            method="post"
+                            th:object="${villa}"
+                        >
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="addVillaModalLabel">
+                                    Add new service
+                                </h5>
+                                <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                ></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="villa-name" class="form-label"
+                                        >Facility name</label
+                                    >
+                                    <input
+                                        class="form-control"
+                                        id="villa-name"
+                                        th:field="*{name}"
+                                    />
+                                    <label for="villa-area" class="form-label"
+                                        >Area</label
+                                    >
+                                    <input
+                                        class="form-control"
+                                        id="villa-area"
+                                        th:field="*{area}"
+                                    />
+                                    <label for="villa-cost" class="form-label"
+                                        >Cost</label
+                                    >
+                                    <input
+                                        class="form-control"
+                                        id="villa-cost"
+                                        th:field="*{cost}"
+                                    />
+                                    <label for="max-people" class="form-label"
+                                        >Max people</label
+                                    >
+                                    <input
+                                        class="form-control"
+                                        id="max-people"
+                                        th:field="*{maxPeople}"
+                                    />
+                                    <label for="rent-type" class="form-label"
+                                        >Rent type</label
+                                    >
+                                    <select
+                                        class="form-select"
+                                        id="rent-type"
+                                        th:field="*{rentType}"
+                                    >
+                                        <option th:value="null" selected>
+                                            For...
+                                        </option>
+                                        <option
+                                            th:each="rentType : ${rentTypes}"
+                                            th:value="${rentType.id}"
+                                            th:text="${rentType.name}"
+                                        ></option>
+                                    </select>
+                                    <label
+                                        for="standard-room"
+                                        class="form-label"
+                                        >Standard room</label
+                                    >
+                                    <select
+                                        class="form-select"
+                                        id="standard-room"
+                                        th:field="*{standardRoom}"
+                                    >
+                                        <option th:value="'normal'">
+                                            Normal
+                                        </option>
+                                        <option th:value="'vip'">VIP</option>
+                                    </select>
+                                    <label
+                                        for="description-other-convenience"
+                                        class="form-label"
+                                        >Description other convenience</label
+                                    >
+                                    <input
+                                        class="form-control"
+                                        id="description-other-convenience"
+                                        th:field="*{descriptionOtherConvenience}"
+                                    />
+                                    <label for="pool-area" class="form-label"
+                                        >Pool area</label
+                                    >
+                                    <input
+                                        class="form-control"
+                                        id="pool-area"
+                                        th:field="*{poolArea}"
+                                    />
+                                    <label
+                                        for="number-of-floors"
+                                        class="form-label"
+                                        >Number of floors</label
+                                    >
+                                    <input
+                                        class="form-control"
+                                        id="number-of-floors"
+                                        th:field="*{numberOfFloors}"
+                                    />
+                                    <label
+                                        for="facility-free"
+                                        class="form-label"
+                                        >Free service</label
+                                    >
+                                    <input
+                                        class="form-control"
+                                        id="facility-free"
+                                        th:field="*{facilityFree}"
+                                    />
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button
+                                    type="button"
+                                    class="btn btn-secondary"
+                                    data-bs-dismiss="modal"
+                                >
+                                    Close
+                                </button>
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary"
+                                    id="addVillaBtn"
+                                >
+                                    Submit
+                                </button>
+                            </div>
+                        </form>
                     </div>
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <label for="villa-name" class="form-label">Facility name</label>
-                            <input class="form-control" id="villa-name"
-                                   th:field="*{name}">
-                            <label for="villa-area" class="form-label">Area</label>
-                            <input class="form-control" id="villa-area"
-                                   th:field="*{area}">
-                            <label for="villa-cost" class="form-label">Cost</label>
-                            <input class="form-control" id="villa-cost"
-                                   th:field="*{cost}">
-                            <label for="max-people" class="form-label">Max people</label>
-                            <input class="form-control" id="max-people"
-                                   th:field="*{maxPeople}">
-                            <label for="rent-type" class="form-label">Rent type</label>
-                            <select class="form-select" id="rent-type" th:field="*{rentType}">
-                                <option th:value="null" selected>For...</option>
-                                <option th:each="rentType : ${rentTypes}" th:value="${rentType.id}"
-                                        th:text="${rentType.name}"></option>
-                            </select>
-                            <label for="standard-room" class="form-label">Standard room</label>
-                            <select class="form-select" id="standard-room" th:field="*{standardRoom}">
-                                <option th:value="'normal'">Normal</option>
-                                <option th:value="'vip'">VIP</option>
-                            </select>
-                            <label for="description-other-convenience" class="form-label">Description other
-                                convenience</label>
-                            <input class="form-control" id="description-other-convenience"
-                                   th:field="*{descriptionOtherConvenience}">
-                            <label for="pool-area" class="form-label">Pool area</label>
-                            <input class="form-control" id="pool-area"
-                                   th:field="*{poolArea}">
-                            <label for="number-of-floors" class="form-label">Number of floors</label>
-                            <input class="form-control" id="number-of-floors"
-                                   th:field="*{numberOfFloors}">
-                            <label for="facility-free" class="form-label">Free service</label>
-                            <input class="form-control" id="facility-free"
-                                   th:field="*{facilityFree}">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" id="addVillaBtn">Submit</button>
-                    </div>
-                </form>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <!-- Add House Modal -->
-    <div class="modal fade" id="addHouseModal" tabindex="-1" aria-labelledby="addHouseModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form action="/service" method="post" th:object="${house}">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="addHouseModalLabel">Add new service</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <!-- Add House Modal -->
+            <div
+                class="modal fade"
+                id="addHouseModal"
+                tabindex="-1"
+                aria-labelledby="addHouseModalLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form
+                            action="/service"
+                            method="post"
+                            th:object="${house}"
+                        >
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="addHouseModalLabel">
+                                    Add new service
+                                </h5>
+                                <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                ></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="house-name" class="form-label"
+                                        >Facility name</label
+                                    >
+                                    <input
+                                        class="form-control"
+                                        id="house-name"
+                                        th:field="*{name}"
+                                    />
+                                    <label for="house-area" class="form-label"
+                                        >Area</label
+                                    >
+                                    <input
+                                        class="form-control"
+                                        id="house-area"
+                                        th:field="*{area}"
+                                    />
+                                    <label for="house-cost" class="form-label"
+                                        >Cost</label
+                                    >
+                                    <input
+                                        class="form-control"
+                                        id="house-cost"
+                                        th:field="*{cost}"
+                                    />
+                                    <label
+                                        for="house-max-people"
+                                        class="form-label"
+                                        >Max perple</label
+                                    >
+                                    <input
+                                        class="form-control"
+                                        id="house-max-people"
+                                        th:field="*{maxPeople}"
+                                    />
+                                    <label
+                                        for="house-rent-type"
+                                        class="form-label"
+                                        >Rent type</label
+                                    >
+                                    <select
+                                        class="form-select"
+                                        id="house-rent-type"
+                                        th:field="*{rentType}"
+                                    >
+                                        <option th:value="null" selected>
+                                            For...
+                                        </option>
+                                        <option
+                                            th:each="rentType : ${rentTypes}"
+                                            th:value="${rentType.id}"
+                                            th:text="${rentType.name}"
+                                        ></option>
+                                    </select>
+                                    <label
+                                        for="house-standard-room"
+                                        class="form-label"
+                                        >Standard room</label
+                                    >
+                                    <select
+                                        class="form-select"
+                                        id="house-standard-room"
+                                        th:field="*{standardRoom}"
+                                    >
+                                        <option th:value="'normal'">
+                                            Normal
+                                        </option>
+                                        <option th:value="'vip'">VIP</option>
+                                    </select>
+                                    <label
+                                        for="house-description-other-convenience"
+                                        class="form-label"
+                                        >Description other convenience</label
+                                    >
+                                    <input
+                                        class="form-control"
+                                        id="house-description-other-convenience"
+                                        th:field="*{descriptionOtherConvenience}"
+                                    />
+                                    <label
+                                        for="house-pool-area"
+                                        class="form-label"
+                                        >Pool area</label
+                                    >
+                                    <input
+                                        class="form-control"
+                                        id="house-pool-area"
+                                        th:field="*{poolArea}"
+                                    />
+                                    <label
+                                        for="house-number-of-floors"
+                                        class="form-label"
+                                        >Number of floors</label
+                                    >
+                                    <input
+                                        class="form-control"
+                                        id="house-number-of-floors"
+                                        th:field="*{numberOfFloors}"
+                                    />
+                                    <label
+                                        for="house-facility-free"
+                                        class="form-label"
+                                        >Free service</label
+                                    >
+                                    <input
+                                        class="form-control"
+                                        id="house-facility-free"
+                                        th:field="*{facilityFree}"
+                                    />
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button
+                                    type="button"
+                                    class="btn btn-secondary"
+                                    data-bs-dismiss="modal"
+                                >
+                                    Close
+                                </button>
+                                <button type="submit" class="btn btn-primary">
+                                    Submit
+                                </button>
+                            </div>
+                        </form>
                     </div>
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <label for="house-name" class="form-label">Facility name</label>
-                            <input class="form-control" id="house-name"
-                                   th:field="*{name}">
-                            <label for="house-area" class="form-label">Area</label>
-                            <input class="form-control" id="house-area"
-                                   th:field="*{area}">
-                            <label for="house-cost" class="form-label">Cost</label>
-                            <input class="form-control" id="house-cost"
-                                   th:field="*{cost}">
-                            <label for="house-max-people" class="form-label">Max perple</label>
-                            <input class="form-control" id="house-max-people"
-                                   th:field="*{maxPeople}">
-                            <label for="house-rent-type" class="form-label">Rent type</label>
-                            <select class="form-select" id="house-rent-type" th:field="*{rentType}">
-                                <option th:value="null" selected>For...</option>
-                                <option th:each="rentType : ${rentTypes}" th:value="${rentType.id}"
-                                        th:text="${rentType.name}"></option>
-                            </select>
-                            <label for="house-standard-room" class="form-label">Standard room</label>
-                            <select class="form-select" id="house-standard-room" th:field="*{standardRoom}">
-                                <option th:value="'normal'">Normal</option>
-                                <option th:value="'vip'">VIP</option>
-                            </select>
-                            <label for="house-description-other-convenience" class="form-label">Description other
-                                convenience</label>
-                            <input class="form-control" id="house-description-other-convenience"
-                                   th:field="*{descriptionOtherConvenience}">
-                            <label for="house-pool-area" class="form-label">Pool area</label>
-                            <input class="form-control" id="house-pool-area"
-                                   th:field="*{poolArea}">
-                            <label for="house-number-of-floors" class="form-label">Number of floors</label>
-                            <input class="form-control" id="house-number-of-floors"
-                                   th:field="*{numberOfFloors}">
-                            <label for="house-facility-free" class="form-label">Free service</label>
-                            <input class="form-control" id="house-facility-free"
-                                   th:field="*{facilityFree}">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                </form>
+                </div>
             </div>
-        </div>
-    </div>
-</main>
-<div th:replace="layout/layout :: footer"></div>
-</body>
+        </main>
+        <div th:replace="layout/layout :: footer"></div>
+    </body>
 </html>
