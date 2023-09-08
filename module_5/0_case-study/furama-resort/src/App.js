@@ -5,6 +5,7 @@ import Header from './components/prototype/Header';
 import Footer from "./components/prototype/Footer";
 import React from "react";
 import ListService from "./components/model/service/ListService";
+import ListCustomer from "./components/model/customer/ListCustomer";
 
 function App() {
     return (
@@ -20,6 +21,9 @@ function App() {
                             </Route>
                             <Route path="" element={<Outlet/>}>
                                 <Route index element={<ListService/>}/>
+                            </Route>
+                            <Route path="/customer" element={<Outlet/>}>
+                                <Route index element={<ListCustomer/>}/>
                             </Route>
                         </Routes>
                     </BrowserRouter>

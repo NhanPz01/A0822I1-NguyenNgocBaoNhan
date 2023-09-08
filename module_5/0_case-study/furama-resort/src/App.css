@@ -5,7 +5,7 @@
 .body {
     font-family: Tahoma, serif;
     font-size: 16px;
-    height: 70rem;
+    height: 80rem;
     /*resize: none;*/
     padding: 0;
     margin: 0;
@@ -51,7 +51,7 @@ nav {
 main {
     font-family: Tahoma, serif;
     font-size: 15px;
-    height: 80vh; /* 800 - 100 - 60 - 50 */
+    height: 100vh; /* 800 - 100 - 60 - 50 */
 }
 
 .btn-create {

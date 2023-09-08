@@ -107,13 +107,7 @@ export default function ListService() {
                                             setActionService(service)
                                         }}>Edit
                                 </button>
-                                <button className="btn btn-grad"
-                                        onClick={() => {
-                                            setShowDeleteModal(true)
-                                            setActionService(service)
-                                        }}
-                                >Delete
-                                </button>
+                                <button className="btn btn-grad">Delete</button>
                             </div>
                         </div>
                     </div>
