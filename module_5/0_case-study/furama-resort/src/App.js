@@ -6,6 +6,7 @@ import Footer from "./components/prototype/Footer";
 import React from "react";
 import ListService from "./components/model/service/ListService";
 import ListCustomer from "./components/model/customer/ListCustomer";
+import {ListContract} from "./components/model/contract/ListContract";
 
 function App() {
     return (
@@ -24,6 +25,9 @@ function App() {
                             </Route>
                             <Route path="/customer" element={<Outlet/>}>
                                 <Route index element={<ListCustomer/>}/>
+                            </Route>
+                            <Route path="/contract" element={<Outlet/>}>
+                                <Route index element={<ListContract/>}/>
                             </Route>
                         </Routes>
                     </BrowserRouter>
