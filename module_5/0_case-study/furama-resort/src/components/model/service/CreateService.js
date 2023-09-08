@@ -1,34 +1,32 @@
 import {Field, Form, Formik} from "formik";
 import {Button, Modal} from "react-bootstrap";
 
-export function UpdateServiceModal({showModal, setShowModal, editService}) {
+export function CreateServiceModal({showModal, setShowModal}) {
     const handle = (values) => {
-        setShowModal(false);
-        console.log(values);
+        setShowModal(false)
+        console.log(values)
     }
 
     return (
         <Formik
-            enableReinitialize={true}
             initialValues={{
-                id: editService.id,
-                name: editService.name,
-                usageArea: editService.usageArea,
-                rentalCost: editService.rentalCost,
-                maxGuest: editService.maxGuest,
-                rentalType: editService.rentalType,
-                otherConvenient: editService.otherConvenient,
-                imgURL: editService.imgURL
+                name: '',
+                usageArea: 0,
+                rentalCost: 0,
+                maxGuest: 0,
+                rentalType: '',
+                otherConvenient: '',
+                imgURL: ''
             }}
             onSubmit={(values, {resetForm}) => {
                 handle(values);
                 resetForm();
             }}
         >
-            <Form id="update-service">
+            <Form id="create-service">
                 <Modal show={showModal} onHide={() => setShowModal(false)}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Update Service</Modal.Title>
+                        <Modal.Title>Create Service</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <div className="mb-3">
@@ -62,8 +60,8 @@ export function UpdateServiceModal({showModal, setShowModal, editService}) {
                     </Modal.Body>
                     <Modal.Footer>
                         <Button type="button" className="btn btn-secondary"
-                                onClick={() => setShowModal(false)}>CLose</Button>
-                        <Button form="update-service" type="submit" className="btn btn-primary">Update</Button>
+                                onClick={() => setShowModal(false)}>Close</Button>
+                        <Button form="create-service" type="submit" className="btn btn-primary">Create</Button>
                     </Modal.Footer>
                 </Modal>
             </Form>

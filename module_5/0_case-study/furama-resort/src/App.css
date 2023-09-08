@@ -54,6 +54,11 @@ main {
     height: 80vh; /* 800 - 100 - 60 - 50 */
 }
 
+.btn-create {
+    display: flex;
+    align-items: flex-start;
+}
+
 footer {
     font-size: 15px;
     position: fixed;
