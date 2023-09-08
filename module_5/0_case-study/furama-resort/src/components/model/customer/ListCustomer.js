@@ -1,6 +1,7 @@
 import {useState} from "react";
 import {AlarmFill, AspectRatioFill, PencilSquare, PeopleFill, PlusCircleFill, TrashFill} from "react-bootstrap-icons";
 import {UpdateCustomerModal} from "./UpdateCustomer";
+import {CreateCustomerModal} from "./CreateCustomer";
 
 
 const customerData = [
@@ -120,11 +121,12 @@ export default function ListCustomer() {
                                     {customer.rentalType}
                                 </p>
                                 <button className="btn btn-grad"
-                                    onClick={ () => {
-                                        setShowUpdateModal(true)
-                                        setActionCustomer(customer)
-                                    }}
-                                >Edit</button>
+                                        onClick={() => {
+                                            setShowUpdateModal(true)
+                                            setActionCustomer(customer)
+                                        }}
+                                >Edit
+                                </button>
                                 <button className="btn btn-grad">Delete</button>
                             </div>
                         </div>
@@ -132,6 +134,7 @@ export default function ListCustomer() {
                 ))}
                 <UpdateCustomerModal showModal={showUpdateModal} setShowModal={setShowUpdateModal}
                                      editCustomer={actionCustomer}/>
+                <CreateCustomerModal showModal={showCreateModal} setShowModal={setShowCreateModal}/>
             </div>
         </>
     )
