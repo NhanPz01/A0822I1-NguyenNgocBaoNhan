@@ -1,5 +1,6 @@
 import {useState} from "react";
 import {AlarmFill, AspectRatioFill, PencilSquare, PeopleFill, PlusCircleFill, TrashFill} from "react-bootstrap-icons";
+import {UpdateServiceModal} from "./UpdateService";
 
 const serviceData = [
     {
@@ -56,6 +57,8 @@ const serviceData = [
 
 export default function ListService() {
     const [serviceList, setServiceList] = useState(serviceData)
+    const [showUpdateModal, setShowUpdateModal] = useState(false)
+    const [showDeleteModal, setShowDeleteModal] = useState(false)
     const [actionService, setActionService] = useState({
         name: "",
         usageArea: 0,
@@ -70,7 +73,8 @@ export default function ListService() {
             {serviceList.map((service, key) => (
                 <div className="col-md-4 mb-4" key={key}>
                     <div className="card" style={{width: 18 + 'rem'}}>
-                        <img src={service.imgURL} className="card-img-top" alt={service.imgURL} style={{height: 10 + 'rem', objectFit: "cover"}}/>
+                        <img src={service.imgURL} className="card-img-top" alt={service.imgURL}
+                             style={{height: 10 + 'rem', objectFit: "cover"}}/>
                         <div className="card-body">
                             <h5 className="card-title">{service.name}</h5>
                             <p className="card-text">
@@ -84,12 +88,25 @@ export default function ListService() {
                                 <AlarmFill/> &nbsp;
                                 {service.rentalType}
                             </p>
-                            <button className="btn btn-outline-warning">Edit</button>
-                            <button className="btn btn-outline-danger">Delete</button>
+                            <button className="btn btn-grad"
+                                    onClick={() => {
+                                        setShowUpdateModal(true)
+                                        setActionService(service)
+                                    }}>Edit
+                            </button>
+                            <button className="btn btn-grad"
+                                    onClick={() => {
+                                        setShowDeleteModal(true)
+                                        setActionService(service)
+                                    }}
+                            >Delete
+                            </button>
                         </div>
                     </div>
                 </div>
             ))}
+            <UpdateServiceModal showModal={showUpdateModal} setShowModal={setShowUpdateModal}
+                                editService={actionService}/>
         </div>
     )
 }

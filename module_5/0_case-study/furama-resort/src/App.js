@@ -18,6 +18,9 @@ function App() {
                             <Route path="" element={<Outlet/>}>
                                 <Route index element={<ListService/>}/>
                             </Route>
+                            <Route path="" element={<Outlet/>}>
+                                <Route index element={<ListService/>}/>
+                            </Route>
                         </Routes>
                     </BrowserRouter>
                 </div>
