@@ -1,19 +1,20 @@
 {
-    "todos": [
-        {
-            "id": 1,
-            "content": "Mua bánh",
-            "completed": true
-        },
-        {
-            "id": 2,
-            "content": "Học Javascript",
-            "completed": false
-        },
-        {
-            "id": 3,
-            "content": "Học ReactJS",
-            "completed": false
-        }
-    ]
+  "todos": [
+    {
+      "id": 1,
+      "content": "Mua bánh"
+    },
+    {
+      "id": 2,
+      "content": "Học Javascript"
+    },
+    {
+      "id": 3,
+      "content": "Học ReactJS"
+    },
+    {
+      "content": "Mua nước",
+      "id": 4
+    }
+  ]
 }
