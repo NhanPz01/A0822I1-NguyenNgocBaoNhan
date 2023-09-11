@@ -22,7 +22,7 @@ export default function TodoList() {
 
     const todoSchema = Yup.object().shape({
         content: Yup.string().required('Could not empty !'),
-    });
+    })
 
     return (
         <>

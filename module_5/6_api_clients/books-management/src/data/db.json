@@ -1,0 +1,14 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Sapiens - Lược sử loài người",
+      "quantity": 7
+    },
+    {
+      "id": 2,
+      "title": "Muôn kiếp nhân sinh",
+      "quantity": 2
+    }
+  ]
+}
