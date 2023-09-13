@@ -1,7 +1,7 @@
 import {Formik, Form, Field, ErrorMessage} from "formik";
 import {Modal} from "react-bootstrap";
+import moment from "moment";
 import * as Yup from "yup";
-import moment from "moment/moment";
 
 export function CreateCustomerModal({showModal, setShowModal}) {
     const currentDate = moment().toDate()
