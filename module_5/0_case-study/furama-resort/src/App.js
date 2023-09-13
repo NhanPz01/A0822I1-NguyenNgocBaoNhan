@@ -23,9 +23,6 @@ function App() {
                             <Route path="" element={<Outlet/>}>
                                 <Route index element={<ListService/>}/>
                             </Route>
-                            <Route path="/employee" element={<Outlet/>}>
-                                <Route index element={<ListService/>}/>
-                            </Route>
                             <Route path="/customer" element={<Outlet/>}>
                                 <Route index element={<ListCustomer/>}/>
                             </Route>

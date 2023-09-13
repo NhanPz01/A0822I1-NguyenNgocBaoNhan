@@ -10,7 +10,6 @@ export default function NavBar() {
                 <Navbar.Collapse id="navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link href="/">Service</Nav.Link>
-                        <Nav.Link href="/employee">Employee</Nav.Link>
                         <Nav.Link href="/customer">Customer</Nav.Link>
                         <Nav.Link href="/contract">Contract</Nav.Link>
                     </Nav>
