@@ -2,6 +2,7 @@ import {useState} from "react";
 import {AlarmFill, AspectRatioFill, PencilSquare, PeopleFill, PlusCircleFill, TrashFill} from "react-bootstrap-icons";
 import {UpdateServiceModal} from "./UpdateService";
 import {CreateServiceModal} from "./CreateService";
+import DeleteService from "./DeleteService";
 
 const serviceData = [
     {
@@ -115,6 +116,7 @@ export default function ListService() {
                 <UpdateServiceModal showModal={showUpdateModal} setShowModal={setShowUpdateModal}
                                     editService={actionService}/>
                 <CreateServiceModal showModal={showCreateModal} setShowModal={setShowCreateModal}/>
+                <DeleteService showModal={showDeleteModal} setShowModal={setShowDeleteModal} removedId={actionService.id}/>
             </div>
         </>
     )
