@@ -2,6 +2,7 @@ import {useState} from "react";
 import {AlarmFill, AspectRatioFill, PencilSquare, PeopleFill, PlusCircleFill, TrashFill} from "react-bootstrap-icons";
 import {UpdateCustomerModal} from "./UpdateCustomer";
 import {CreateCustomerModal} from "./CreateCustomer";
+import DeleteCustomer from "./DeleteCustomer";
 
 
 const customerData = [
@@ -127,7 +128,12 @@ export default function ListCustomer() {
                                         }}
                                 >Edit
                                 </button>
-                                <button className="btn btn-grad">Delete</button>
+                                <button className="btn btn-grad"
+                                        onClick={() => {
+                                            setShowDeleteModal(true)
+                                            setActionCustomer(customer)
+                                        }}
+                                >Delete</button>
                             </div>
                         </div>
                     </div>
@@ -135,6 +141,7 @@ export default function ListCustomer() {
                 <UpdateCustomerModal showModal={showUpdateModal} setShowModal={setShowUpdateModal}
                                      editCustomer={actionCustomer}/>
                 <CreateCustomerModal showModal={showCreateModal} setShowModal={setShowCreateModal}/>
+                <DeleteCustomer showModal={showDeleteModal} setShowModal={setShowDeleteModal} removedId={actionCustomer.id}/>
             </div>
         </>
     )
