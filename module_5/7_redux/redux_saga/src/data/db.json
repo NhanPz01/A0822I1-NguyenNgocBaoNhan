@@ -1,0 +1,22 @@
+{
+  "user": [
+    {
+      "id": 3,
+      "name": "Nguyen Nhan 3",
+      "email": "nnbnhan3@gmail.com",
+      "website": "abc3.com"
+    },
+    {
+      "id": 5,
+      "name": "Nguyen Nhan 5",
+      "email": "nnbnhan5@gmail.com",
+      "website": "abc5.com"
+    },
+    {
+      "id": 6,
+      "name": "Nguyen Nhan 6",
+      "email": "nnbnhan6@gmail.com",
+      "website": "abc6.com"
+    }
+  ]
+}
