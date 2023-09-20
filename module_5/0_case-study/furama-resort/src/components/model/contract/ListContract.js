@@ -1,53 +1,20 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {PlusCircleFill} from "react-bootstrap-icons";
 import {CreateContractModal} from "./CreateContract";
-
-const contractData = [
-    {
-        id: 1,
-        cId: "CT-01",
-        customer: "Nguyen Van A",
-        service: "Villa Rose",
-        beginDate: "2023-01-01",
-        endDate: "2023-02-02",
-        deposit: 300,
-        totalMoney: 500
-    },
-    {
-        id: 2,
-        cId: "CT-02",
-        customer: "Nguyen Van B",
-        service: "Villa Violet",
-        beginDate: "2023-01-01",
-        endDate: "2023-02-02",
-        deposit: 300,
-        totalMoney: 500
-    },
-    {
-        id: 3,
-        cId: "CT-03",
-        customer: "Nguyen Van C",
-        service: "Villa Sunflower",
-        beginDate: "2023-01-01",
-        endDate: "2023-02-02",
-        deposit: 300,
-        totalMoney: 500
-    },
-    {
-        id: 4,
-        cId: "CT-04",
-        customer: "Nguyen Van A",
-        service: "House Rose",
-        beginDate: "2023-01-01",
-        endDate: "2023-02-02",
-        deposit: 300,
-        totalMoney: 500
-    }
-]
+import * as contractService from "../../service/ContractService";
 
 export function ListContract() {
-    const [contracts, setContracts] = useState(contractData);
+    const [contracts, setContracts] = useState([]);
     const [showCreateModal, setShowCreateModal] = useState(false);
+
+    useEffect(() => {
+        getContracts();
+    }, []);
+
+    const getContracts = async () => {
+        const list = await contractService.getAll();
+        setContracts(list);
+    }
 
     return (
         <>

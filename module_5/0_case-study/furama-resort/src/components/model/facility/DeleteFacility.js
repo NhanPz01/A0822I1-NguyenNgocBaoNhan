@@ -1,6 +1,6 @@
 import {Modal} from "react-bootstrap";
 
-export default function DeleteService({ showModal, setShowModal, removedId }) {
+export default function DeleteFacility({ showModal, setShowModal, removedId }) {
     const handle = () => {
         console.log(removedId)
         setShowModal(false)

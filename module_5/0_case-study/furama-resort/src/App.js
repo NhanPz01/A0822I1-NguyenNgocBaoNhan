@@ -4,7 +4,7 @@ import {BrowserRouter, Outlet, Route, Routes} from "react-router-dom";
 import Header from './components/prototype/Header';
 import Footer from "./components/prototype/Footer";
 import React from "react";
-import ListService from "./components/model/service/ListService";
+import ListFacility from "./components/model/facility/ListFacility";
 import ListCustomer from "./components/model/customer/ListCustomer";
 import {ListContract} from "./components/model/contract/ListContract";
 
@@ -18,10 +18,10 @@ function App() {
                     <BrowserRouter>
                         <Routes>
                             <Route path="" element={<Outlet/>}>
-                                <Route index element={<ListService/>}/>
+                                <Route index element={<ListFacility/>}/>
                             </Route>
                             <Route path="" element={<Outlet/>}>
-                                <Route index element={<ListService/>}/>
+                                <Route index element={<ListFacility/>}/>
                             </Route>
                             <Route path="/customer" element={<Outlet/>}>
                                 <Route index element={<ListCustomer/>}/>

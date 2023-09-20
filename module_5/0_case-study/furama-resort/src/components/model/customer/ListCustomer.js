@@ -1,81 +1,13 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {AlarmFill, AspectRatioFill, PencilSquare, PeopleFill, PlusCircleFill, TrashFill} from "react-bootstrap-icons";
 import {UpdateCustomerModal} from "./UpdateCustomer";
 import {CreateCustomerModal} from "./CreateCustomer";
 import DeleteCustomer from "./DeleteCustomer";
+import * as customerService from "../../service/CustomerService";
 
-
-const customerData = [
-    {
-        id: 1,
-        name: 'Nguyen Van A',
-        customerType: 'GOLD',
-        dateOfBirth: '2023-07-24',
-        gender: 'MALE',
-        idCard: '10123456789',
-        phoneNumber: '10935123456',
-        email: 'abc1@gmail.com',
-        address: '12 Le Duan'
-    },
-    {
-        id: 2,
-        name: 'Nguyen Van B',
-        customerType: 'GOLD',
-        dateOfBirth: '2023-08-24',
-        gender: 'FEMALE',
-        idCard: '20123456789',
-        phoneNumber: '20935123456',
-        email: 'abc2@gmail.com',
-        address: '14 Le Duan'
-    },
-    {
-        id: 3,
-        name: 'Nguyen Van C',
-        customerType: 'PLATINUM',
-        dateOfBirth: '2023-09-24',
-        gender: 'MALE',
-        idCard: '30123456789',
-        phoneNumber: '30935123456',
-        email: 'abc3@gmail.com',
-        address: '16 Le Duan'
-    },
-    {
-        id: 4,
-        name: 'Nguyen Van D',
-        customerType: 'DIAMOND',
-        dateOfBirth: '2023-10-24',
-        gender: 'FEMALE',
-        idCard: '40123456789',
-        phoneNumber: '40935123456',
-        email: 'abc4@gmail.com',
-        address: '20 Le Duan'
-    },
-    {
-        id: 5,
-        name: 'Nguyen Van E',
-        customerType: 'SILVER',
-        dateOfBirth: '2023-11-24',
-        gender: 'MALE',
-        idCard: '50123456789',
-        phoneNumber: '50935123456',
-        email: 'abc5@gmail.com',
-        address: '15 Le Duan'
-    },
-    {
-        id: 6,
-        name: 'Nguyen Van F',
-        customerType: 'SILVER',
-        dateOfBirth: '2023-12-24',
-        gender: 'MALE',
-        idCard: '60123456789',
-        phoneNumber: '60935123456',
-        email: 'abc6@gmail.com',
-        address: '4 Le Duan'
-    }
-]
 
 export default function ListCustomer() {
-    const [customerList, setCustomerList] = useState(customerData)
+    const [customerList, setCustomerList] = useState([])
     const [showCreateModal, setShowCreateModal] = useState(false)
     const [showUpdateModal, setShowUpdateModal] = useState(false)
     const [showDeleteModal, setShowDeleteModal] = useState(false)
@@ -88,6 +20,14 @@ export default function ListCustomer() {
         email: '',
         address: ''
     })
+    useEffect(() => {
+        getCustomers();
+    }, []);
+    const getCustomers = async () => {
+        const list = await customerService.getAll();
+        setCustomerList(list);
+    }
+
     return (
         <>
             <div className="btn-create mb-3 mt-3 -align-left" style={{}}>

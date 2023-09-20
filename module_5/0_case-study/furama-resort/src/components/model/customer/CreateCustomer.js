@@ -2,10 +2,14 @@ import {Formik, Form, Field, ErrorMessage} from "formik";
 import {Modal} from "react-bootstrap";
 import moment from "moment";
 import * as Yup from "yup";
+import * as customerService from "../../service/CustomerService"
+import {useNavigate} from "react-router-dom";
 
 export function CreateCustomerModal({showModal, setShowModal}) {
     const currentDate = moment().toDate()
-    const handle = (values) => {
+    const navigate = useNavigate();
+    const handle = async (values) => {
+        await customerService.add(values);
         console.log(values);
         setShowModal(false);
     }
@@ -14,10 +18,6 @@ export function CreateCustomerModal({showModal, setShowModal}) {
         name: Yup.string().required('Could not empty !').matches(/^([A-Z][a-z]*(\s|$))+$/, "Name could not contain number !"),
         dateOfBirth: Yup
             .date()
-            .transform((value, originalValue) => {
-                const date = moment(originalValue, 'DD/MM/YYYY', true);
-                return date.isValid() ? date.toDate() : new Date('');
-            })
             .max(new Date(), 'Could not in future !')
             .required('Could not empty !'),
 
@@ -43,6 +43,7 @@ export function CreateCustomerModal({showModal, setShowModal}) {
                 onSubmit={(values, {resetForm}) => {
                     handle(values);
                     resetForm();
+                    navigate("/");
                 }}
             >
                 {({errors, touched}) => (
@@ -81,7 +82,7 @@ export function CreateCustomerModal({showModal, setShowModal}) {
                                     <label className="form-label">Gender</label>
                                     <div role="group" aria-labelledby="my-radio-group">
                                         <label>
-                                            <Field type="radio" name="gender" value="MALE" check/>
+                                            <Field type="radio" name="gender" value="MALE" checked/>
                                             &nbsp;Male
                                         </label>
                                         &nbsp;&nbsp;&nbsp;&nbsp;

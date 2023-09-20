@@ -1,8 +1,16 @@
 import {Modal} from "react-bootstrap";
+import * as customerService from "../../service/CustomerService"
+import {useNavigate} from "react-router-dom";
 
 export default function DeleteCustomer({showModal, setShowModal, removedId}) {
-    const handle = () => {
+    const navigate = useNavigate();
+    const handle = async () => {
+        console.group("Removing...")
         console.log("removedId : " + removedId)
+        console.log("...Done !")
+        console.groupEnd()
+        await customerService.remove(removedId)
+        navigate("/customer")
         setShowModal(false)
     }
 

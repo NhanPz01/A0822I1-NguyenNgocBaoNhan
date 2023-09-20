@@ -1,8 +1,12 @@
 import {Field, Form, Formik} from "formik";
 import {Button, Modal} from "react-bootstrap";
+import {useNavigate} from "react-router-dom";
+import * as facilityService from "../../service/FacilityService"
 
 export function CreateServiceModal({showModal, setShowModal}) {
-    const handle = (values) => {
+    const navigate = useNavigate();
+    const handle = async (values) => {
+        await facilityService.add(values);
         setShowModal(false)
         console.log(values)
     }
@@ -21,6 +25,7 @@ export function CreateServiceModal({showModal, setShowModal}) {
             onSubmit={(values, {resetForm}) => {
                 handle(values);
                 resetForm();
+                navigate("/");
             }}
         >
             <Form id="create-service">
@@ -46,8 +51,14 @@ export function CreateServiceModal({showModal, setShowModal}) {
                             <Field type="number" className="form-control" name="maxGuest"/>
                         </div>
                         <div className="mb-3">
-                            <label className="form-label">Rental Type</label>
-                            <Field type="text" className="form-control" name="rentalType"/>
+                            <label className="form-label">Rent Type</label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <Field as="select" name="rentalType">
+                                <option value="Hourly">Hourly</option>
+                                <option value="Daily">Daily</option>
+                                <option value="Monthly">Monthly</option>
+                                <option value="Yearly">Yearly</option>
+                            </Field>
                         </div>
                         <div className="mb-3">
                             <label className="form-label">Other Convenient</label>
