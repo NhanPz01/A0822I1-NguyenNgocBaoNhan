@@ -3,7 +3,7 @@ export default function Header() {
         <header>
             <div className="banner">
                 <div className="header-title">
-                    <h1>Furama Resort</h1>
+                    <h1>Sky Garden Library</h1>
                 </div>
             </div>
         </header>

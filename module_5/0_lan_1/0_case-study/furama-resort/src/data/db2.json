@@ -1,0 +1,488 @@
+{
+  "facility": [
+    {
+      "cId": 1,
+      "name": "Villa A",
+      "usageArea": 100,
+      "rentalCost": 200,
+      "maxGuest": 15,
+      "rentalType": "Daily",
+      "otherConvenient": "TV, Wifi, AC, Breakfast",
+      "imgURL": "https://plus.unsplash.com/premium_photo-1682285212027-6af0d0f70e07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+    },
+    {
+      "cId": 2,
+      "name": "Villa B",
+      "usageArea": 150,
+      "rentalCost": 100,
+      "maxGuest": 10,
+      "rentalType": "Hourly",
+      "otherConvenient": "TV, Wifi, AC",
+      "imgURL": "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
+    },
+    {
+      "cId": 3,
+      "name": "Villa C",
+      "usageArea": 150,
+      "rentalCost": 100,
+      "maxGuest": 5,
+      "rentalType": "Monthly",
+      "otherConvenient": "TV, Wifi, AC",
+      "imgURL": "https://plus.unsplash.com/premium_photo-1682913629540-3857602b540c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1780&q=80"
+    },
+    {
+      "cId": 4,
+      "name": "House A",
+      "usageArea": 150,
+      "rentalCost": 100,
+      "maxGuest": 5,
+      "rentalType": "Monthly",
+      "otherConvenient": "TV, Wifi, AC",
+      "imgURL": "https://images.unsplash.com/photo-1615880484746-a134be9a6ecf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
+    },
+    {
+      "cId": 5,
+      "name": "House B",
+      "usageArea": 150,
+      "rentalCost": 100,
+      "maxGuest": 5,
+      "rentalType": "Hourly",
+      "otherConvenient": "TV, Wifi, AC",
+      "imgURL": "https://media.architecturaldigest.com/photos/628fb43b978896c06b13b204/16:9/w_2560%2Cc_limit/GettyImages-957245348.jpg"
+    },
+    {
+      "name": "Villa :v",
+      "usageArea": 59,
+      "rentalCost": 2,
+      "maxGuest": 5,
+      "rentalType": "Monthly",
+      "otherConvenient": "",
+      "imgURL": "http://www.sanroccovillas.com/photos/mikulina/1.jpg",
+      "cId": 6
+    },
+    {
+      "name": "Garden",
+      "usageArea": 80,
+      "rentalCost": 2,
+      "maxGuest": 16,
+      "rentalType": "Daily",
+      "otherConvenient": "",
+      "imgURL": "https://media.istockphoto.com/id/1347784849/photo/scenic-view-of-a-beautiful-landscape-garden-with-a-green-mowed-lawn.jpg?s=612x612&w=0&k=20&c=VU6cE_762lTNwqFeuc1A-JFksy6HcXM35Xq3ox3-Az0=",
+      "cId": 7
+    }
+  ],
+  "customer": [
+    {
+      "cId": 1,
+      "name": "Nguyen Van Ahihi",
+      "customerType": "GOLD",
+      "dateOfBirth": "2023-07-24",
+      "gender": "MALE",
+      "idCard": "019999999",
+      "phoneNumber": "0911111000",
+      "email": "abc1@gmail.com",
+      "address": "12 Le Duan"
+    },
+    {
+      "cId": 2,
+      "name": "Nguyen Van B",
+      "customerType": "GOLD",
+      "dateOfBirth": "2023-08-24",
+      "gender": "FEMALE",
+      "idCard": "20123456789",
+      "phoneNumber": "20935123456",
+      "email": "abc2@gmail.com",
+      "address": "14 Le Duan"
+    },
+    {
+      "cId": 3,
+      "name": "Nguyen Van C",
+      "customerType": "PLATINUM",
+      "dateOfBirth": "2023-09-24",
+      "gender": "MALE",
+      "idCard": "30123456789",
+      "phoneNumber": "30935123456",
+      "email": "abc3@gmail.com",
+      "address": "16 Le Duan"
+    },
+    {
+      "cId": 4,
+      "name": "Nguyen Van D",
+      "customerType": "DIAMOND",
+      "dateOfBirth": "2023-10-24",
+      "gender": "FEMALE",
+      "idCard": "40123456789",
+      "phoneNumber": "40935123456",
+      "email": "abc4@gmail.com",
+      "address": "20 Le Duan"
+    },
+    {
+      "cId": 5,
+      "name": "Nguyen Van E",
+      "customerType": "SILVER",
+      "dateOfBirth": "2023-11-24",
+      "gender": "MALE",
+      "idCard": "50123456789",
+      "phoneNumber": "50935123456",
+      "email": "abc5@gmail.com",
+      "address": "15 Le Duan"
+    },
+    {
+      "cId": 6,
+      "name": "Nguyen Van F",
+      "customerType": "SILVER",
+      "dateOfBirth": "2023-12-24",
+      "gender": "MALE",
+      "idCard": "60123456789",
+      "phoneNumber": "60935123456",
+      "email": "abc6@gmail.com",
+      "address": "4 Le Duan"
+    },
+    {
+      "name": "Bao Nhan",
+      "customerType": "PLATINUM",
+      "dateOfBirth": "2023-08-28",
+      "gender": "MALE",
+      "idCard": "010000000",
+      "phoneNumber": "0910000000",
+      "email": "AS@gmail.com",
+      "address": "12 Le Le",
+      "cId": 7
+    },
+    {
+      "name": "Nhan Pz",
+      "customerType": "GOLD",
+      "dateOfBirth": "2011-01-23",
+      "gender": "",
+      "idCard": "210000000",
+      "phoneNumber": "0901212121",
+      "email": "asdk@gmail.com",
+      "address": "129 SJ KKKKK",
+      "cId": 8
+    },
+    {
+      "name": "Bao Nhan",
+      "customerType": "SILVER",
+      "dateOfBirth": "2022-12-31",
+      "gender": "FEMALE",
+      "idCard": "019192999922",
+      "phoneNumber": "0912919991",
+      "email": "asm@gmail.com",
+      "address": "12 @LSj",
+      "cId": 9
+    },
+    {
+      "name": "Hai Anh",
+      "customerType": "SILVER",
+      "dateOfBirth": "2000-05-15",
+      "gender": "MALE",
+      "idCard": "01234567890",
+      "phoneNumber": "0912345678",
+      "email": "hai.anh@gmail.com",
+      "address": "123 ABC Street",
+      "cId": 10
+    },
+    {
+      "name": "Mai Hoa",
+      "customerType": "SILVER",
+      "dateOfBirth": "1995-07-20",
+      "gender": "FEMALE",
+      "idCard": "98765432109",
+      "phoneNumber": "0909876543",
+      "email": "mai.hoa@gmail.com",
+      "address": "456 XYZ Street",
+      "cId": 11
+    },
+    {
+      "name": "Quoc Bao",
+      "customerType": "GOLD",
+      "dateOfBirth": "1988-03-10",
+      "gender": "MALE",
+      "idCard": "87654321098",
+      "phoneNumber": "0901234567",
+      "email": "quoc.bao@gmail.com",
+      "address": "789 LMN Street",
+      "cId": 12
+    },
+    {
+      "name": "Thi Lan",
+      "customerType": "SILVER",
+      "dateOfBirth": "2002-11-25",
+      "gender": "FEMALE",
+      "idCard": "76543210987",
+      "phoneNumber": "0913456789",
+      "email": "thi.lan@gmail.com",
+      "address": "101 QRS Street",
+      "cId": 13
+    },
+    {
+      "name": "Duc Anh",
+      "customerType": "SILVER",
+      "dateOfBirth": "1998-09-05",
+      "gender": "MALE",
+      "idCard": "65432109876",
+      "phoneNumber": "0905678901",
+      "email": "duc.anh@gmail.com",
+      "address": "202 TUV Street",
+      "cId": 14
+    },
+    {
+      "name": "Trang Nga",
+      "customerType": "GOLD",
+      "dateOfBirth": "1990-12-18",
+      "gender": "FEMALE",
+      "idCard": "54321098765",
+      "phoneNumber": "0916789012",
+      "email": "trang.nga@gmail.com",
+      "address": "303 WXY Street",
+      "cId": 15
+    },
+    {
+      "name": "Minh Tri",
+      "customerType": "SILVER",
+      "dateOfBirth": "1999-04-30",
+      "gender": "MALE",
+      "idCard": "43210987654",
+      "phoneNumber": "0917890123",
+      "email": "minh.tri@gmail.com",
+      "address": "404 ZAB Street",
+      "cId": 16
+    },
+    {
+      "name": "Phuong Linh",
+      "customerType": "GOLD",
+      "dateOfBirth": "1985-06-12",
+      "gender": "FEMALE",
+      "idCard": "32109876543",
+      "phoneNumber": "0908901234",
+      "email": "phuong.linh@gmail.com",
+      "address": "505 CDE Street",
+      "cId": 17
+    },
+    {
+      "name": "Van Huy",
+      "customerType": "SILVER",
+      "dateOfBirth": "2001-08-22",
+      "gender": "MALE",
+      "idCard": "21098765432",
+      "phoneNumber": "0918901235",
+      "email": "van.huy@gmail.com",
+      "address": "606 FGH Street",
+      "cId": 18
+    },
+    {
+      "name": "My Phuong",
+      "customerType": "SILVER",
+      "dateOfBirth": "1997-02-07",
+      "gender": "FEMALE",
+      "idCard": "10987654321",
+      "phoneNumber": "0901234567",
+      "email": "my.phuong@gmail.com",
+      "address": "707 IJK Street",
+      "cId": 19
+    },
+    {
+      "name": "Tuan Anh",
+      "customerType": "GOLD",
+      "dateOfBirth": "1986-10-14",
+      "gender": "MALE",
+      "idCard": "09876543210",
+      "phoneNumber": "0909876543",
+      "email": "tuan.anh@gmail.com",
+      "address": "808 MNO Street",
+      "cId": 20
+    },
+    {
+      "name": "Thi Mai",
+      "customerType": "SILVER",
+      "dateOfBirth": "2003-03-05",
+      "gender": "FEMALE",
+      "idCard": "98765432109",
+      "phoneNumber": "0912345678",
+      "email": "thi.mai@gmail.com",
+      "address": "909 PQR Street",
+      "cId": 21
+    },
+    {
+      "name": "Khoa Long",
+      "customerType": "SILVER",
+      "dateOfBirth": "1994-09-28",
+      "gender": "MALE",
+      "idCard": "87654321098",
+      "phoneNumber": "0901234567",
+      "email": "khoa.long@gmail.com",
+      "address": "1010 STU Street",
+      "cId": 22
+    },
+    {
+      "name": "Thanh Truc",
+      "customerType": "GOLD",
+      "dateOfBirth": "1989-07-01",
+      "gender": "FEMALE",
+      "idCard": "76543210987",
+      "phoneNumber": "0912345678",
+      "email": "thanh.truc@gmail.com",
+      "address": "1111 VWX Street",
+      "cId": 23
+    },
+    {
+      "name": "Dinh Hung",
+      "customerType": "SILVER",
+      "dateOfBirth": "1993-11-11",
+      "gender": "MALE",
+      "idCard": "65432109876",
+      "phoneNumber": "0901234567",
+      "email": "dinh.hung@gmail.com",
+      "address": "1212 XYZ Street",
+      "cId": 24
+    },
+    {
+      "name": "Ngoc Anh",
+      "customerType": "SILVER",
+      "dateOfBirth": "2000-05-15",
+      "gender": "FEMALE",
+      "idCard": "54321098765",
+      "phoneNumber": "0912345678",
+      "email": "ngoc.anh@gmail.com",
+      "address": "1313 UVW Street",
+      "cId": 25
+    },
+    {
+      "name": "Quang Thanh",
+      "customerType": "GOLD",
+      "dateOfBirth": "1987-04-19",
+      "gender": "FEMALE",
+      "idCard": "012921999",
+      "phoneNumber": "0901234567",
+      "email": "quang.thanh@gmail.com",
+      "address": "1414 CDE Street",
+      "cId": 26
+    },
+    {
+      "name": "Thuy Linh",
+      "customerType": "SILVER",
+      "dateOfBirth": "2004-02-23",
+      "gender": "FEMALE",
+      "idCard": "32109876543",
+      "phoneNumber": "0912345678",
+      "email": "thuy.linh@gmail.com",
+      "address": "1515 XYZ Street",
+      "cId": 27
+    },
+    {
+      "name": "Hoang Nam",
+      "customerType": "SILVER",
+      "dateOfBirth": "1996-06-30",
+      "gender": "MALE",
+      "idCard": "21098765432",
+      "phoneNumber": "0901234567",
+      "email": "hoang.nam@gmail.com",
+      "address": "1616 LMN Street",
+      "cId": 28
+    },
+    {
+      "name": "Bao Nhan",
+      "customerType": "SILVER",
+      "dateOfBirth": "2022-12-31",
+      "gender": "FEMALE",
+      "idCard": "019192999922",
+      "phoneNumber": "0912919991",
+      "email": "asm@gmail.com",
+      "address": "12 @LSj",
+      "cId": 29
+    },
+    {
+      "name": "Ehe Ahihi",
+      "customerType": "DIAMOND",
+      "dateOfBirth": "1998-01-01",
+      "gender": "",
+      "idCard": "012222200",
+      "phoneNumber": "0910000002",
+      "email": "as@gmail.com",
+      "address": "290 @LSas",
+      "cId": 30
+    }
+  ],
+  "contract": [
+    {
+      "cId": 1,
+      "cId": "CT-01",
+      "customer": "Nguyen Van A",
+      "service": "Villa Rose",
+      "beginDate": "2023-01-01",
+      "endDate": "2023-02-02",
+      "deposit": 300,
+      "totalMoney": 500
+    },
+    {
+      "cId": 2,
+      "cId": "CT-02",
+      "customer": "Nguyen Van B",
+      "service": "Villa Violet",
+      "beginDate": "2023-01-01",
+      "endDate": "2023-02-02",
+      "deposit": 300,
+      "totalMoney": 500
+    },
+    {
+      "cId": 3,
+      "cId": "CT-03",
+      "customer": "Nguyen Van C",
+      "service": "Villa Sunflower",
+      "beginDate": "2023-01-01",
+      "endDate": "2023-02-02",
+      "deposit": 300,
+      "totalMoney": 500
+    },
+    {
+      "cId": 4,
+      "cId": "CT-04",
+      "customer": "Nguyen Van A",
+      "service": "House Rose",
+      "beginDate": "2023-01-01",
+      "endDate": "2023-02-02",
+      "deposit": 300,
+      "totalMoney": 500
+    },
+    {
+      "cId": 5,
+      "cId": "CT-05",
+      "customer": "Nguyen Van D",
+      "service": "Villa Orchid",
+      "beginDate": "2023-03-15",
+      "endDate": "2023-04-15",
+      "deposit": 350,
+      "totalMoney": 600
+    },
+    {
+      "cId": 6,
+      "cId": "CT-06",
+      "customer": "Nguyen Van E",
+      "service": "Villa Lily",
+      "beginDate": "2023-04-10",
+      "endDate": "2023-05-10",
+      "deposit": 400,
+      "totalMoney": 700
+    },
+    {
+      "cId": 7,
+      "cId": "CT-07",
+      "customer": "Nguyen Van F",
+      "service": "House Jasmine",
+      "beginDate": "2023-06-20",
+      "endDate": "2023-07-20",
+      "deposit": 250,
+      "totalMoney": 550
+    },
+    {
+      "cId": 8,
+      "cId": "CT-08",
+      "customer": "Nguyen Van G",
+      "service": "House Tulip",
+      "beginDate": "2023-08-05",
+      "endDate": "2023-09-05",
+      "deposit": 300,
+      "totalMoney": 600
+    }
+  ]
+}

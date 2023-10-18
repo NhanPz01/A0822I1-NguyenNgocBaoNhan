@@ -8,11 +8,11 @@ export default function NavBar() {
                 <Navbar.Brand href="/">Home</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbar-nav" />
                 <Navbar.Collapse id="navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link href="/">Service</Nav.Link>
-                        <Nav.Link href="/customer">Customer</Nav.Link>
-                        <Nav.Link href="/contract">Contract</Nav.Link>
-                    </Nav>
+                    {/*<Nav className="me-auto">*/}
+                    {/*    <Nav.Link href="/">Service</Nav.Link>*/}
+                    {/*    <Nav.Link href="/customer">Customer</Nav.Link>*/}
+                    {/*    <Nav.Link href="/contract">Contract</Nav.Link>*/}
+                    {/*</Nav>*/}
                     <Nav className="ml-auto">
                         <Nav.Link href="#">
                             <input className="form-control" type="text" placeholder="Search" aria-label="Search" />

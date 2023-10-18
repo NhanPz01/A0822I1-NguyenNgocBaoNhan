@@ -1,0 +1,81 @@
+{
+  "type": [
+    "Horror",
+    "Drama",
+    "Novel"
+  ],
+  "book": [
+    {
+      "id": 1,
+      "cId": "BO-0001",
+      "name": "Book 1",
+      "type": "Horror",
+      "getDate": "2021-12-02",
+      "quantity": 8
+    },
+    {
+      "id": 2,
+      "cId": "BO-0002",
+      "name": "Book 2",
+      "type": "Drama",
+      "getDate": "2021-12-02",
+      "quantity": 15
+    },
+    {
+      "id": 3,
+      "cId": "BO-0003",
+      "name": "Book 3",
+      "type": "Drama",
+      "getDate": "2021-12-02",
+      "quantity": 20
+    },
+    {
+      "id": 4,
+      "cId": "BO-0004",
+      "name": "Book 4",
+      "type": "Drama",
+      "getDate": "2021-12-12",
+      "quantity": 7
+    },
+    {
+      "id": 5,
+      "cId": "BO-0005",
+      "name": "Book 5",
+      "type": "Horror",
+      "getDate": "2021-11-02",
+      "quantity": 10
+    },
+    {
+      "cId": "BO-0006",
+      "name": "Book 6",
+      "type": "Novel",
+      "getDate": "2019-11-01",
+      "quantity": 2,
+      "id": 6
+    },
+    {
+      "cId": "BO-0007",
+      "name": "Book 7",
+      "type": "Novel",
+      "getDate": "2020-04-29",
+      "quantity": 1,
+      "id": 7
+    },
+    {
+      "cId": "BO-0008",
+      "name": "Book 8",
+      "type": "Novel",
+      "getDate": "2019-02-05",
+      "quantity": 1,
+      "id": 8
+    },
+    {
+      "cId": "BO-0102",
+      "name": "ASd",
+      "type": "Truyen",
+      "getDate": "2023-09-06",
+      "quantity": 3,
+      "id": 9
+    }
+  ]
+}
