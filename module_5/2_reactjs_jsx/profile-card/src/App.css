@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+  background-color: #9de2ff;
+}
+
+a {
+  text-decoration: none;
+  color: #ffff;
+}
+
+.card {
+  border-radius: 15px;
+  background-color: #efefef;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  border-radius: 7px;
+  object-fit: cover;
+}
