@@ -8,7 +8,7 @@ export default function Todo({ todo, onDelete }) {
   return (
     <li>
       {todo.todo}
-      <button onClick={handleDelete}>x</button>
+      <span onClick={handleDelete}>x</span>
     </li>
   );
 }
