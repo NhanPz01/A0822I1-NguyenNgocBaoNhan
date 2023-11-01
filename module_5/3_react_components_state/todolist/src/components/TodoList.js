@@ -49,7 +49,7 @@ export default function TodoList() {
         </div>
         <ul id="list-container">
           {todos.map((todo) => (
-            <Todo key={todo.id} todo={todo} onDelete={deleteTodo} />
+            <Todo key={todo.id} todo={todo} onDelete={() => deleteTodo(todo.id)} />
           ))}
         </ul>
       </div>
