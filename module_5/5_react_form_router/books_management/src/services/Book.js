@@ -16,7 +16,7 @@ export const save = async (value) => {
 }
 
 export const update = async (value) => {
-  const response = await axios.put('http://localhost:8080/books', value)
+  const response = await axios.put(`http://localhost:8080/books/${value.id}`, value)
   return response.status
 }
 

@@ -2,6 +2,16 @@
   width: 100%;
 }
 
+.container {
+  margin: 0;
+  width: 100%;
+  text-align: right;
+}
+
 .error {
   color: red;
 }
+/* 
+table {
+  text-align: right;
+} */
