@@ -65,7 +65,7 @@ const BookEdit = ({ editing, book, onCancel }) => {
             </tbody>
           </table>
         </Form>
-      </Formik >
+      </Formik>
     </>
   )
 }
