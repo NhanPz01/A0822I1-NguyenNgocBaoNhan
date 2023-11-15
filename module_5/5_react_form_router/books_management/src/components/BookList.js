@@ -19,8 +19,6 @@ const BookList = () => {
   }
 
   const handleEditMode = (book) => {
-    setEditingBook(book)
-    setIsEditMode(true)
   }
 
   
