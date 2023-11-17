@@ -1,0 +1,26 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Nguyen Van A",
+      "age": 18,
+      "gender": "male"
+    },
+    {
+      "id": 2,
+      "name": "Le Thi B",
+      "age": 21,
+      "gender": "female"
+    },
+    {
+      "id": 3,
+      "name": "Tran Duc C",
+      "age": 12,
+      "gender": "male"
+    }
+  ],
+  "gender": [
+    "male",
+    "female"
+  ]
+}
