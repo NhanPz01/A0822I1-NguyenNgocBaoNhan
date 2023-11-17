@@ -1,0 +1,20 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "content": "Learning JavaScript"
+    },
+    {
+      "id": 3,
+      "content": "Learning Python"
+    },
+    {
+      "id": 4,
+      "content": "Doing JavaScript Exercise"
+    },
+    {
+      "content": "Playing Game",
+      "id": 5
+    }
+  ]
+}
