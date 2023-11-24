@@ -1,488 +1,770 @@
 {
-  "facility": [
+  "accompanied_service": [
     {
       "id": 1,
-      "name": "Villa A",
-      "usageArea": 100,
-      "rentalCost": 200,
-      "maxGuest": 15,
-      "rentalType": "Daily",
-      "otherConvenient": "TV, Wifi, AC, Breakfast",
-      "imgURL": "https://plus.unsplash.com/premium_photo-1682285212027-6af0d0f70e07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+      "name": "massage",
+      "unit": "hour",
+      "price": 400000
     },
     {
       "id": 2,
-      "name": "Villa B",
-      "usageArea": 150,
-      "rentalCost": 100,
-      "maxGuest": 10,
-      "rentalType": "Hourly",
-      "otherConvenient": "TV, Wifi, AC",
-      "imgURL": "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
+      "name": "karaoke",
+      "unit": "hour",
+      "price": 20000
     },
     {
       "id": 3,
-      "name": "Villa C",
-      "usageArea": 150,
-      "rentalCost": 100,
-      "maxGuest": 5,
-      "rentalType": "Monthly",
-      "otherConvenient": "TV, Wifi, AC",
-      "imgURL": "https://plus.unsplash.com/premium_photo-1682913629540-3857602b540c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1780&q=80"
+      "name": "food",
+      "unit": "meal",
+      "price": 200000
     },
     {
       "id": 4,
-      "name": "House A",
-      "usageArea": 150,
-      "rentalCost": 100,
-      "maxGuest": 5,
-      "rentalType": "Monthly",
-      "otherConvenient": "TV, Wifi, AC",
-      "imgURL": "https://images.unsplash.com/photo-1615880484746-a134be9a6ecf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
+      "name": "drink",
+      "unit": "meal",
+      "price": 70000
     },
     {
       "id": 5,
-      "name": "House B",
-      "usageArea": 150,
-      "rentalCost": 100,
-      "maxGuest": 5,
-      "rentalType": "Hourly",
-      "otherConvenient": "TV, Wifi, AC",
-      "imgURL": "https://media.architecturaldigest.com/photos/628fb43b978896c06b13b204/16:9/w_2560%2Cc_limit/GettyImages-957245348.jpg"
-    },
-    {
-      "name": "Villa :v",
-      "usageArea": 59,
-      "rentalCost": 2,
-      "maxGuest": 5,
-      "rentalType": "Monthly",
-      "otherConvenient": "",
-      "imgURL": "http://www.sanroccovillas.com/photos/mikulina/1.jpg",
-      "id": 6
-    },
-    {
-      "name": "Garden",
-      "usageArea": 80,
-      "rentalCost": 2,
-      "maxGuest": 16,
-      "rentalType": "Daily",
-      "otherConvenient": "",
-      "imgURL": "https://media.istockphoto.com/id/1347784849/photo/scenic-view-of-a-beautiful-landscape-garden-with-a-green-mowed-lawn.jpg?s=612x612&w=0&k=20&c=VU6cE_762lTNwqFeuc1A-JFksy6HcXM35Xq3ox3-Az0=",
-      "id": 7
+      "name": "rented bik",
+      "unit": "day",
+      "price": 500000
     }
   ],
-  "customer": [
+  "free_service_included": [
+    "karaoke",
+    "rent bicycle",
+    "Morning buffet",
+    "Lunch buffet",
+    "Evening buffet"
+  ],
+  "standard": [
+    "vip",
+    "normal"
+  ],
+  "facility_type": [
+    "Villa",
+    "House",
+    "Room"
+  ],
+  "other_amenities_described": [
+    "swimming pool",
+    "additional grill",
+    "television"
+  ],
+  "pool_area": [
+    200,
+    1000
+  ],
+  "number_of_floors": [
+    1,
+    2,
+    3
+  ],
+  "area": [
+    150,
+    250,
+    500,
+    1000
+  ],
+  "rent_type": [
+    "Yearly",
+    "Monthly",
+    "Daily",
+    "Hourly"
+  ],
+  "maximum_capacity": [
+    2,
+    4,
+    10,
+    16
+  ],
+  "position": [
+    "Receptionist",
+    "Service",
+    "Specialist",
+    "Monitoring",
+    "Manager",
+    "Director"
+  ],
+  "department": [
+    "Sale-Marketing",
+    "Administrative",
+    "Service",
+    "Manager"
+  ],
+  "literacy": [
+    "Intermediate",
+    "College",
+    "University",
+    "Postgraduate"
+  ],
+  "customer_type": [
+    "Diamond",
+    "Platinum",
+    "Gold",
+    "Silver",
+    "Member"
+  ],
+  "employees": [
     {
       "id": 1,
-      "name": "Nguyen Van Ahihi",
-      "customerType": "GOLD",
-      "dateOfBirth": "2023-07-24",
-      "gender": "MALE",
-      "idCard": "019999999",
-      "phoneNumber": "0911111000",
-      "email": "abc1@gmail.com",
-      "address": "12 Le Duan"
+      "name": "Nguyễn Văn An",
+      "dateOfBirth": "1970-11-07",
+      "personalId": "456231786",
+      "salary": 10000000,
+      "phone": "0901234121",
+      "email": "annguyen@gmail.com",
+      "position": "Receptionist",
+      "department": "Service",
+      "literacy": "College"
     },
     {
       "id": 2,
-      "name": "Nguyen Van B",
-      "customerType": "GOLD",
-      "dateOfBirth": "2023-08-24",
-      "gender": "FEMALE",
-      "idCard": "20123456789",
-      "phoneNumber": "20935123456",
-      "email": "abc2@gmail.com",
-      "address": "14 Le Duan"
+      "name": "Trần Thị Bình",
+      "dateOfBirth": "1985-05-15",
+      "personalId": "789456123",
+      "salary": 12000000,
+      "phone": "0909876543",
+      "email": "binhtran@gmail.com",
+      "position": "Specialist",
+      "department": "Sale-Marketing",
+      "literacy": "University"
     },
     {
       "id": 3,
-      "name": "Nguyen Van C",
-      "customerType": "PLATINUM",
-      "dateOfBirth": "2023-09-24",
-      "gender": "MALE",
-      "idCard": "30123456789",
-      "phoneNumber": "30935123456",
-      "email": "abc3@gmail.com",
-      "address": "16 Le Duan"
+      "name": "Lê Văn Cường",
+      "dateOfBirth": "1990-09-22",
+      "personalId": "123789654",
+      "salary": 15000000,
+      "phone": "0904567890",
+      "email": "cuongle@gmail.com",
+      "position": "Monitoring",
+      "department": "Administrative",
+      "literacy": "Postgraduate"
     },
     {
       "id": 4,
-      "name": "Nguyen Van D",
-      "customerType": "DIAMOND",
-      "dateOfBirth": "2023-10-24",
-      "gender": "FEMALE",
-      "idCard": "40123456789",
-      "phoneNumber": "40935123456",
-      "email": "abc4@gmail.com",
-      "address": "20 Le Duan"
+      "name": "Phạm Thị Dung",
+      "dateOfBirth": "1982-07-19",
+      "personalId": "654789321",
+      "salary": 11000000,
+      "phone": "0905678901",
+      "email": "dungpham@gmail.com",
+      "position": "Manager",
+      "department": "Manager",
+      "literacy": "Intermediate"
     },
     {
       "id": 5,
-      "name": "Nguyen Van E",
-      "customerType": "SILVER",
-      "dateOfBirth": "2023-11-24",
-      "gender": "MALE",
-      "idCard": "50123456789",
-      "phoneNumber": "50935123456",
-      "email": "abc5@gmail.com",
-      "address": "15 Le Duan"
+      "name": "Hoàng Văn Eo",
+      "dateOfBirth": "1995-03-25",
+      "personalId": "987321654",
+      "salary": 13000000,
+      "phone": "0902345678",
+      "email": "eohoang@gmail.com",
+      "position": "Director",
+      "department": "Manager",
+      "literacy": "University"
     },
     {
       "id": 6,
-      "name": "Nguyen Van F",
-      "customerType": "SILVER",
-      "dateOfBirth": "2023-12-24",
-      "gender": "MALE",
-      "idCard": "60123456789",
-      "phoneNumber": "60935123456",
-      "email": "abc6@gmail.com",
-      "address": "4 Le Duan"
-    },
-    {
-      "name": "Bao Nhan",
-      "customerType": "PLATINUM",
-      "dateOfBirth": "2023-08-28",
-      "gender": "MALE",
-      "idCard": "010000000",
-      "phoneNumber": "0910000000",
-      "email": "AS@gmail.com",
-      "address": "12 Le Le",
-      "id": 7
-    },
-    {
-      "name": "Nhan Pz",
-      "customerType": "GOLD",
-      "dateOfBirth": "2011-01-23",
-      "gender": "",
-      "idCard": "210000000",
-      "phoneNumber": "0901212121",
-      "email": "asdk@gmail.com",
-      "address": "129 SJ KKKKK",
-      "id": 8
-    },
-    {
-      "name": "Bao Nhan",
-      "customerType": "SILVER",
-      "dateOfBirth": "2022-12-31",
-      "gender": "FEMALE",
-      "idCard": "019192999922",
-      "phoneNumber": "0912919991",
-      "email": "asm@gmail.com",
-      "address": "12 @LSj",
-      "id": 9
-    },
-    {
-      "name": "Hai Anh",
-      "customerType": "SILVER",
-      "dateOfBirth": "2000-05-15",
-      "gender": "MALE",
-      "idCard": "01234567890",
-      "phoneNumber": "0912345678",
-      "email": "hai.anh@gmail.com",
-      "address": "123 ABC Street",
-      "id": 10
-    },
-    {
-      "name": "Mai Hoa",
-      "customerType": "SILVER",
-      "dateOfBirth": "1995-07-20",
-      "gender": "FEMALE",
-      "idCard": "98765432109",
-      "phoneNumber": "0909876543",
-      "email": "mai.hoa@gmail.com",
-      "address": "456 XYZ Street",
-      "id": 11
-    },
-    {
-      "name": "Quoc Bao",
-      "customerType": "GOLD",
-      "dateOfBirth": "1988-03-10",
-      "gender": "MALE",
-      "idCard": "87654321098",
-      "phoneNumber": "0901234567",
-      "email": "quoc.bao@gmail.com",
-      "address": "789 LMN Street",
-      "id": 12
-    },
-    {
-      "name": "Thi Lan",
-      "customerType": "SILVER",
-      "dateOfBirth": "2002-11-25",
-      "gender": "FEMALE",
-      "idCard": "76543210987",
-      "phoneNumber": "0913456789",
-      "email": "thi.lan@gmail.com",
-      "address": "101 QRS Street",
-      "id": 13
-    },
-    {
-      "name": "Duc Anh",
-      "customerType": "SILVER",
-      "dateOfBirth": "1998-09-05",
-      "gender": "MALE",
-      "idCard": "65432109876",
-      "phoneNumber": "0905678901",
-      "email": "duc.anh@gmail.com",
-      "address": "202 TUV Street",
-      "id": 14
-    },
-    {
-      "name": "Trang Nga",
-      "customerType": "GOLD",
-      "dateOfBirth": "1990-12-18",
-      "gender": "FEMALE",
-      "idCard": "54321098765",
-      "phoneNumber": "0916789012",
-      "email": "trang.nga@gmail.com",
-      "address": "303 WXY Street",
-      "id": 15
-    },
-    {
-      "name": "Minh Tri",
-      "customerType": "SILVER",
-      "dateOfBirth": "1999-04-30",
-      "gender": "MALE",
-      "idCard": "43210987654",
-      "phoneNumber": "0917890123",
-      "email": "minh.tri@gmail.com",
-      "address": "404 ZAB Street",
-      "id": 16
-    },
-    {
-      "name": "Phuong Linh",
-      "customerType": "GOLD",
-      "dateOfBirth": "1985-06-12",
-      "gender": "FEMALE",
-      "idCard": "32109876543",
-      "phoneNumber": "0908901234",
-      "email": "phuong.linh@gmail.com",
-      "address": "505 CDE Street",
-      "id": 17
-    },
-    {
-      "name": "Van Huy",
-      "customerType": "SILVER",
-      "dateOfBirth": "2001-08-22",
-      "gender": "MALE",
-      "idCard": "21098765432",
-      "phoneNumber": "0918901235",
-      "email": "van.huy@gmail.com",
-      "address": "606 FGH Street",
-      "id": 18
-    },
-    {
-      "name": "My Phuong",
-      "customerType": "SILVER",
-      "dateOfBirth": "1997-02-07",
-      "gender": "FEMALE",
-      "idCard": "10987654321",
-      "phoneNumber": "0901234567",
-      "email": "my.phuong@gmail.com",
-      "address": "707 IJK Street",
-      "id": 19
-    },
-    {
-      "name": "Tuan Anh",
-      "customerType": "GOLD",
-      "dateOfBirth": "1986-10-14",
-      "gender": "MALE",
-      "idCard": "09876543210",
-      "phoneNumber": "0909876543",
-      "email": "tuan.anh@gmail.com",
-      "address": "808 MNO Street",
-      "id": 20
-    },
-    {
-      "name": "Thi Mai",
-      "customerType": "SILVER",
-      "dateOfBirth": "2003-03-05",
-      "gender": "FEMALE",
-      "idCard": "98765432109",
-      "phoneNumber": "0912345678",
-      "email": "thi.mai@gmail.com",
-      "address": "909 PQR Street",
-      "id": 21
-    },
-    {
-      "name": "Khoa Long",
-      "customerType": "SILVER",
-      "dateOfBirth": "1994-09-28",
-      "gender": "MALE",
-      "idCard": "87654321098",
-      "phoneNumber": "0901234567",
-      "email": "khoa.long@gmail.com",
-      "address": "1010 STU Street",
-      "id": 22
-    },
-    {
-      "name": "Thanh Truc",
-      "customerType": "GOLD",
-      "dateOfBirth": "1989-07-01",
-      "gender": "FEMALE",
-      "idCard": "76543210987",
-      "phoneNumber": "0912345678",
-      "email": "thanh.truc@gmail.com",
-      "address": "1111 VWX Street",
-      "id": 23
-    },
-    {
-      "name": "Dinh Hung",
-      "customerType": "SILVER",
-      "dateOfBirth": "1993-11-11",
-      "gender": "MALE",
-      "idCard": "65432109876",
-      "phoneNumber": "0901234567",
-      "email": "dinh.hung@gmail.com",
-      "address": "1212 XYZ Street",
-      "id": 24
-    },
-    {
-      "name": "Ngoc Anh",
-      "customerType": "SILVER",
-      "dateOfBirth": "2000-05-15",
-      "gender": "FEMALE",
-      "idCard": "54321098765",
-      "phoneNumber": "0912345678",
-      "email": "ngoc.anh@gmail.com",
-      "address": "1313 UVW Street",
-      "id": 25
-    },
-    {
-      "name": "Quang Thanh",
-      "customerType": "GOLD",
-      "dateOfBirth": "1987-04-19",
-      "gender": "FEMALE",
-      "idCard": "012921999",
-      "phoneNumber": "0901234567",
-      "email": "quang.thanh@gmail.com",
-      "address": "1414 CDE Street",
-      "id": 26
-    },
-    {
-      "name": "Thuy Linh",
-      "customerType": "SILVER",
-      "dateOfBirth": "2004-02-23",
-      "gender": "FEMALE",
-      "idCard": "32109876543",
-      "phoneNumber": "0912345678",
-      "email": "thuy.linh@gmail.com",
-      "address": "1515 XYZ Street",
-      "id": 27
-    },
-    {
-      "name": "Hoang Nam",
-      "customerType": "SILVER",
-      "dateOfBirth": "1996-06-30",
-      "gender": "MALE",
-      "idCard": "21098765432",
-      "phoneNumber": "0901234567",
-      "email": "hoang.nam@gmail.com",
-      "address": "1616 LMN Street",
-      "id": 28
-    },
-    {
-      "name": "Bao Nhan",
-      "customerType": "SILVER",
-      "dateOfBirth": "2022-12-31",
-      "gender": "FEMALE",
-      "idCard": "019192999922",
-      "phoneNumber": "0912919991",
-      "email": "asm@gmail.com",
-      "address": "12 @LSj",
-      "id": 29
-    },
-    {
-      "name": "Ehe Ahihi",
-      "customerType": "DIAMOND",
-      "dateOfBirth": "1998-01-01",
-      "gender": "",
-      "idCard": "012222200",
-      "phoneNumber": "0910000002",
-      "email": "as@gmail.com",
-      "address": "290 @LSas",
-      "id": 30
-    }
-  ],
-  "contract": [
-    {
-      "id": 1,
-      "id": "CT-01",
-      "customer": "Nguyen Van A",
-      "service": "Villa Rose",
-      "beginDate": "2023-01-01",
-      "endDate": "2023-02-02",
-      "deposit": 300,
-      "totalMoney": 500
-    },
-    {
-      "id": 2,
-      "id": "CT-02",
-      "customer": "Nguyen Van B",
-      "service": "Villa Violet",
-      "beginDate": "2023-01-01",
-      "endDate": "2023-02-02",
-      "deposit": 300,
-      "totalMoney": 500
-    },
-    {
-      "id": 3,
-      "id": "CT-03",
-      "customer": "Nguyen Van C",
-      "service": "Villa Sunflower",
-      "beginDate": "2023-01-01",
-      "endDate": "2023-02-02",
-      "deposit": 300,
-      "totalMoney": 500
-    },
-    {
-      "id": 4,
-      "id": "CT-04",
-      "customer": "Nguyen Van A",
-      "service": "House Rose",
-      "beginDate": "2023-01-01",
-      "endDate": "2023-02-02",
-      "deposit": 300,
-      "totalMoney": 500
-    },
-    {
-      "id": 5,
-      "id": "CT-05",
-      "customer": "Nguyen Van D",
-      "service": "Villa Orchid",
-      "beginDate": "2023-03-15",
-      "endDate": "2023-04-15",
-      "deposit": 350,
-      "totalMoney": 600
-    },
-    {
-      "id": 6,
-      "id": "CT-06",
-      "customer": "Nguyen Van E",
-      "service": "Villa Lily",
-      "beginDate": "2023-04-10",
-      "endDate": "2023-05-10",
-      "deposit": 400,
-      "totalMoney": 700
+      "name": "Mai Thị Phượng",
+      "dateOfBirth": "1988-12-10",
+      "personalId": "369852147",
+      "salary": 10500000,
+      "phone": "0908765432",
+      "email": "phuongmai@gmail.com",
+      "position": "Receptionist",
+      "department": "Service",
+      "literacy": "College"
     },
     {
       "id": 7,
-      "id": "CT-07",
-      "customer": "Nguyen Van F",
-      "service": "House Jasmine",
-      "beginDate": "2023-06-20",
-      "endDate": "2023-07-20",
-      "deposit": 250,
-      "totalMoney": 550
+      "name": "Đỗ Văn Ghiền",
+      "dateOfBirth": "1992-06-30",
+      "personalId": "852147963",
+      "salary": 12500000,
+      "phone": "0903456789",
+      "email": "ghiendo@gmail.com",
+      "position": "Specialist",
+      "department": "Sale-Marketing",
+      "literacy": "University"
     },
     {
       "id": 8,
-      "id": "CT-08",
-      "customer": "Nguyen Van G",
-      "service": "House Tulip",
-      "beginDate": "2023-08-05",
-      "endDate": "2023-09-05",
-      "deposit": 300,
-      "totalMoney": 600
+      "name": "Nguyễn Thị Hương",
+      "dateOfBirth": "1980-04-18",
+      "personalId": "147963852",
+      "salary": 15500000,
+      "phone": "0906543210",
+      "email": "huongnguyen@gmail.com",
+      "position": "Monitoring",
+      "department": "Administrative",
+      "literacy": "Postgraduate"
+    },
+    {
+      "id": 9,
+      "name": "Trần Văn Đức",
+      "dateOfBirth": "1998-08-08",
+      "personalId": "963852741",
+      "salary": 11500000,
+      "phone": "0909876543",
+      "email": "ductran@gmail.com",
+      "position": "Manager",
+      "department": "Manager",
+      "literacy": "Intermediate"
+    },
+    {
+      "id": 10,
+      "name": "Lê Thị Lan",
+      "dateOfBirth": "1993-02-14",
+      "personalId": "258963147",
+      "salary": 13500000,
+      "phone": "0901234567",
+      "email": "lanle@gmail.com",
+      "position": "Director",
+      "department": "Manager",
+      "literacy": "University"
+    },
+    {
+      "id": 11,
+      "name": "Vũ Văn Mạnh",
+      "dateOfBirth": "1986-10-05",
+      "personalId": "741258963",
+      "salary": 10600000,
+      "phone": "0902345678",
+      "email": "manhvuvan@gmail.com",
+      "position": "Receptionist",
+      "department": "Service",
+      "literacy": "College"
+    },
+    {
+      "id": 12,
+      "name": "Bùi Thị Ngọc",
+      "dateOfBirth": "1991-01-20",
+      "personalId": "852963741",
+      "salary": 12200000,
+      "phone": "0903456789",
+      "email": "ngocbuithi@gmail.com",
+      "position": "Specialist",
+      "department": "Sale-Marketing",
+      "literacy": "University"
+    },
+    {
+      "id": 13,
+      "name": "Hồ Văn Phúc",
+      "dateOfBirth": "1984-08-17",
+      "personalId": "369852147",
+      "salary": 15200000,
+      "phone": "0904567890",
+      "email": "phucho@gmail.com",
+      "position": "Monitoring",
+      "department": "Administrative",
+      "literacy": "Postgraduate"
+    },
+    {
+      "id": 14,
+      "name": "Trần Thị Quỳnh",
+      "dateOfBirth": "1996-12-28",
+      "personalId": "147852369",
+      "salary": 11200000,
+      "phone": "0905678901",
+      "email": "quynhtran@gmail.com",
+      "position": "Manager",
+      "department": "Manager",
+      "literacy": "Intermediate"
+    },
+    {
+      "id": 15,
+      "name": "Lý Văn Sơn",
+      "dateOfBirth": "1987-03-14",
+      "personalId": "963147852",
+      "salary": 13200000,
+      "phone": "0906789012",
+      "email": "sonly@gmail.com",
+      "position": "Director",
+      "department": "Manager",
+      "literacy": "University"
+    },
+    {
+      "id": 16,
+      "name": "Phạm Thị Tâm",
+      "dateOfBirth": "1999-09-09",
+      "personalId": "258369147",
+      "salary": 10700000,
+      "phone": "0907890123",
+      "email": "tampham@gmail.com",
+      "position": "Receptionist",
+      "department": "Service",
+      "literacy": "College"
+    },
+    {
+      "id": 17,
+      "name": "Võ Văn Tài",
+      "dateOfBirth": "1989-11-23",
+      "personalId": "987654321",
+      "salary": 12300000,
+      "phone": "0908901234",
+      "email": "taivo@gmail.com",
+      "position": "Specialist",
+      "department": "Sale-Marketing",
+      "literacy": "University"
+    },
+    {
+      "id": 18,
+      "name": "Nguyễn Thị Út",
+      "dateOfBirth": "1994-04-05",
+      "personalId": "321654987",
+      "salary": 15300000,
+      "phone": "0909012345",
+      "email": "utnguyen@gmail.com",
+      "position": "Monitoring",
+      "department": "Administrative",
+      "literacy": "Postgraduate"
+    },
+    {
+      "id": 19,
+      "name": "Lê Văn Vũ",
+      "dateOfBirth": "1983-02-27",
+      "personalId": "456987123",
+      "salary": 11300000,
+      "phone": "0900123456",
+      "email": "vule@gmail.com",
+      "position": "Manager",
+      "department": "Manager",
+      "literacy": "Intermediate"
+    },
+    {
+      "id": 20,
+      "name": "Nguyễn Thị Xinh",
+      "dateOfBirth": "1997-06-18",
+      "personalId": "654321987",
+      "salary": 13300000,
+      "phone": "0901234567",
+      "email": "xinhnguyen@gmail.com",
+      "position": "Director",
+      "department": "Manager",
+      "literacy": "University"
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "name": "Nguyễn Thị Hào",
+      "dateOfBirth": "1970-11-07",
+      "gender": 0,
+      "personalId": "643431213",
+      "phone": "0945423362",
+      "email": "thihao07@gmail.com",
+      "customer_type": "Member",
+      "address": "23 Nguyễn Hoàng, Đà Nẵng"
+    },
+    {
+      "id": 2,
+      "name": "Trần Thị Linh",
+      "dateOfBirth": "1985-05-15",
+      "gender": 0,
+      "personalId": "742356789",
+      "phone": "0987654321",
+      "email": "linhtran85@gmail.com",
+      "customer_type": "Diamond",
+      "address": "456 Lê Lợi, Hồ Chí Minh"
+    },
+    {
+      "id": 3,
+      "name": "Phạm Văn Tuấn",
+      "dateOfBirth": "1990-09-20",
+      "gender": 1,
+      "personalId": "123456789",
+      "phone": "0912345678",
+      "email": "tuanpham90@gmail.com",
+      "customer_type": "Platinum",
+      "address": "789 Trần Hưng Đạo, Hà Nội"
+    },
+    {
+      "id": 4,
+      "name": "Lê Thị Ngọc Trinh",
+      "dateOfBirth": "1988-03-25",
+      "gender": 0,
+      "personalId": "654321987",
+      "phone": "0976543210",
+      "email": "ngoctrinh88@gmail.com",
+      "customer_type": "Gold",
+      "address": "147 Nguyễn Du, Hải Phòng"
+    },
+    {
+      "id": 5,
+      "name": "Hoàng Văn Long",
+      "dateOfBirth": "1975-12-10",
+      "gender": 1,
+      "personalId": "987654321",
+      "phone": "0965432109",
+      "email": "longhoang75@gmail.com",
+      "customer_type": "Silver",
+      "address": "369 Lý Thường Kiệt, Quảng Ninh"
+    },
+    {
+      "id": 6,
+      "name": "Mai Thị Huệ",
+      "dateOfBirth": "1982-07-28",
+      "gender": 0,
+      "personalId": "234567890",
+      "phone": "0932109876",
+      "email": "huemai82@gmail.com",
+      "customer_type": "Member",
+      "address": "258 Trần Phú, Nha Trang"
+    },
+    {
+      "id": 7,
+      "name": "Đặng Văn Minh",
+      "dateOfBirth": "1995-01-05",
+      "gender": 1,
+      "personalId": "876543210",
+      "phone": "0943210654",
+      "email": "minhdang95@gmail.com",
+      "customer_type": "Diamond",
+      "address": "123 Lê Thanh Nghị, Đà Nẵng"
+    },
+    {
+      "id": 8,
+      "name": "Trần Thị Mai Anh",
+      "dateOfBirth": "1989-08-17",
+      "gender": 0,
+      "personalId": "135792468",
+      "phone": "0923456789",
+      "email": "maianh89@gmail.com",
+      "customer_type": "Platinum",
+      "address": "456 Nguyễn Thị Minh Khai, Hồ Chí Minh"
+    },
+    {
+      "id": 9,
+      "name": "Nguyễn Văn Hùng",
+      "dateOfBirth": "1978-04-30",
+      "gender": 1,
+      "personalId": "987654321",
+      "phone": "0918237465",
+      "email": "hungnguyen78@gmail.com",
+      "customer_type": "Gold",
+      "address": "789 Lê Duẩn, Hà Nội"
+    },
+    {
+      "id": 10,
+      "name": "Lê Thị Ánh Nguyệt",
+      "dateOfBirth": "1992-11-20",
+      "gender": 0,
+      "personalId": "246813579",
+      "phone": "0978163245",
+      "email": "nguyetanh92@gmail.com",
+      "customer_type": "Silver",
+      "address": "147 Nguyễn Văn Cừ, Hải Phòng"
+    },
+    {
+      "id": 11,
+      "name": "Vũ Văn Nam",
+      "dateOfBirth": "1986-06-18",
+      "gender": 1,
+      "personalId": "543216789",
+      "phone": "0945678901",
+      "email": "namvu86@gmail.com",
+      "customer_type": "Member",
+      "address": "369 Phan Đình Phùng, Quảng Ninh"
+    },
+    {
+      "id": 12,
+      "name": "Phạm Thị Quỳnh Trang",
+      "dateOfBirth": "1998-02-14",
+      "gender": 0,
+      "personalId": "987123654",
+      "phone": "0932468012",
+      "email": "trangpham98@gmail.com",
+      "customer_type": "Diamond",
+      "address": "258 Lý Thái Tổ, Nha Trang"
+    },
+    {
+      "id": 13,
+      "name": "Đinh Văn Hòa",
+      "dateOfBirth": "1980-10-05",
+      "gender": 1,
+      "personalId": "369852147",
+      "phone": "0941526378",
+      "email": "hoadinh80@gmail.com",
+      "customer_type": "Platinum",
+      "address": "123 Nguyễn Văn Linh, Đà Nẵng"
+    },
+    {
+      "id": 14,
+      "name": "Nguyễn Thị Phương Thảo",
+      "dateOfBirth": "1993-09-08",
+      "gender": 0,
+      "personalId": "159263487",
+      "phone": "0928374651",
+      "email": "thaophuong93@gmail.com",
+      "customer_type": "Gold",
+      "address": "456 Lê Đức Thọ, Hồ Chí Minh"
+    },
+    {
+      "id": 15,
+      "name": "Trần Văn Đức",
+      "dateOfBirth": "1973-07-22",
+      "gender": 1,
+      "personalId": "852369741",
+      "phone": "0914758362",
+      "email": "ductran73@gmail.com",
+      "customer_type": "Silver",
+      "address": "789 Điện Biên Phủ, Hà Nội"
+    }
+  ],
+  "facilities": [
+    {
+      "id": 1,
+      "name": "Villa Beach Front 1",
+      "area": 500,
+      "rental_cost": 10000000,
+      "maximum_capacity": 10,
+      "rent_type": "Daily",
+      "type": {
+        "name": "Villa",
+        "standard": "vip",
+        "other_amenities_described": [
+          "swimming pool",
+          "additional grill",
+          "television"
+        ],
+        "pool_area": 200,
+        "number_of_floors": 1
+      }
+    },
+    {
+      "id": 2,
+      "name": "House Princess 01",
+      "area": 250,
+      "rental_cost": 5000000,
+      "maximum_capacity": 4,
+      "rent_type": "Yearly",
+      "type": {
+        "name": "House",
+        "standard": "vip",
+        "other_amenities_described": [
+          "additional grill"
+        ],
+        "number_of_floors": 1
+      }
+    },
+    {
+      "id": 3,
+      "name": "Room Twin 02",
+      "area": 150,
+      "rental_cost": 900000,
+      "maximum_capacity": 2,
+      "rent_type": "Daily",
+      "type": {
+        "name": "Room",
+        "free_service_included": [
+          "rent bicycle",
+          "Morning buffet"
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "name": "Villa Ocean View",
+      "area": 1000,
+      "rental_cost": 20000000,
+      "maximum_capacity": 16,
+      "rent_type": "Monthly",
+      "type": {
+        "name": "Villa",
+        "standard": "normal",
+        "other_amenities_described": [
+          "swimming pool",
+          "additional grill",
+          "television"
+        ],
+        "pool_area": 1000,
+        "number_of_floors": 2
+      }
+    },
+    {
+      "id": 5,
+      "name": "House Sunset Paradise",
+      "area": 500,
+      "rental_cost": 12000000,
+      "maximum_capacity": 4,
+      "rent_type": "Yearly",
+      "type": {
+        "name": "House",
+        "standard": "normal",
+        "other_amenities_described": [
+          "additional grill"
+        ],
+        "number_of_floors": 2
+      }
+    },
+    {
+      "id": 6,
+      "name": "Room Executive Suite",
+      "area": 250,
+      "rental_cost": 1500000,
+      "maximum_capacity": 2,
+      "rent_type": "Hourly",
+      "type": {
+        "name": "Room",
+        "free_service_included": [
+          "karaoke",
+          "Evening buffet"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "name": "Villa Mountain Retreat",
+      "area": 500,
+      "rental_cost": 15000000,
+      "maximum_capacity": 10,
+      "rent_type": "Monthly",
+      "type": {
+        "name": "Villa",
+        "standard": "vip",
+        "other_amenities_described": [
+          "swimming pool",
+          "additional grill",
+          "television"
+        ],
+        "pool_area": 200,
+        "number_of_floors": 2
+      }
+    },
+    {
+      "id": 8,
+      "name": "House Lake View",
+      "area": 250,
+      "rental_cost": 6000000,
+      "maximum_capacity": 4,
+      "rent_type": "Yearly",
+      "type": {
+        "name": "House",
+        "standard": "normal",
+        "other_amenities_described": [
+          "additional grill"
+        ],
+        "number_of_floors": 1
+      }
+    },
+    {
+      "id": 9,
+      "name": "Room Cityscape View",
+      "area": 150,
+      "rental_cost": 1200000,
+      "maximum_capacity": 2,
+      "rent_type": "Daily",
+      "type": {
+        "name": "Room",
+        "free_service_included": [
+          "Morning buffet",
+          "Lunch buffet"
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "name": "Villa Lakeside Haven",
+      "area": 1000,
+      "rental_cost": 25000000,
+      "maximum_capacity": 16,
+      "rent_type": "Monthly",
+      "type": {
+        "name": "Villa",
+        "standard": "vip",
+        "other_amenities_described": [
+          "swimming pool",
+          "additional grill",
+          "television"
+        ],
+        "pool_area": 1000,
+        "number_of_floors": 3
+      }
+    },
+    {
+      "id": 11,
+      "name": "House Garden Retreat",
+      "area": 500,
+      "rental_cost": 10000000,
+      "maximum_capacity": 4,
+      "rent_type": "Yearly",
+      "type": {
+        "name": "House",
+        "standard": "normal",
+        "other_amenities_described": [
+          "additional grill"
+        ],
+        "number_of_floors": 3
+      }
+    },
+    {
+      "id": 12,
+      "name": "Room Urban Escape",
+      "area": 250,
+      "rental_cost": 1800000,
+      "maximum_capacity": 2,
+      "rent_type": "Hourly",
+      "type": {
+        "name": "Room",
+        "free_service_included": [
+          "karaoke",
+          "Lunch buffet"
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "name": "Villa Riverside Oasis",
+      "area": 500,
+      "rental_cost": 18000000,
+      "maximum_capacity": 10,
+      "rent_type": "Monthly",
+      "type": {
+        "name": "Villa",
+        "standard": "vip",
+        "other_amenities_described": [
+          "swimming pool",
+          "additional grill",
+          "television"
+        ],
+        "pool_area": 200,
+        "number_of_floors": 2
+      }
+    },
+    {
+      "id": 14,
+      "name": "House Forest Hideaway",
+      "area": 250,
+      "rental_cost": 7000000,
+      "maximum_capacity": 4,
+      "rent_type": "Yearly",
+      "type": {
+        "name": "House",
+        "standard": "normal",
+        "other_amenities_described": [
+          "additional grill"
+        ],
+        "number_of_floors": 2
+      }
+    },
+    {
+      "id": 15,
+      "name": "Room Serene View",
+      "area": 150,
+      "rental_cost": 1500000,
+      "maximum_capacity": 2,
+      "rent_type": "Daily",
+      "type": {
+        "name": "Room",
+        "free_service_included": [
+          "rent bicycle",
+          "Evening buffet"
+        ]
+      }
     }
   ]
 }

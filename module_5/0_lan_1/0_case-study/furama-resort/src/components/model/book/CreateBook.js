@@ -3,7 +3,6 @@ import {Modal} from "react-bootstrap";
 import * as Yup from "yup";
 import data from "../../../data/db.json";
 import * as bookService from "../../service/BookService"
-import toast from "toastify"
 
 export function CreateBookModal({showModal, setShowModal}) {
     const typeData = data["type"]
