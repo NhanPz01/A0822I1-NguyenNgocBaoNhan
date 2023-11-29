@@ -6,8 +6,12 @@ export const getAll = async () => {
 }
 
 export const save = async(value) => {
-  const response = await axios.post('http://localhost:8080/facilities', value)
-  return response.status
+  try {
+    const response = await axios.post(`http://localhost:8080/facilities`, value)
+    return response.status
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 export const update = async (value) => {

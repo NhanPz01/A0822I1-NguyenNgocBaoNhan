@@ -1,0 +1,53 @@
+{
+  "status": [
+    "private",
+    "public"
+  ],
+  "song": [
+    {
+      "id": 1,
+      "name": "Nơi này có anh",
+      "singer": "Sơn Tùng M-TP",
+      "artist": "Sơn Tùng (maybe :v)",
+      "duration": "05:00",
+      "likes": 34,
+      "status": "public"
+    },
+    {
+      "id": 2,
+      "name": "Khó vẽ nụ cười",
+      "singer": "Đạt G",
+      "artist": "Sơn Tùng (maybe :v)",
+      "duration": "04:30",
+      "likes": 20,
+      "status": "public"
+    },
+    {
+      "id": 3,
+      "name": "See you again",
+      "singer": "Wiz Khalifa",
+      "artist": "Sơn Tùng (maybe :v)",
+      "duration": "03:55",
+      "likes": 5,
+      "status": "public"
+    },
+    {
+      "id": 4,
+      "name": "Shape of you",
+      "singer": "Ed Sheeran",
+      "artist": "Sơn Tùng (maybe :v)",
+      "duration": "06:05",
+      "likes": 43,
+      "status": "private"
+    },
+    {
+      "id": 5,
+      "name": "Symphony",
+      "singer": "Clean Bandit",
+      "artist": "Sơn Tùng (maybe :v)",
+      "duration": "04:50",
+      "likes": 111,
+      "status": "public"
+    }
+  ]
+}

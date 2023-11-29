@@ -519,7 +519,7 @@
     {
       "id": 1,
       "name": "Villa Beach Front 1000",
-      "area": 500,
+      "area": "250",
       "rental_cost": 10000000,
       "maximum_capacity": 10,
       "rent_type": "Monthly",

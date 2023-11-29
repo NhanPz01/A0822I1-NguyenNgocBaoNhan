@@ -18,12 +18,11 @@ const FacilityCreateModal = ({ showModal, setShowModal }) => {
     rental_cost: 0,
     maximum_capacity: 0,
     type: {
-      name: "",
+      name: "Villa",
       standard: null,
       other_amenities_described: [],
       pool_area: null,
       number_of_floors: null,
-      free_service_included: null
     }
   }
 
@@ -37,7 +36,7 @@ const FacilityCreateModal = ({ showModal, setShowModal }) => {
   }
 
   const handleCreate = async (values) => {
-    console.log(await FacilityService.save(values));
+    await FacilityService.save(values)
   }
 
   const onClose = () => {
@@ -56,8 +55,6 @@ const FacilityCreateModal = ({ showModal, setShowModal }) => {
         onSubmit={(values) => {
           console.log(values)
           handleCreate(values)
-          // onClose()
-          // alert('Created !!!')
         }}
       >
         {({ errors, touched }) => (
