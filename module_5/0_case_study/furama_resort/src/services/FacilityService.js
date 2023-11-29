@@ -5,6 +5,11 @@ export const getAll = async () => {
   return response.data
 }
 
+export const save = async(value) => {
+  const response = await axios.post('http://localhost:8080/facilities', value)
+  return response.status
+}
+
 export const update = async (value) => {
   const response = await axios.put(`http://localhost:8080/facilities/${value.id}`, value)
   return response.status

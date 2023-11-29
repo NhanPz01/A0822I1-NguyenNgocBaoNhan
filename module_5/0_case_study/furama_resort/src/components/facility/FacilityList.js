@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import * as FacilityService from '../../services/FacilityService.js'
 import FacilityEditModal from './FacilityEditModal.js'
+import FacilityCreateModal from './FacilityCreateModal.js'
 
 const FacilityList = () => {
   const [facilities, setFacilities] = useState([])
   const [showEditModal, setShowEditModal] = useState(false)
+  const [showCreateModal, setShowCreateModal] = useState(false)
   const [editFacility, setEditFacility] = useState(null)
   const IMG = [
     "https://plus.unsplash.com/premium_photo-1682285212027-6af0d0f70e07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80",
@@ -40,13 +42,27 @@ const FacilityList = () => {
     setShowEditModal(true)
   }
 
+  const handleCloseEdit = () => {
+    setEditFacility(null)
+    setShowEditModal(false)
+  }
+
+  const handleCreate = () => {
+    setShowCreateModal(true)
+  }
+
   return (
     <>
       <div className="header">
-        <h1>Facility</h1>
+        <div className="header_title">
+          <h1>Facility</h1>
+        </div>
       </div>
       {/* Create the navigation bar with some links */}
       <ul className="navigation">
+        <li>
+          <button onClick={handleCreate} className='btn btn-success rounded-0'>Create</button>
+        </li>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/customer">Customer</NavLink></li>
         <li><NavLink to="/contract">Contract</NavLink></li>
@@ -56,8 +72,7 @@ const FacilityList = () => {
         <div className='d-flex align-content-start justify-content-center flex-wrap gap-4'>
           {
             facilities.map((facility, index) => {
-              let imgURL = ''
-              imgURL = IMG[index]
+              let imgURL = IMG[index]
 
               return (
                 <>
@@ -82,8 +97,8 @@ const FacilityList = () => {
               )
             })
           }
-          <FacilityEditModal showModal={showEditModal} setShowModal={setShowEditModal} editFacility={editFacility} />
-
+          <FacilityEditModal showModal={showEditModal} setShowModal={setShowEditModal} editFacility={editFacility} onClose={handleCloseEdit} />
+          <FacilityCreateModal showModal={showCreateModal} setShowModal={setShowCreateModal} />
         </div>
 
         {/* Create the footer with some text */}

@@ -4,22 +4,7 @@ import * as FacilityService from '../../services/FacilityService'
 import { ErrorMessage, Field, Form, Formik } from "formik"
 import data from '../../data/db.json'
 
-const FacilityEditModal = ({ showModal, setShowModal, editFacility }) => {
-  const initialValue = {
-    id: -1,
-    name: "",
-    area: 0,
-    rental_cost: 0,
-    maximum_capacity: 0,
-    type: {
-      name: "",
-      standard: null,
-      other_amenities_described: [],
-      pool_area: null,
-      number_of_floors: null,
-      free_service_included: null
-    }
-  }
+const FacilityEditModal = ({ showModal, setShowModal, editFacility, onClose }) => {
   const areaData = data['area']
   const capacityData = data['maximum_capacity']
   const rentTypeData = data['rent_type']
@@ -36,7 +21,6 @@ const FacilityEditModal = ({ showModal, setShowModal, editFacility }) => {
   }
 
   if (!editFacility) {
-    // alert('There is nothing')
     return null
   }
 
@@ -47,24 +31,19 @@ const FacilityEditModal = ({ showModal, setShowModal, editFacility }) => {
         <Formik
           initialValues={editFacility}
           validationSchema={Yup.object(facilityValidate)}
-          onSubmit={(values, { resetForm }) => {
-            handleVillaEdit(values);
-            resetForm();
+          onSubmit={(values) => {
+            handleVillaEdit(values)
+            onClose()
+            alert('Updated !!!')
           }}
         >
           {({ errors, touched }) => (
-            <Form id="create-book">
-              <Modal show={showModal} onHide={() => setShowModal(false)} >
+            <Form id="edit-book">
+              <Modal show={showModal} onHide={onClose} >
                 <Modal.Header closeButton>
                   <Modal.Title>Edit Facility</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                  <div className="mb-3">
-                    <label className="form-label">ID</label>
-                    <Field type="text" className={`form-control ${errors.id && touched.id ? 'is-invalid' : ''
-                      }`} name="id" />
-                    <ErrorMessage name="cId" component="div" className="invalid-feedback" />
-                  </div>
                   <div className="mb-3">
                     <label className="form-label">Name</label>
                     <Field type="text" className={`form-control ${errors.name && touched.name ? 'is-invalid' : ''
@@ -160,7 +139,7 @@ const FacilityEditModal = ({ showModal, setShowModal, editFacility }) => {
                   <button type="button" className="btn btn-secondary"
                     onClick={() => setShowModal(false)}>Close
                   </button>
-                  <button form="create-book" type="submit" className="btn btn-primary">Create</button>
+                  <button form="edit-book" type="submit" className="btn btn-primary">Save</button>
                 </Modal.Footer>
               </Modal>
             </Form>

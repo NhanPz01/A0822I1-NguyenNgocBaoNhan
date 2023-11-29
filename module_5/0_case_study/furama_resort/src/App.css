@@ -5,30 +5,54 @@ body {
 }
 
 .header {
+  height: 200px;
   background-image: url("./assets/img/home-banner.jpg");
   padding: 20px;
   text-align: center;
 }
 
+.header .header_title {
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .header_title h1 {
+  font-weight: bolder;
+  margin: auto;
+  padding: 50px 0px;
+}
+
 .navigation {
+  display: flex;
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #333;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .navigation li {
-  float: left;
+  width: 100%;
 }
 
+.navigation li .btn {
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+}
 
 .navigation li a {
+  width: 100%;
   display: block;
   color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+
 }
 
 .navigation li a:hover {
